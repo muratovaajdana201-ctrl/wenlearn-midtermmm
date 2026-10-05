@@ -21,6 +21,34 @@ The site has the lectures of the first four weeks:
 - Week 4: Bootstrap and Media Queries
 
 Every week works the same way. The student reads the lecture, presses "Take the quiz", and then presses "Live coding". Both buttons are at the end of each lecture. In total the site has 14 pages, 44 quiz questions and 12 live coding tasks.
+## Screenshots
+
+Home page:
+
+![Home page](screenshotsm/home.png)
+
+Lectures page:
+
+![Lectures page](screenshotsm/lectures.png)
+
+Quiz after pressing "Check Answers":
+
+![Quiz page](screenshotsm/quiz.png)
+![Quiz page](screenshotsm/quiz(1).png)
+
+
+Live coding task with the solution opened:
+
+![Live coding page](screenshotsm/live-coding.png)
+![Live coding page](screenshotsm/live-coding(1).png)
+
+Contact page:
+
+![Contact page](screenshotsm/contact.png)
+
+Mobile version with the hamburger menu:
+
+![Mobile version](screenshotsm/mobile.png)
 
 ## Project structure
 
