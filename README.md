@@ -46,9 +46,6 @@ Live coding page, where you choose a week:
 
 ![Live coding page](screenshotsm/live-coding.png)
 
-One of the live coding tasks (week 1, task 1):
-
-![Live coding task](screenshotsm/live-coding(1).png)
 
 Contact page:
 
@@ -80,11 +77,11 @@ Home page on a narrower screen:
 - On small screens the menu turns into a hamburger button. We did it with a hidden checkbox and CSS, without JavaScript.
 - We wrote the text of all four lectures on one page, with code examples, a few tables and a schedule table.
 - We made one quiz for each lecture. Some questions are about theory and some are about code. Every question has three answers and a short explanation.
-- The "Check Answers" button also works without JavaScript. There is a hidden checkbox at the top of the form. When it is checked, CSS selectors (~ and +) make the right answer green, the wrong one red and show the explanation. "Try again" is a simple `reset` button.
+- The "Check Answers" button also works without JavaScript. There is a hidden checkbox at the top of the form. When it is checked, CSS selectors (~ and +) make the right answer green, the wrong one red and show the explanation. "Try again" is a simple *reset* button.
 - We made three coding tasks for each lecture. Each task has requirements, an expected result, a place to write your code and a "Show Solution" button. This button works the same way as the quiz.
 - We added the "Take the quiz" and "Live coding" buttons at the end of each lecture.
 - We made a contact form with required fields. After sending it you get to *thank-you.html* .
-- We wrote `css/style.css` ourselves. It has CSS variables, Flexbox, Grid, positioning, *:hover*, *:focus*, *:focus-visible* and *:nth-child()*.
+- We wrote *css/style.css* ourselves. It has CSS variables, Flexbox, Grid, positioning, *:hover*, *:focus*, *:focus-visible* and *:nth-child()*.
 - We added Bootstrap 5.3.3 for the grid, buttons and some utility classes.
 - For different screen sizes we used the Bootstrap grid and our own media queries (992px, 768px and 576px).
 - We used the Google font Sora, wrote *alt* text for images and added *loading="lazy"* to the images below the top of the page.
