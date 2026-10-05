@@ -114,7 +114,7 @@ Download the project and open *index.html* in a browser. You don't need to insta
 
 - Aidana Muratova: Lectures page (lecture text and schedule table), Contact page, media queries, hamburger menu
 - Zhasmira Mamyrbayeva: Quiz and Live Coding pages, forms, Bootstrap classes
-- Khanzada Nyshanbek: project structure, Home page, header and footer, main part of `css/style.css` (variables, Flexbox, Grid), publishing the site
+- Khanzada Nyshanbek: project structure, Home page, header and footer, main part of *css/style.css* (variables, Flexbox, Grid), publishing the site
 
 ## Limitations
 
