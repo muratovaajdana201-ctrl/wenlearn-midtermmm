@@ -28,35 +28,35 @@ Every week goes the same way. You read the lecture, then press "Take the quiz", 
 
 Home page:
 
-![Home page](screenshots/home.png)
+![Home page](screenshotsm/home.png)
 
 Lectures page with the schedule table:
 
-![Lectures page](screenshots/lectures.png)
+![Lectures page](screenshotsm/lectures.png)
 
 Quiz page, where you choose a week:
 
-![Quiz page](screenshots/quiz-hub.png)
+![Quiz page](screenshotsm/quiz.png)
 
 Quiz for week 1:
 
-![Quiz for week 1](screenshots/quiz-week1.png)
+![Quiz for week 1](screenshotsm/quiz(1).png)
 
 Live coding page, where you choose a week:
 
-![Live coding page](screenshots/live-coding-hub.png)
+![Live coding page](screenshotsm/live-coding.png)
 
 One of the live coding tasks (week 1, task 1):
 
-![Live coding task](screenshots/live-coding-task.png)
+![Live coding task](screenshotsm/live-coding(1).png)
 
 Contact page:
 
-![Contact page](screenshots/contact.png)
+![Contact page](screenshotsm/contact.png)
 
 Home page on a narrower screen:
 
-![Mobile screen](screenshots/mobile.png)
+![Mobile screen](screenshotsm/mobile.png)
 
 ## Project structure
 
