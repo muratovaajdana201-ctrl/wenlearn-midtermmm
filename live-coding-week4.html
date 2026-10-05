@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Live Coding Week 4 | WebLearn, Astana IT University</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Sora:wght@400;600;700&display=swap" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link href="css/style.css" rel="stylesheet">
+</head>
+<body>
+  <header class="site-header">
+    <a class="logo" href="index.html"><img class="logo-img" src="img/aitu-logo.png" alt="Astana IT University logo"><span>WebLearn</span></a>
+    <input type="checkbox" id="nav-toggle" class="nav-toggle" aria-label="Open menu">
+    <label for="nav-toggle" class="hamburger"><span></span><span></span><span></span></label>
+    <nav>
+      <ul class="nav-list"><li><a href="index.html">Home</a></li><li><a href="lectures.html">Lectures</a></li><li><a href="quiz.html">Quiz</a></li><li><a href="live-coding.html" class="active">Live Coding</a></li><li><a href="contact.html">Contact</a></li></ul>
+    </nav>
+  </header>
+
+  <main>
+    <section class="page-title"><div class="container"><h1>Live Coding &mdash; Week 4: Bootstrap and Media Queries</h1><p>Three coding tasks. Write your code in your editor (for example VS Code) or in the box below, then press <b>Show Solution</b> to compare.</p></div></section>
+    <section class="section">
+      <div class="container narrow">
+        <article class="task">
+          <input type="checkbox" id="sol-week4-1" class="check-toggle">
+          <h2>Task 1: Bootstrap grid</h2>
+          <p>Make a responsive row of three columns with Bootstrap.</p>
+          <ul class="task-reqs"><li>Connect Bootstrap with the CDN link in <code>&lt;head&gt;</code></li><li>Use the structure <code>container</code> &rarr; <code>row</code> &rarr; columns</li><li>Each column is <code>col-12 col-md-4</code>: full width on phones, one third from 768px</li></ul>
+          <p class="pg-label">Expected result</p>
+          <div class="ex-preview"><div class="row g-2 text-center"><div class="col-12 col-md-4"><div class="ex-col">Column 1</div></div><div class="col-12 col-md-4"><div class="ex-col">Column 2</div></div><div class="col-12 col-md-4"><div class="ex-col">Column 3</div></div></div></div>
+          <label for="week4-code1" class="pg-label mt-3">Your code</label>
+          <textarea id="week4-code1" class="code-box" rows="6" spellcheck="false" placeholder="Write your solution here"></textarea>
+          <div class="quiz-actions">
+            <label for="sol-week4-1" class="btn btn-accent check-btn"><span class="show-text">Show Solution</span><span class="hide-text">Hide Solution</span></label>
+          </div>
+          <div class="solution">
+            <p class="pg-label">Solution</p>
+            <pre class="code-card"><code>&lt;link rel="stylesheet"
+  href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"&gt;
+
+&lt;div class="container"&gt;
+  &lt;div class="row"&gt;
+    &lt;div class="col-12 col-md-4"&gt;Column 1&lt;/div&gt;
+    &lt;div class="col-12 col-md-4"&gt;Column 2&lt;/div&gt;
+    &lt;div class="col-12 col-md-4"&gt;Column 3&lt;/div&gt;
+  &lt;/div&gt;
+&lt;/div&gt;</code></pre>
+          </div>
+        </article>
+        <article class="task">
+          <input type="checkbox" id="sol-week4-2" class="check-toggle">
+          <h2>Task 2: Utilities and components</h2>
+          <p>Build a small card only with Bootstrap classes, without your own CSS.</p>
+          <ul class="task-reqs"><li>A heading centered with <code>text-center</code></li><li>A green message with <code>text-success</code> and a margin <code>mt-3</code></li><li>A box with padding <code>p-4</code> and a button <code>btn btn-primary</code></li></ul>
+          <p class="pg-label">Expected result</p>
+          <div class="ex-preview"><div class="p-4 border rounded"><h4 class="text-center">Lecture finished</h4><p class="text-success mt-3">You passed the quiz!</p><a class="btn btn-primary" href="#">Next lecture</a></div></div>
+          <label for="week4-code2" class="pg-label mt-3">Your code</label>
+          <textarea id="week4-code2" class="code-box" rows="6" spellcheck="false" placeholder="Write your solution here"></textarea>
+          <div class="quiz-actions">
+            <label for="sol-week4-2" class="btn btn-accent check-btn"><span class="show-text">Show Solution</span><span class="hide-text">Hide Solution</span></label>
+          </div>
+          <div class="solution">
+            <p class="pg-label">Solution</p>
+            <pre class="code-card"><code>&lt;div class="p-4 border rounded"&gt;
+  &lt;h4 class="text-center"&gt;Lecture finished&lt;/h4&gt;
+  &lt;p class="text-success mt-3"&gt;You passed the quiz!&lt;/p&gt;
+  &lt;a class="btn btn-primary" href="#"&gt;Next lecture&lt;/a&gt;
+&lt;/div&gt;</code></pre>
+          </div>
+        </article>
+        <article class="task">
+          <input type="checkbox" id="sol-week4-3" class="check-toggle">
+          <h2>Task 3: Media queries</h2>
+          <p>Make the page change on small screens.</p>
+          <ul class="task-reqs"><li>On desktop <code>.menu</code> is a flex row</li><li><code>@media (max-width: 768px)</code>: <code>.menu</code> becomes a column (<code>flex-direction: column</code>)</li><li><code>@media (max-width: 575px)</code>: <code>h1</code> gets <code>font-size: 24px</code></li></ul>
+          <p class="pg-label">Expected result</p>
+          <div class="ex-preview"><p class="mb-2"><b>Make the browser window narrower to see it change:</b></p><ul class="ex-mq"><li>Home</li><li>Lectures</li><li>Quiz</li></ul></div>
+          <label for="week4-code3" class="pg-label mt-3">Your code</label>
+          <textarea id="week4-code3" class="code-box" rows="6" spellcheck="false" placeholder="Write your solution here"></textarea>
+          <div class="quiz-actions">
+            <label for="sol-week4-3" class="btn btn-accent check-btn"><span class="show-text">Show Solution</span><span class="hide-text">Hide Solution</span></label>
+          </div>
+          <div class="solution">
+            <p class="pg-label">Solution</p>
+            <pre class="code-card"><code>.menu {
+  display: flex;
+  gap: 12px;
+}
+
+@media (max-width: 768px) {
+  .menu {
+    flex-direction: column;
+  }
+}
+
+@media (max-width: 575px) {
+  h1 {
+    font-size: 24px;
+  }
+}</code></pre>
+          </div>
+        </article>
+        <ul class="lec-nav quiz-links"><li><a href="lectures.html#week4">Back to the lecture</a></li><li><a href="quiz-week4.html">Quiz for this lecture</a></li><li><a href="contact.html">Questions? Contact us</a></li></ul>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">
+      <div class="row text-center text-md-start">
+        <div class="col-md-4 mb-3">
+          <img class="footer-logo" src="img/aitu-logo.png" alt="Astana IT University logo" loading="lazy">
+          <h2 class="h6 mt-2">Astana IT University</h2>
+          <p>Web Technologies-1. Read lectures, take the quizzes, code it live.</p>
+        </div>
+        <div class="col-md-4 mb-3">
+          <h2 class="h6">Contact</h2>
+          <p>info@weblearn.example<br>Astana IT University, Astana</p>
+        </div>
+        <div class="col-md-4 mb-3">
+          <h2 class="h6">Follow</h2>
+          <p><a href="https://github.com/" target="_blank" rel="noopener">GitHub</a> | <a href="https://t.me/" target="_blank" rel="noopener">Telegram</a> | <a href="https://instagram.com/" target="_blank" rel="noopener">Instagram</a></p>
+        </div>
+      </div>
+      <p class="text-center copyright mb-0">&copy; 2026 WebLearn. Web Technologies midterm project.</p>
+    </div>
+  </footer>
+</body>
+</html>

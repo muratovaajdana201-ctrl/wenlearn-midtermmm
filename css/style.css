@@ -1,0 +1,230 @@
+/* Variables */
+:root {
+  --ink: #0a1a3a;
+  --blue: #0b3b8c;
+  --sky: #4db8ff;
+  --paper: #eaf3fd;
+  --white: #ffffff;
+  --mid: #1e6fd9;
+  --radius: 10px;
+  --font: "Sora", Arial, sans-serif;
+}
+
+/* Base */
+* { box-sizing: border-box; }
+body { font-family: var(--font); color: var(--ink); background: var(--paper); margin: 0; line-height: 1.6; }
+a { color: var(--blue); }
+h1 { font-size: 2.6rem; font-weight: 700; line-height: 1.2; }
+h2 { font-weight: 700; }
+code { color: var(--blue); }
+
+/* Header: Flexbox + positioning */
+.site-header {
+  position: sticky; top: 0; z-index: 10;
+  display: flex; justify-content: space-between; align-items: center;
+  padding: 14px 32px; background: var(--blue);
+}
+.logo { color: var(--white); font-weight: 700; font-size: 1.3rem; text-decoration: none; }
+.logo-mark { color: var(--sky); }
+.nav-list { display: flex; gap: 8px; list-style: none; margin: 0; padding: 0; }
+.nav-list a { display: block; padding: 8px 14px; color: var(--white); text-decoration: none; border-radius: var(--radius); }
+.nav-list a:hover, .nav-list a:focus { background: var(--sky); color: var(--ink); outline: none; }
+.nav-list a.active { border-bottom: 3px solid var(--sky); border-radius: 0; }
+
+/* Hero */
+.hero { background: linear-gradient(135deg, var(--blue), var(--mid)); color: var(--white); padding: 80px 0; }
+.hero .lead { margin-bottom: 24px; }
+.code-card { background: var(--ink); color: #cfe8ff; padding: 20px; border-radius: var(--radius); border-left: 6px solid var(--sky); overflow-x: auto; }
+.code-card code { color: inherit; }
+
+/* Sections */
+.section { padding: 56px 0; }
+.section-alt { background: var(--white); }
+.page-title { background: var(--blue); color: var(--white); padding: 40px 0; }
+.page-title h1 { margin: 0; font-size: 2.2rem; }
+.narrow { max-width: 760px; }
+
+/* Buttons */
+.btn-accent { background: var(--sky); color: var(--ink); font-weight: 600; border: 2px solid var(--sky); }
+.btn-accent:hover, .btn-accent:focus { background: var(--ink); color: var(--sky); border-color: var(--ink); }
+
+/* Grid: steps */
+.steps { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; }
+.step { background: var(--white); padding: 24px; border-radius: var(--radius); border-top: 4px solid var(--sky); }
+
+/* Lecture cards */
+.lecture-card { position: relative; height: 100%; padding: 24px; background: var(--paper); border-radius: var(--radius); }
+.badge-tag { position: absolute; top: 0; right: 0; background: var(--blue); color: var(--white); padding: 4px 12px; font-size: 0.8rem; border-radius: 0 var(--radius) 0 var(--radius); }
+.lecture-card h3 { margin-top: 12px; font-size: 1.25rem; }
+.col-12:nth-child(odd) .lecture-card { border-left: 5px solid var(--sky); }
+.col-12:nth-child(even) .lecture-card { border-left: 5px solid var(--blue); }
+
+/* Reading + table */
+.reading, .side-box { background: var(--white); padding: 28px; border-radius: var(--radius); }
+.mark { background: var(--sky); padding: 0 4px; }
+.table tbody tr:nth-child(even) { background: var(--paper); }
+.table th { background: var(--blue); color: var(--white); }
+
+/* Forms */
+.card-form { background: var(--white); padding: 28px; border-radius: var(--radius); display: flex; flex-direction: column; }
+.card-form label { font-weight: 600; margin-top: 12px; }
+.card-form input[type="text"], .card-form input[type="email"], .card-form select, .card-form textarea {
+  padding: 10px; border: 2px solid #b7cde8; border-radius: var(--radius); font-family: var(--font);
+}
+.card-form input:focus, .card-form select:focus, .card-form textarea:focus { border-color: var(--blue); outline: 3px solid var(--sky); }
+.question { border: 0; margin-bottom: 20px; }
+.question legend { font-weight: 600; }
+.option { display: block; padding: 8px 12px; margin-top: 6px; border: 2px solid #b7cde8; border-radius: var(--radius); font-weight: 400; }
+.option:hover { border-color: var(--sky); }
+.task { background: var(--white); padding: 20px 24px; margin-bottom: 16px; border-radius: var(--radius); border-left: 5px solid var(--blue); }
+.task:nth-child(2) { border-left-color: var(--sky); }
+.task h2 { font-size: 1.15rem; }
+
+/* Footer */
+.site-footer { background: var(--ink); color: var(--white); padding: 40px 0 20px; }
+.site-footer a { color: var(--sky); }
+.site-footer a:hover, .site-footer a:focus { color: var(--white); }
+.copyright { border-top: 1px solid #26407a; padding-top: 16px; }
+
+/* Tablet */
+@media (max-width: 992px) {
+  h1 { font-size: 2.1rem; }
+  .site-header { padding: 14px 20px; }
+  .hero { padding: 56px 0; }
+}
+
+/* Mobile: header becomes vertical, grid stacks */
+@media (max-width: 576px) {
+  h1 { font-size: 1.7rem; }
+  .steps { grid-template-columns: 1fr; }
+  .section { padding: 36px 0; }
+  .reading, .side-box, .card-form { padding: 18px; }
+}
+
+/* Lecture page additions */
+.reading { margin-bottom: 28px; scroll-margin-top: 90px; }
+.reading h3 { font-size: 1.15rem; margin-top: 24px; }
+.reading .table { font-size: 0.9rem; }
+.lec-nav { display: flex; gap: 12px; list-style: none; padding: 0; margin: 16px 0 0; }
+.lec-nav a { padding: 4px 12px; border: 2px solid var(--blue); border-radius: var(--radius); text-decoration: none; }
+.lec-nav a:hover, .lec-nav a:focus { background: var(--sky); border-color: var(--sky); outline: none; }
+.question small { color: #4a6283; font-weight: 400; }
+details summary { cursor: pointer; font-weight: 600; }
+
+/* Logo, motivation, quiz feedback */
+.logo { display: flex; align-items: center; gap: 12px; }
+.logo-img { display: block; width: auto; height: 50px; background: var(--white); padding: 5px 10px; border-radius: 8px; object-fit: contain; }
+.footer-logo { display: block; width: auto; height: 56px; background: var(--white); padding: 6px 12px; border-radius: 8px; object-fit: contain; }
+.motivation { margin-top: 40px; padding: 40px 24px; text-align: center; color: var(--white); background: linear-gradient(135deg, var(--mid), var(--blue)); border-radius: var(--radius); }
+.motivation h2 { color: var(--sky); }
+
+/* Hamburger menu: hidden on desktop */
+.nav-toggle { position: absolute; opacity: 0; pointer-events: none; }
+.hamburger { display: none; }
+
+/* Tablet and mobile: show hamburger, hide the menu until it is opened */
+@media (max-width: 768px) {
+  .site-header { flex-wrap: wrap; }
+  .hamburger { display: flex; flex-direction: column; gap: 5px; padding: 10px; cursor: pointer; border-radius: var(--radius); }
+  .hamburger span { display: block; width: 26px; height: 3px; background: var(--white); border-radius: 2px; transition: transform 0.2s; }
+  .hamburger:hover { background: var(--mid); }
+  .nav-toggle:focus-visible + .hamburger { outline: 3px solid var(--sky); }
+  .site-header nav { display: none; width: 100%; }
+  .nav-toggle:checked ~ nav { display: block; }
+  .nav-toggle:checked + .hamburger span:nth-child(1) { transform: translateY(8px) rotate(45deg); }
+  .nav-toggle:checked + .hamburger span:nth-child(2) { opacity: 0; }
+  .nav-toggle:checked + .hamburger span:nth-child(3) { transform: translateY(-8px) rotate(-45deg); }
+  .nav-list { flex-direction: column; gap: 4px; padding-top: 12px; }
+}
+
+/* ID selectors */
+#code { font-family: "Courier New", monospace; }
+#nav-toggle:checked ~ nav .nav-list { border-top: 1px solid var(--mid); }
+
+/* ===== Quiz: answers are checked with CSS only (:checked + sibling selectors) ===== */
+.check-toggle, .opt-input { position: absolute; opacity: 0; pointer-events: none; }
+.q-tag { display: inline-block; margin-left: 6px; padding: 0 8px; font-size: 0.75rem; font-weight: 600; color: var(--blue); background: var(--paper); border-radius: var(--radius); vertical-align: middle; }
+.question .code-card { margin: 10px 0 4px; font-size: 0.9rem; }
+.option { cursor: pointer; }
+.opt-input:checked + .option { border-color: var(--blue); background: var(--paper); font-weight: 600; }
+.opt-input:focus-visible + .option { outline: 3px solid var(--sky); }
+.explain { display: none; margin: 10px 0 0; padding: 10px 14px; background: var(--paper); border-left: 4px solid #198754; border-radius: var(--radius); }
+.quiz-actions { display: flex; flex-wrap: wrap; gap: 12px; margin-top: 8px; }
+.check-btn .hide-text { display: none; }
+.legend-note { display: none; margin: 12px 0 0; font-size: 0.9rem; color: #4a6283; }
+
+/* After "Check Answers" is pressed */
+.check-toggle:checked ~ .question .opt-input:checked + .option { border-color: #dc3545; background: #fde8ea; }
+.check-toggle:checked ~ .question .opt-input:checked + .option::after { content: "  ✗ your answer"; color: #dc3545; font-weight: 600; }
+.check-toggle:checked ~ .question .option.correct,
+.check-toggle:checked ~ .question .opt-input:checked + .option.correct { border-color: #198754; background: #e3f5ea; }
+.check-toggle:checked ~ .question .option.correct::after { content: "  ✓ correct"; color: #198754; font-weight: 600; }
+.check-toggle:checked ~ .question .opt-input:checked + .option.correct::after { content: "  ✓ your answer is correct"; color: #198754; }
+.check-toggle:checked ~ .question .explain { display: block; }
+.check-toggle:checked ~ .quiz-actions .show-text { display: none; }
+.check-toggle:checked ~ .quiz-actions .hide-text { display: inline; }
+.check-toggle:checked ~ .legend-note { display: block; }
+.check-toggle:focus-visible ~ .quiz-actions .check-btn { outline: 3px solid var(--blue); }
+.quiz-links { flex-wrap: wrap; }
+
+/* "Take the quiz" button after each lecture */
+.lecture-end { display: flex; flex-wrap: wrap; align-items: center; gap: 12px; margin-top: 24px; padding-top: 20px; border-top: 2px solid var(--paper); }
+.lecture-end p { margin: 0; }
+
+/* ===== Live coding tasks ===== */
+.pg-label { display: block; margin: 0 0 6px; font-size: 0.8rem; font-weight: 700; text-transform: uppercase; color: #4a6283; }
+.task { position: relative; padding: 24px; margin-bottom: 24px; }
+.task-reqs { padding-left: 20px; }
+.ex-preview { padding: 16px; background: var(--white); border: 2px solid #b7cde8; border-radius: var(--radius); font-family: "Times New Roman", serif; }
+.code-box { width: 100%; padding: 12px; font-family: "Courier New", monospace; font-size: 0.9rem; color: #cfe8ff; background: var(--ink); border: 2px solid #b7cde8; border-radius: var(--radius); }
+.code-box:focus { border-color: var(--sky); outline: 3px solid var(--sky); }
+.task .quiz-actions { margin-top: 12px; }
+.solution { display: none; margin-top: 16px; }
+.solution .code-card { font-size: 0.88rem; }
+/* "Show Solution" uses the same :checked trick as the quiz */
+.check-toggle:checked ~ .solution { display: block; }
+
+/* Expected results of the tasks (ex- = example) */
+.ex-title { font-size: 32px; text-align: center; }
+.ex-note { text-transform: uppercase; font-family: Georgia, serif; }
+.ex-sel nav a { text-decoration: none; margin-right: 12px; }
+.ex-card { position: relative; padding: 20px; border: 2px solid var(--blue); margin: 16px; }
+.ex-badge { position: absolute; top: 10px; right: 10px; padding: 2px 8px; color: var(--white); background: var(--blue); font-size: 0.8rem; }
+.ex-menu { display: flex; justify-content: space-between; align-items: center; list-style: none; margin: 0; padding: 12px; color: var(--white); background: var(--blue); }
+.ex-center { display: flex; justify-content: center; align-items: center; height: 200px; border: 2px dashed var(--sky); }
+.ex-center p { margin: 0; }
+.ex-gallery { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; }
+.ex-gallery div { padding: 20px; text-align: center; background: var(--sky); }
+.ex-gallery .ex-wide { grid-column: 1 / 3; }
+.ex-col { padding: 12px; color: var(--white); background: var(--blue); }
+.ex-mq { display: flex; gap: 12px; list-style: none; padding: 0; margin: 0; }
+.ex-mq li { padding: 8px 14px; color: var(--white); background: var(--blue); }
+@media (max-width: 768px) {
+  .ex-mq { flex-direction: column; }
+}
+
+/* Fix: Bootstrap makes <legend> float, so the first answer slid up under the question */
+.question legend { float: none; width: auto; font-size: 1.1rem; font-weight: 600; margin-bottom: 12px; line-height: 1.4; }
+.question .option:first-of-type { margin-top: 0; }
+
+/* Contact: thank-you page */
+.thanks { text-align: center; }
+.thanks .big-check { display: inline-flex; align-items: center; justify-content: center; width: 72px; height: 72px; margin-bottom: 12px; font-size: 2.2rem; color: var(--white); background: #198754; border-radius: 50%; }
+.ex-table { border-collapse: collapse; }
+.ex-table caption { caption-side: top; color: var(--ink); font-weight: 700; }
+.ex-table th, .ex-table td { padding: 6px 14px; border: 1px solid var(--ink); }
+.ex-img { height: 50px; margin-top: 8px; }
+
+/* Cards: same structure, buttons on one line at the bottom */
+.lecture-card { display: flex; flex-direction: column; }
+.lecture-card .btn { align-self: flex-start; margin-top: auto; }
+.lecture-card .small { margin-top: auto; }
+.lecture-card .small + .btn { margin-top: 0; }
+
+/* Lecture page side menu: Week 1-4 links in one row, never broken */
+.lec-nav { flex-wrap: wrap; gap: 8px; }
+.lec-nav a { display: inline-block; white-space: nowrap; }
+/* Titles take the same height in a row of 4 cards, so the text below starts on one line */
+@media (min-width: 992px) {
+  .col-lg-3 .lecture-card h3 { min-height: 2.5em; line-height: 1.25; }
+}

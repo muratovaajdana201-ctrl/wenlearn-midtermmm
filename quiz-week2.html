@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Quiz Week 2 | WebLearn, Astana IT University</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Sora:wght@400;600;700&display=swap" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link href="css/style.css" rel="stylesheet">
+</head>
+<body>
+  <header class="site-header">
+    <a class="logo" href="index.html"><img class="logo-img" src="img/aitu-logo.png" alt="Astana IT University logo"><span>WebLearn</span></a>
+    <input type="checkbox" id="nav-toggle" class="nav-toggle" aria-label="Open menu">
+    <label for="nav-toggle" class="hamburger"><span></span><span></span><span></span></label>
+    <nav>
+      <ul class="nav-list"><li><a href="index.html">Home</a></li><li><a href="lectures.html">Lectures</a></li><li><a href="quiz.html" class="active">Quiz</a></li><li><a href="live-coding.html">Live Coding</a></li><li><a href="contact.html">Contact</a></li></ul>
+    </nav>
+  </header>
+
+  <main>
+    <section class="page-title"><div class="container"><h1>Quiz &mdash; Week 2: CSS Basics</h1><p>10 questions: 7 on theory and 3 on code. Choose your answers, then press <b>Check Answers</b>.</p></div></section>
+    <section class="section">
+      <div class="container narrow">
+        <form class="card-form quiz">
+          <input type="checkbox" id="check-week2" class="check-toggle">
+          <fieldset class="question">
+            <legend>1. What does CSS stand for? <span class="q-tag">Theory</span></legend>
+            <input type="radio" class="opt-input" name="q1" id="week2-q1a"><label for="week2-q1a" class="option">Creative Style System</label>
+            <input type="radio" class="opt-input" name="q1" id="week2-q1b"><label for="week2-q1b" class="option correct">Cascading Style Sheets</label>
+            <input type="radio" class="opt-input" name="q1" id="week2-q1c"><label for="week2-q1c" class="option">Computer Styled Sections</label>
+            <p class="explain"><b>Correct answer: Cascading Style Sheets.</b> CSS means Cascading Style Sheets. It makes pages presentable and keeps styling separate from the HTML.</p>
+          </fieldset>
+          <fieldset class="question">
+            <legend>2. Which type of CSS is written in a separate .css file and connected with the &lt;link&gt; tag? <span class="q-tag">Theory</span></legend>
+            <input type="radio" class="opt-input" name="q2" id="week2-q2a"><label for="week2-q2a" class="option">Inline</label>
+            <input type="radio" class="opt-input" name="q2" id="week2-q2b"><label for="week2-q2b" class="option">Internal</label>
+            <input type="radio" class="opt-input" name="q2" id="week2-q2c"><label for="week2-q2c" class="option correct">External</label>
+            <p class="explain"><b>Correct answer: External.</b> External CSS lives in its own .css file and is linked in &lt;head&gt;, so one file can style many pages.</p>
+          </fieldset>
+          <fieldset class="question">
+            <legend>3. Where is internal CSS written? <span class="q-tag">Theory</span></legend>
+            <input type="radio" class="opt-input" name="q3" id="week2-q3a"><label for="week2-q3a" class="option correct">Inside a &lt;style&gt; tag in the &lt;head&gt;</label>
+            <input type="radio" class="opt-input" name="q3" id="week2-q3b"><label for="week2-q3b" class="option">In the style attribute of a tag</label>
+            <input type="radio" class="opt-input" name="q3" id="week2-q3c"><label for="week2-q3c" class="option">In a separate .css file</label>
+            <p class="explain"><b>Correct answer: Inside a &lt;style&gt; tag in the &lt;head&gt;.</b> Internal CSS is placed in a &lt;style&gt; tag in the head section. It is useful when one page needs unique styles.</p>
+          </fieldset>
+          <fieldset class="question">
+            <legend>4. Which selector is used to target one specific, unique element? <span class="q-tag">Theory</span></legend>
+            <input type="radio" class="opt-input" name="q4" id="week2-q4a"><label for="week2-q4a" class="option">Element selector (p)</label>
+            <input type="radio" class="opt-input" name="q4" id="week2-q4b"><label for="week2-q4b" class="option">Class selector (.box)</label>
+            <input type="radio" class="opt-input" name="q4" id="week2-q4c"><label for="week2-q4c" class="option correct">ID selector (#header)</label>
+            <p class="explain"><b>Correct answer: ID selector (#header).</b> An ID must be unique on the page, so #header selects only one element. Classes can be shared by many elements.</p>
+          </fieldset>
+          <fieldset class="question">
+            <legend>5. In the box model, what is the space between the content and the border? <span class="q-tag">Theory</span></legend>
+            <input type="radio" class="opt-input" name="q5" id="week2-q5a"><label for="week2-q5a" class="option correct">Padding</label>
+            <input type="radio" class="opt-input" name="q5" id="week2-q5b"><label for="week2-q5b" class="option">Margin</label>
+            <input type="radio" class="opt-input" name="q5" id="week2-q5c"><label for="week2-q5c" class="option">Outline</label>
+            <p class="explain"><b>Correct answer: Padding.</b> Padding is the space inside the box, around the content. Margin is the space outside the border.</p>
+          </fieldset>
+          <fieldset class="question">
+            <legend>6. Which position value keeps an element in the same place on the screen while the page scrolls? <span class="q-tag">Theory</span></legend>
+            <input type="radio" class="opt-input" name="q6" id="week2-q6a"><label for="week2-q6a" class="option">static</label>
+            <input type="radio" class="opt-input" name="q6" id="week2-q6b"><label for="week2-q6b" class="option">relative</label>
+            <input type="radio" class="opt-input" name="q6" id="week2-q6c"><label for="week2-q6c" class="option correct">fixed</label>
+            <p class="explain"><b>Correct answer: fixed.</b> position: fixed stays in place on the screen. static is the default normal flow, relative is offset from its normal place.</p>
+          </fieldset>
+          <fieldset class="question">
+            <legend>7. Which of these is a web-safe monospace font? <span class="q-tag">Theory</span></legend>
+            <input type="radio" class="opt-input" name="q7" id="week2-q7a"><label for="week2-q7a" class="option">Georgia</label>
+            <input type="radio" class="opt-input" name="q7" id="week2-q7b"><label for="week2-q7b" class="option correct">Courier New</label>
+            <input type="radio" class="opt-input" name="q7" id="week2-q7c"><label for="week2-q7c" class="option">Comic Sans MS</label>
+            <p class="explain"><b>Correct answer: Courier New.</b> Courier New (and Courier) are monospace. Georgia is serif and Comic Sans MS is cursive.</p>
+          </fieldset>
+          <fieldset class="question">
+            <legend>8. What type of CSS is used in this code? <span class="q-tag">Code</span></legend>
+            <pre class="code-card"><code>&lt;p style="color: blue;"&gt;Hello&lt;/p&gt;</code></pre>
+            <input type="radio" class="opt-input" name="q8" id="week2-q8a"><label for="week2-q8a" class="option correct">Inline CSS</label>
+            <input type="radio" class="opt-input" name="q8" id="week2-q8b"><label for="week2-q8b" class="option">Internal CSS</label>
+            <input type="radio" class="opt-input" name="q8" id="week2-q8c"><label for="week2-q8c" class="option">External CSS</label>
+            <p class="explain"><b>Correct answer: Inline CSS.</b> The style is written right inside the tag with the style attribute, so it is inline CSS.</p>
+          </fieldset>
+          <fieldset class="question">
+            <legend>9. What does this rule select? <span class="q-tag">Code</span></legend>
+            <pre class="code-card"><code>nav a {
+  color: green;
+}</code></pre>
+            <input type="radio" class="opt-input" name="q9" id="week2-q9a"><label for="week2-q9a" class="option">The nav element and every link on the page</label>
+            <input type="radio" class="opt-input" name="q9" id="week2-q9b"><label for="week2-q9b" class="option correct">All links that are inside a nav element</label>
+            <input type="radio" class="opt-input" name="q9" id="week2-q9c"><label for="week2-q9c" class="option">Only the first link in the nav</label>
+            <p class="explain"><b>Correct answer: All links that are inside a nav element.</b> A space between selectors makes a descendant selector: every a nested inside nav.</p>
+          </fieldset>
+          <fieldset class="question">
+            <legend>10. How will the text look in the browser? <span class="q-tag">Code</span></legend>
+            <pre class="code-card"><code>h2 {
+  text-transform: uppercase;
+  text-align: center;
+}
+
+&lt;h2&gt;Hello world&lt;/h2&gt;</code></pre>
+            <input type="radio" class="opt-input" name="q10" id="week2-q10a"><label for="week2-q10a" class="option">hello world, aligned left</label>
+            <input type="radio" class="opt-input" name="q10" id="week2-q10b"><label for="week2-q10b" class="option correct">HELLO WORLD, centered</label>
+            <input type="radio" class="opt-input" name="q10" id="week2-q10c"><label for="week2-q10c" class="option">Hello World, aligned right</label>
+            <p class="explain"><b>Correct answer: HELLO WORLD, centered.</b> text-transform: uppercase changes all letters to capitals and text-align: center centers the line.</p>
+          </fieldset>
+          <div class="quiz-actions">
+            <label for="check-week2" class="btn btn-accent check-btn"><span class="show-text">Check Answers</span><span class="hide-text">Hide Answers</span></label>
+            <button type="reset" class="btn btn-outline-primary">Try again</button>
+          </div>
+          <p class="legend-note">Green = correct answer, red = your wrong choice.</p>
+        </form>
+        <ul class="lec-nav quiz-links"><li><a href="lectures.html#week2">Back to the lecture</a></li><li><a href="live-coding-week2.html">Next: Live Coding for this lecture</a></li></ul>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">
+      <div class="row text-center text-md-start">
+        <div class="col-md-4 mb-3">
+          <img class="footer-logo" src="img/aitu-logo.png" alt="Astana IT University logo" loading="lazy">
+          <h2 class="h6 mt-2">Astana IT University</h2>
+          <p>Web Technologies-1. Read lectures, take the quizzes, code it live.</p>
+        </div>
+        <div class="col-md-4 mb-3">
+          <h2 class="h6">Contact</h2>
+          <p>info@weblearn.example<br>Astana IT University, Astana</p>
+        </div>
+        <div class="col-md-4 mb-3">
+          <h2 class="h6">Follow</h2>
+          <p><a href="https://github.com/" target="_blank" rel="noopener">GitHub</a> | <a href="https://t.me/" target="_blank" rel="noopener">Telegram</a> | <a href="https://instagram.com/" target="_blank" rel="noopener">Instagram</a></p>
+        </div>
+      </div>
+      <p class="text-center copyright mb-0">&copy; 2026 WebLearn. Web Technologies midterm project.</p>
+    </div>
+  </footer>
+</body>
+</html>

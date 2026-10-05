@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Quiz Week 4 | WebLearn, Astana IT University</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Sora:wght@400;600;700&display=swap" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link href="css/style.css" rel="stylesheet">
+</head>
+<body>
+  <header class="site-header">
+    <a class="logo" href="index.html"><img class="logo-img" src="img/aitu-logo.png" alt="Astana IT University logo"><span>WebLearn</span></a>
+    <input type="checkbox" id="nav-toggle" class="nav-toggle" aria-label="Open menu">
+    <label for="nav-toggle" class="hamburger"><span></span><span></span><span></span></label>
+    <nav>
+      <ul class="nav-list"><li><a href="index.html">Home</a></li><li><a href="lectures.html">Lectures</a></li><li><a href="quiz.html" class="active">Quiz</a></li><li><a href="live-coding.html">Live Coding</a></li><li><a href="contact.html">Contact</a></li></ul>
+    </nav>
+  </header>
+
+  <main>
+    <section class="page-title"><div class="container"><h1>Quiz &mdash; Week 4: Bootstrap and Media Queries</h1><p>11 questions: 8 on theory and 3 on code. Choose your answers, then press <b>Check Answers</b>.</p></div></section>
+    <section class="section">
+      <div class="container narrow">
+        <form class="card-form quiz">
+          <input type="checkbox" id="check-week4" class="check-toggle">
+          <fieldset class="question">
+            <legend>1. What is Bootstrap? <span class="q-tag">Theory</span></legend>
+            <input type="radio" class="opt-input" name="q1" id="week4-q1a"><label for="week4-q1a" class="option">A programming language</label>
+            <input type="radio" class="opt-input" name="q1" id="week4-q1b"><label for="week4-q1b" class="option correct">An open-source front-end framework with ready-made classes</label>
+            <input type="radio" class="opt-input" name="q1" id="week4-q1c"><label for="week4-q1c" class="option">A web browser</label>
+            <p class="explain"><b>Correct answer: An open-source front-end framework with ready-made classes.</b> Bootstrap is an open-source front-end framework (created at Twitter) with ready-made CSS classes and components.</p>
+          </fieldset>
+          <fieldset class="question">
+            <legend>2. How many columns does the Bootstrap grid have? <span class="q-tag">Theory</span></legend>
+            <input type="radio" class="opt-input" name="q2" id="week4-q2a"><label for="week4-q2a" class="option">8</label>
+            <input type="radio" class="opt-input" name="q2" id="week4-q2b"><label for="week4-q2b" class="option">10</label>
+            <input type="radio" class="opt-input" name="q2" id="week4-q2c"><label for="week4-q2c" class="option correct">12</label>
+            <p class="explain"><b>Correct answer: 12.</b> The Bootstrap grid is based on 12 columns, so col-4 + col-4 + col-4 fill one row.</p>
+          </fieldset>
+          <fieldset class="question">
+            <legend>3. What is the correct structure of the Bootstrap grid? <span class="q-tag">Theory</span></legend>
+            <input type="radio" class="opt-input" name="q3" id="week4-q3a"><label for="week4-q3a" class="option">row → container → columns</label>
+            <input type="radio" class="opt-input" name="q3" id="week4-q3b"><label for="week4-q3b" class="option correct">container → row → columns</label>
+            <input type="radio" class="opt-input" name="q3" id="week4-q3c"><label for="week4-q3c" class="option">columns → row → container</label>
+            <p class="explain"><b>Correct answer: container → row → columns.</b> A container wraps a row, and the row groups the columns.</p>
+          </fieldset>
+          <fieldset class="question">
+            <legend>4. What is the difference of .container-fluid? <span class="q-tag">Theory</span></legend>
+            <input type="radio" class="opt-input" name="q4" id="week4-q4a"><label for="week4-q4a" class="option correct">It spans the full width of the viewport</label>
+            <input type="radio" class="opt-input" name="q4" id="week4-q4b"><label for="week4-q4b" class="option">It has a fixed width of 960px</label>
+            <input type="radio" class="opt-input" name="q4" id="week4-q4c"><label for="week4-q4c" class="option">It hides content on mobile</label>
+            <p class="explain"><b>Correct answer: It spans the full width of the viewport.</b> .container-fluid is always 100% wide. .container has a fixed max-width that changes at each breakpoint.</p>
+          </fieldset>
+          <fieldset class="question">
+            <legend>5. Bootstrap follows which approach to responsive design? <span class="q-tag">Theory</span></legend>
+            <input type="radio" class="opt-input" name="q5" id="week4-q5a"><label for="week4-q5a" class="option">Desktop-first</label>
+            <input type="radio" class="opt-input" name="q5" id="week4-q5b"><label for="week4-q5b" class="option">Print-first</label>
+            <input type="radio" class="opt-input" name="q5" id="week4-q5c"><label for="week4-q5c" class="option correct">Mobile-first</label>
+            <p class="explain"><b>Correct answer: Mobile-first.</b> Bootstrap is mobile-first: styles start from small screens and classes like col-md- add changes for wider ones.</p>
+          </fieldset>
+          <fieldset class="question">
+            <legend>6. From which screen width does the md breakpoint start? <span class="q-tag">Theory</span></legend>
+            <input type="radio" class="opt-input" name="q6" id="week4-q6a"><label for="week4-q6a" class="option">576px</label>
+            <input type="radio" class="opt-input" name="q6" id="week4-q6b"><label for="week4-q6b" class="option correct">768px</label>
+            <input type="radio" class="opt-input" name="q6" id="week4-q6c"><label for="week4-q6c" class="option">992px</label>
+            <p class="explain"><b>Correct answer: 768px.</b> sm starts at 576px, md at 768px, lg at 992px and xl at 1200px.</p>
+          </fieldset>
+          <fieldset class="question">
+            <legend>7. What is the easiest and fastest way to add Bootstrap to a page? <span class="q-tag">Theory</span></legend>
+            <input type="radio" class="opt-input" name="q7" id="week4-q7a"><label for="week4-q7a" class="option correct">A CDN link in the &lt;head&gt;</label>
+            <input type="radio" class="opt-input" name="q7" id="week4-q7b"><label for="week4-q7b" class="option">Copying the code by hand</label>
+            <input type="radio" class="opt-input" name="q7" id="week4-q7c"><label for="week4-q7c" class="option">Installing a new browser</label>
+            <p class="explain"><b>Correct answer: A CDN link in the &lt;head&gt;.</b> A CDN &lt;link&gt; in the head is the quickest. You can also download the files or use npm install bootstrap.</p>
+          </fieldset>
+          <fieldset class="question">
+            <legend>8. What is a media query? <span class="q-tag">Theory</span></legend>
+            <input type="radio" class="opt-input" name="q8" id="week4-q8a"><label for="week4-q8a" class="option">A Bootstrap component for videos</label>
+            <input type="radio" class="opt-input" name="q8" id="week4-q8b"><label for="week4-q8b" class="option">An HTML tag for images</label>
+            <input type="radio" class="opt-input" name="q8" id="week4-q8c"><label for="week4-q8c" class="option correct">A CSS feature that applies styles based on device characteristics</label>
+            <p class="explain"><b>Correct answer: A CSS feature that applies styles based on device characteristics.</b> A media query applies CSS only when a condition is true, for example max-width, min-width or orientation.</p>
+          </fieldset>
+          <fieldset class="question">
+            <legend>9. The screen is 800px wide. How much space does this column take? <span class="q-tag">Code</span></legend>
+            <pre class="code-card"><code>&lt;div class="col-12 col-md-3 col-lg-2"&gt;
+  Sidebar
+&lt;/div&gt;</code></pre>
+            <input type="radio" class="opt-input" name="q9" id="week4-q9a"><label for="week4-q9a" class="option">The full width (12 of 12)</label>
+            <input type="radio" class="opt-input" name="q9" id="week4-q9b"><label for="week4-q9b" class="option correct">3 of the 12 columns</label>
+            <input type="radio" class="opt-input" name="q9" id="week4-q9c"><label for="week4-q9c" class="option">2 of the 12 columns</label>
+            <p class="explain"><b>Correct answer: 3 of the 12 columns.</b> 800px is at least 768px (md) but less than 992px (lg), so col-md-3 is used: 3 of 12 columns.</p>
+          </fieldset>
+          <fieldset class="question">
+            <legend>10. When is this CSS applied? <span class="q-tag">Code</span></legend>
+            <pre class="code-card"><code>@media (max-width: 575px) {
+  h1 {
+    font-size: 24px;
+  }
+}</code></pre>
+            <input type="radio" class="opt-input" name="q10" id="week4-q10a"><label for="week4-q10a" class="option correct">Only on screens 575px wide or narrower</label>
+            <input type="radio" class="opt-input" name="q10" id="week4-q10b"><label for="week4-q10b" class="option">Only on screens wider than 575px</label>
+            <input type="radio" class="opt-input" name="q10" id="week4-q10c"><label for="week4-q10c" class="option">On every screen</label>
+            <p class="explain"><b>Correct answer: Only on screens 575px wide or narrower.</b> max-width: 575px means the rule works only while the screen is 575px or less, so on phones.</p>
+          </fieldset>
+          <fieldset class="question">
+            <legend>11. What do these Bootstrap classes do? <span class="q-tag">Code</span></legend>
+            <pre class="code-card"><code>&lt;p class="text-center text-danger mt-3"&gt;
+  Error!
+&lt;/p&gt;</code></pre>
+            <input type="radio" class="opt-input" name="q11" id="week4-q11a"><label for="week4-q11a" class="option">Green text, aligned left, padding 3px</label>
+            <input type="radio" class="opt-input" name="q11" id="week4-q11b"><label for="week4-q11b" class="option correct">Red centered text with margin-top 1rem</label>
+            <input type="radio" class="opt-input" name="q11" id="week4-q11c"><label for="week4-q11c" class="option">Bold text with a border</label>
+            <p class="explain"><b>Correct answer: Red centered text with margin-top 1rem.</b> text-center centers the text, text-danger makes it red and mt-3 adds a margin-top of 1rem.</p>
+          </fieldset>
+          <div class="quiz-actions">
+            <label for="check-week4" class="btn btn-accent check-btn"><span class="show-text">Check Answers</span><span class="hide-text">Hide Answers</span></label>
+            <button type="reset" class="btn btn-outline-primary">Try again</button>
+          </div>
+          <p class="legend-note">Green = correct answer, red = your wrong choice.</p>
+        </form>
+        <ul class="lec-nav quiz-links"><li><a href="lectures.html#week4">Back to the lecture</a></li><li><a href="live-coding-week4.html">Next: Live Coding for this lecture</a></li></ul>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">
+      <div class="row text-center text-md-start">
+        <div class="col-md-4 mb-3">
+          <img class="footer-logo" src="img/aitu-logo.png" alt="Astana IT University logo" loading="lazy">
+          <h2 class="h6 mt-2">Astana IT University</h2>
+          <p>Web Technologies-1. Read lectures, take the quizzes, code it live.</p>
+        </div>
+        <div class="col-md-4 mb-3">
+          <h2 class="h6">Contact</h2>
+          <p>info@weblearn.example<br>Astana IT University, Astana</p>
+        </div>
+        <div class="col-md-4 mb-3">
+          <h2 class="h6">Follow</h2>
+          <p><a href="https://github.com/" target="_blank" rel="noopener">GitHub</a> | <a href="https://t.me/" target="_blank" rel="noopener">Telegram</a> | <a href="https://instagram.com/" target="_blank" rel="noopener">Instagram</a></p>
+        </div>
+      </div>
+      <p class="text-center copyright mb-0">&copy; 2026 WebLearn. Web Technologies midterm project.</p>
+    </div>
+  </footer>
+</body>
+</html>

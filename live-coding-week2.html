@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Live Coding Week 2 | WebLearn, Astana IT University</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Sora:wght@400;600;700&display=swap" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link href="css/style.css" rel="stylesheet">
+</head>
+<body>
+  <header class="site-header">
+    <a class="logo" href="index.html"><img class="logo-img" src="img/aitu-logo.png" alt="Astana IT University logo"><span>WebLearn</span></a>
+    <input type="checkbox" id="nav-toggle" class="nav-toggle" aria-label="Open menu">
+    <label for="nav-toggle" class="hamburger"><span></span><span></span><span></span></label>
+    <nav>
+      <ul class="nav-list"><li><a href="index.html">Home</a></li><li><a href="lectures.html">Lectures</a></li><li><a href="quiz.html">Quiz</a></li><li><a href="live-coding.html" class="active">Live Coding</a></li><li><a href="contact.html">Contact</a></li></ul>
+    </nav>
+  </header>
+
+  <main>
+    <section class="page-title"><div class="container"><h1>Live Coding &mdash; Week 2: CSS Basics</h1><p>Three coding tasks. Write your code in your editor (for example VS Code) or in the box below, then press <b>Show Solution</b> to compare.</p></div></section>
+    <section class="section">
+      <div class="container narrow">
+        <article class="task">
+          <input type="checkbox" id="sol-week2-1" class="check-toggle">
+          <h2>Task 1: Three types of CSS</h2>
+          <p>Make one page that uses all three types of CSS.</p>
+          <ul class="task-reqs"><li>Inline CSS: make the <code>h1</code> blue with the <code>style</code> attribute</li><li>Internal CSS: in a <code>&lt;style&gt;</code> tag in <code>&lt;head&gt;</code> make every <code>p</code> green</li><li>External CSS: link the file <code>css/style.css</code> with the <code>&lt;link&gt;</code> tag</li></ul>
+          <p class="pg-label">Expected result</p>
+          <div class="ex-preview"><h3 style="color: blue;">My page</h3><p style="color: green;">This text is green.</p></div>
+          <label for="week2-code1" class="pg-label mt-3">Your code</label>
+          <textarea id="week2-code1" class="code-box" rows="6" spellcheck="false" placeholder="Write your solution here"></textarea>
+          <div class="quiz-actions">
+            <label for="sol-week2-1" class="btn btn-accent check-btn"><span class="show-text">Show Solution</span><span class="hide-text">Hide Solution</span></label>
+          </div>
+          <div class="solution">
+            <p class="pg-label">Solution</p>
+            <pre class="code-card"><code>&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+&lt;head&gt;
+  &lt;title&gt;CSS types&lt;/title&gt;
+  &lt;link rel="stylesheet" href="css/style.css"&gt;
+  &lt;style&gt;
+    p {
+      color: green;
+    }
+  &lt;/style&gt;
+&lt;/head&gt;
+&lt;body&gt;
+  &lt;h1 style="color: blue;"&gt;My page&lt;/h1&gt;
+  &lt;p&gt;This text is green.&lt;/p&gt;
+&lt;/body&gt;
+&lt;/html&gt;</code></pre>
+          </div>
+        </article>
+        <article class="task">
+          <input type="checkbox" id="sol-week2-2" class="check-toggle">
+          <h2>Task 2: Selectors and text formatting</h2>
+          <p>Style a heading, a note and links with different selectors.</p>
+          <ul class="task-reqs"><li>ID selector <code>#main-title</code>: <code>font-size: 32px</code> and <code>text-align: center</code></li><li>Class selector <code>.note</code>: <code>text-transform: uppercase</code> and a web-safe font <code>Georgia, serif</code></li><li>Descendant selector <code>nav a</code>: remove the underline with <code>text-decoration: none</code></li></ul>
+          <p class="pg-label">Expected result</p>
+          <div class="ex-preview"><div class="ex-sel"><h3 class="ex-title">Welcome</h3><p class="ex-note">Read the lecture first</p><nav><a href="#">Home</a> <a href="#">Quiz</a></nav></div></div>
+          <label for="week2-code2" class="pg-label mt-3">Your code</label>
+          <textarea id="week2-code2" class="code-box" rows="6" spellcheck="false" placeholder="Write your solution here"></textarea>
+          <div class="quiz-actions">
+            <label for="sol-week2-2" class="btn btn-accent check-btn"><span class="show-text">Show Solution</span><span class="hide-text">Hide Solution</span></label>
+          </div>
+          <div class="solution">
+            <p class="pg-label">Solution</p>
+            <pre class="code-card"><code>&lt;h1 id="main-title"&gt;Welcome&lt;/h1&gt;
+&lt;p class="note"&gt;Read the lecture first&lt;/p&gt;
+&lt;nav&gt;
+  &lt;a href="#"&gt;Home&lt;/a&gt;
+  &lt;a href="#"&gt;Quiz&lt;/a&gt;
+&lt;/nav&gt;
+
+/* CSS */
+#main-title {
+  font-size: 32px;
+  text-align: center;
+}
+.note {
+  text-transform: uppercase;
+  font-family: Georgia, serif;
+}
+nav a {
+  text-decoration: none;
+}</code></pre>
+          </div>
+        </article>
+        <article class="task">
+          <input type="checkbox" id="sol-week2-3" class="check-toggle">
+          <h2>Task 3: Box model and positioning</h2>
+          <p>Make a product card with a badge in the corner.</p>
+          <ul class="task-reqs"><li><code>.card</code>: <code>padding: 20px</code>, <code>border: 2px solid</code>, <code>margin: 16px</code></li><li><code>.card</code> must be <code>position: relative</code></li><li><code>.badge</code>: <code>position: absolute</code>, <code>top: 10px</code>, <code>right: 10px</code></li></ul>
+          <p class="pg-label">Expected result</p>
+          <div class="ex-preview"><div class="ex-card">Product card<span class="ex-badge">NEW</span></div></div>
+          <label for="week2-code3" class="pg-label mt-3">Your code</label>
+          <textarea id="week2-code3" class="code-box" rows="6" spellcheck="false" placeholder="Write your solution here"></textarea>
+          <div class="quiz-actions">
+            <label for="sol-week2-3" class="btn btn-accent check-btn"><span class="show-text">Show Solution</span><span class="hide-text">Hide Solution</span></label>
+          </div>
+          <div class="solution">
+            <p class="pg-label">Solution</p>
+            <pre class="code-card"><code>&lt;div class="card"&gt;
+  Product card
+  &lt;span class="badge"&gt;NEW&lt;/span&gt;
+&lt;/div&gt;
+
+/* CSS */
+.card {
+  position: relative;
+  padding: 20px;
+  border: 2px solid #0b3b8c;
+  margin: 16px;
+}
+.badge {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  background: #0b3b8c;
+  color: white;
+  padding: 2px 8px;
+}</code></pre>
+          </div>
+        </article>
+        <ul class="lec-nav quiz-links"><li><a href="lectures.html#week2">Back to the lecture</a></li><li><a href="quiz-week2.html">Quiz for this lecture</a></li><li><a href="live-coding-week3.html">Next: Week 3: Flexbox and Grid</a></li></ul>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">
+      <div class="row text-center text-md-start">
+        <div class="col-md-4 mb-3">
+          <img class="footer-logo" src="img/aitu-logo.png" alt="Astana IT University logo" loading="lazy">
+          <h2 class="h6 mt-2">Astana IT University</h2>
+          <p>Web Technologies-1. Read lectures, take the quizzes, code it live.</p>
+        </div>
+        <div class="col-md-4 mb-3">
+          <h2 class="h6">Contact</h2>
+          <p>info@weblearn.example<br>Astana IT University, Astana</p>
+        </div>
+        <div class="col-md-4 mb-3">
+          <h2 class="h6">Follow</h2>
+          <p><a href="https://github.com/" target="_blank" rel="noopener">GitHub</a> | <a href="https://t.me/" target="_blank" rel="noopener">Telegram</a> | <a href="https://instagram.com/" target="_blank" rel="noopener">Instagram</a></p>
+        </div>
+      </div>
+      <p class="text-center copyright mb-0">&copy; 2026 WebLearn. Web Technologies midterm project.</p>
+    </div>
+  </footer>
+</body>
+</html>

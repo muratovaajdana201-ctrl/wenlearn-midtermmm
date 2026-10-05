@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Home | WebLearn, Astana IT University</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Sora:wght@400;600;700&display=swap" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link href="css/style.css" rel="stylesheet">
+</head>
+<body>
+  <header class="site-header">
+    <a class="logo" href="index.html"><img class="logo-img" src="img/aitu-logo.png" alt="Astana IT University logo"><span>WebLearn</span></a>
+    <input type="checkbox" id="nav-toggle" class="nav-toggle" aria-label="Open menu">
+    <label for="nav-toggle" class="hamburger"><span></span><span></span><span></span></label>
+    <nav>
+      <ul class="nav-list"><li><a href="index.html" class="active">Home</a></li><li><a href="lectures.html">Lectures</a></li><li><a href="quiz.html">Quiz</a></li><li><a href="live-coding.html">Live Coding</a></li><li><a href="contact.html">Contact</a></li></ul>
+    </nav>
+  </header>
+
+  <main>
+    <section class="hero">
+      <div class="container">
+        <div class="row align-items-center">
+          <div class="col-lg-7">
+            <h1>Learn web technologies one lecture at a time.</h1>
+            <p class="lead">Astana IT University, Web Technologies-1. Read the lecture, check yourself with a quiz, then write real code in live coding tasks.</p>
+            <a class="btn btn-accent btn-lg me-2" href="lectures.html">Start reading</a>
+            <a class="btn btn-outline-light btn-lg" href="quiz.html">Try the quiz</a>
+          </div>
+          <div class="col-lg-5 mt-4 mt-lg-0">
+            <pre class="code-card"><code>p {
+  color: red;
+}</code></pre>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="container">
+        <h2 class="text-center mb-4">How it works</h2>
+        <div class="steps">
+          <div class="step"><h3>1. Read</h3><p>Four short lectures with code examples.</p></div>
+          <div class="step"><h3>2. Quiz</h3><p>A separate quiz after every lecture, with theory and code questions.</p></div>
+          <div class="step"><h3>3. Code</h3><p>Three live coding tasks for every lecture.</p></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section section-alt">
+      <div class="container">
+        <h2 class="text-center mb-4">Course lectures</h2>
+        <div class="row g-4">
+        <div class="col-12 col-md-6 col-lg-3">
+          <article class="lecture-card">
+            <span class="badge-tag">Week 1</span>
+            <h3>HTML Basics</h3>
+            <p>Document structure, text tags, tables, lists, links and images.</p>
+            <a class="btn btn-accent" href="lectures.html#week1">Read lecture</a>
+          </article>
+        </div>
+        <div class="col-12 col-md-6 col-lg-3">
+          <article class="lecture-card">
+            <span class="badge-tag">Week 2</span>
+            <h3>CSS Basics</h3>
+            <p>Types of CSS, selectors, text, fonts, box model, positioning.</p>
+            <a class="btn btn-accent" href="lectures.html#week2">Read lecture</a>
+          </article>
+        </div>
+        <div class="col-12 col-md-6 col-lg-3">
+          <article class="lecture-card">
+            <span class="badge-tag">Week 3</span>
+            <h3>Flexbox and Grid</h3>
+            <p>One-dimensional and two-dimensional layouts.</p>
+            <a class="btn btn-accent" href="lectures.html#week3">Read lecture</a>
+          </article>
+        </div>
+        <div class="col-12 col-md-6 col-lg-3">
+          <article class="lecture-card">
+            <span class="badge-tag">Week 4</span>
+            <h3>Bootstrap and Media Queries</h3>
+            <p>12-column grid, utilities, components, breakpoints.</p>
+            <a class="btn btn-accent" href="lectures.html#week4">Read lecture</a>
+          </article>
+        </div>
+        </div>
+        <div class="motivation">
+          <h2>Read. Practice. Score 100.</h2>
+          <p>Every lecture you read and every task you code today is a point you earn at the defence. Start with Week 2 and keep going.</p>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">
+      <div class="row text-center text-md-start">
+        <div class="col-md-4 mb-3">
+          <img class="footer-logo" src="img/aitu-logo.png" alt="Astana IT University logo" loading="lazy">
+          <h2 class="h6 mt-2">Astana IT University</h2>
+          <p>Web Technologies-1. Read lectures, take the quizzes, code it live.</p>
+        </div>
+        <div class="col-md-4 mb-3">
+          <h2 class="h6">Contact</h2>
+          <p>info@weblearn.example<br>Astana IT University, Astana</p>
+        </div>
+        <div class="col-md-4 mb-3">
+          <h2 class="h6">Follow</h2>
+          <p><a href="https://github.com/" target="_blank" rel="noopener">GitHub</a> | <a href="https://t.me/" target="_blank" rel="noopener">Telegram</a> | <a href="https://instagram.com/" target="_blank" rel="noopener">Instagram</a></p>
+        </div>
+      </div>
+      <p class="text-center copyright mb-0">&copy; 2026 WebLearn. Web Technologies midterm project.</p>
+    </div>
+  </footer>
+</body>
+</html>

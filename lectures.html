@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Lectures | WebLearn, Astana IT University</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Sora:wght@400;600;700&display=swap" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link href="css/style.css" rel="stylesheet">
+</head>
+<body>
+  <header class="site-header">
+    <a class="logo" href="index.html"><img class="logo-img" src="img/aitu-logo.png" alt="Astana IT University logo"><span>WebLearn</span></a>
+    <input type="checkbox" id="nav-toggle" class="nav-toggle" aria-label="Open menu">
+    <label for="nav-toggle" class="hamburger"><span></span><span></span><span></span></label>
+    <nav>
+      <ul class="nav-list"><li><a href="index.html">Home</a></li><li><a href="lectures.html" class="active">Lectures</a></li><li><a href="quiz.html">Quiz</a></li><li><a href="live-coding.html">Live Coding</a></li><li><a href="contact.html">Contact</a></li></ul>
+    </nav>
+  </header>
+
+  <main>
+    <section class="page-title"><div class="container"><h1>Lectures</h1><p>After each lecture, take its quiz and do the live coding tasks.</p></div></section>
+    <section class="section">
+      <div class="container">
+        <div class="row g-4">
+          <div class="col-lg-8">
+<article class="reading" id="week1">
+<h2>Week 1: HTML Basics</h2>
+<p>A website has a <b>frontend</b> (everything the user sees) and a <b>backend</b> (the server side: how the site works and stores data). The frontend is built with three languages:</p>
+<ul><li><b>HTML</b> &ndash; how the page is <b>structured</b></li><li><b>CSS</b> &ndash; how it <b>looks</b></li><li><b>JavaScript</b> &ndash; how it <b>functions</b></li></ul>
+<h3>Internet and WWW</h3>
+<p>The Internet is a global network of computers. The World Wide Web is the collection of websites on the Internet. It works on the client&ndash;server model: the browser (client) sends a request and the server responds with a web page.</p>
+<h3>HTML elements, tags and attributes</h3>
+<p>HTML (Hyper Text Markup Language) describes the structure of a page with <b>elements</b>. An element has a start tag, content and an end tag, for example <code>&lt;b&gt;text&lt;/b&gt;</code>. Browsers do not show the tags, they use them to render the content. An <b>attribute</b> tells the browser <i>how</i> to do something, for example <code>href</code> or <code>src</code>.</p>
+<p>Nested tags must be closed in the right order: the last tag opened is the first tag closed.</p>
+<pre class="code-card"><code>&lt;p&gt;&lt;b&gt;&lt;em&gt;Correct nesting&lt;/em&gt;&lt;/b&gt;&lt;/p&gt;</code></pre>
+<h3>The basic skeleton</h3>
+<p><code>&lt;html&gt;</code> wraps the whole page, <code>&lt;head&gt;</code> holds the title and styles, <code>&lt;body&gt;</code> holds the content you see.</p>
+<pre class="code-card"><code>&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+&lt;head&gt;
+  &lt;title&gt;Astana IT University&lt;/title&gt;
+&lt;/head&gt;
+&lt;body&gt;
+  This is what is displayed.
+&lt;/body&gt;
+&lt;/html&gt;</code></pre>
+<h3>Text tags</h3>
+<div class="table-responsive"><table class="table"><thead><tr><th>Tag</th><th>Meaning</th></tr></thead><tbody><tr><td><code>&lt;h1&gt; &hellip; &lt;h6&gt;</code></td><td>Headings, from the largest to the smallest</td></tr><tr><td><code>&lt;p&gt;</code></td><td>A paragraph, a block of text</td></tr><tr><td><code>&lt;br&gt;</code></td><td>A line break without a new paragraph</td></tr><tr><td><code>&lt;b&gt;</code>, <code>&lt;em&gt;</code></td><td>Bold and emphasized text</td></tr></tbody></table></div>
+<h3>Tables</h3>
+<p><code>&lt;table&gt;</code> contains rows <code>&lt;tr&gt;</code>; a row contains data cells <code>&lt;td&gt;</code> or header cells <code>&lt;th&gt;</code>. Use <code>&lt;caption&gt;</code>, <code>&lt;thead&gt;</code>, <code>&lt;tbody&gt;</code> and <code>&lt;tfoot&gt;</code> for structure, and <code>colspan</code> / <code>rowspan</code> to join cells.</p>
+<h3>Lists</h3>
+<p><code>&lt;ul&gt;</code> is an unordered list with bullets, <code>&lt;ol&gt;</code> is an ordered list with numbers. Each item is an <code>&lt;li&gt;</code>.</p>
+<h3>Links, images, forms</h3>
+<pre class="code-card"><code>&lt;a href=&quot;https://du.astanait.edu.kz/login&quot;&gt;DU Astana IT University&lt;/a&gt;
+&lt;img src=&quot;graphics/chef.gif&quot; alt=&quot;Chef&quot;&gt;
+&lt;form&gt;
+  &lt;label&gt;Name:&lt;/label&gt;
+  &lt;input type=&quot;text&quot;&gt;
+  &lt;input type=&quot;submit&quot; value=&quot;Submit&quot;&gt;
+&lt;/form&gt;</code></pre>
+<p><code>&lt;img&gt;</code> is an empty tag: it has only attributes and no closing tag.</p>
+<h3>Tools and publishing</h3>
+<p>Tools: VS Code (editor), GitHub (version control) and browser DevTools (inspecting and debugging). To publish a site: create a GitHub repository, upload the files (the main page must be <code>index.html</code>), enable GitHub Pages in Settings and open <code>your-username.github.io/your-repo-name</code>.</p>
+<div class="lecture-end"><a class="btn btn-accent" href="quiz-week1.html">Take the quiz</a><a class="btn btn-outline-primary" href="live-coding-week1.html">Live coding</a><p>Check what you learned in Week 1.</p></div>
+</article>
+<article class="reading" id="week2">
+<h2>Week 2: CSS Basics</h2>
+<p>CSS (Cascading Style Sheets) makes web pages presentable and keeps styling separate from the HTML.</p>
+<h3>Three types of CSS</h3>
+<ul><li><b>Inline</b> &ndash; in the <code>style</code> attribute of a tag.</li><li><b>Internal</b> &ndash; in a <code>&lt;style&gt;</code> tag inside <code>&lt;head&gt;</code>.</li><li><b>External</b> &ndash; a separate <code>.css</code> file linked with <code>&lt;link&gt;</code>.</li></ul>
+<pre class="code-card"><code>&lt;link rel=&quot;stylesheet&quot; href=&quot;css/style.css&quot;&gt;</code></pre>
+<h3>CSS syntax and selectors</h3>
+<p>A rule has a selector and declarations. Each declaration is a property and a value.</p>
+<pre class="code-card"><code>p {
+  color: red;
+}</code></pre>
+<div class="table-responsive"><table class="table"><thead><tr><th>Selector</th><th>Example</th><th>Targets</th></tr></thead><tbody><tr><td>Element</td><td><code>p</code></td><td>All elements of that tag</td></tr><tr><td>Class</td><td><code>.button-style</code></td><td>Elements sharing a class</td></tr><tr><td>ID</td><td><code>#header</code></td><td>One unique element</td></tr><tr><td>Descendant</td><td><code>.nav a</code></td><td>Elements nested inside others</td></tr><tr><td>Universal</td><td><code>*</code></td><td>Every element</td></tr></tbody></table></div>
+<h3>Text formatting and fonts</h3>
+<p>Common properties: <code>color</code>, <code>text-align</code>, <code>font-size</code> (px, em, rem), <code>direction</code>, text decoration and <code>text-transform</code>. Web-safe fonts work on most systems without a download:</p>
+<ul><li>Serif: Times New Roman, Georgia, Cambria</li><li>Sans-serif: Arial, Calibri, Trebuchet MS, Century Gothic</li><li>Monospace: Courier New, Courier</li><li>Cursive: Comic Sans MS</li></ul>
+<h3>Box model</h3>
+<p>Every element is a box: <b>content</b> (text, images), <b>padding</b> (space inside), <b>border</b> (line around content) and <b>margin</b> (space outside).</p>
+<h3>Positioning</h3>
+<div class="table-responsive"><table class="table"><thead><tr><th>Value</th><th>Behaviour</th></tr></thead><tbody><tr><td>static</td><td>Default, normal document flow</td></tr><tr><td>relative</td><td>Offset from its normal position</td></tr><tr><td>absolute</td><td>Relative to the nearest positioned ancestor or the viewport</td></tr><tr><td>fixed</td><td>Stays in place on screen when scrolling</td></tr><tr><td>sticky</td><td>Switches between relative and fixed on scroll</td></tr></tbody></table></div>
+<div class="lecture-end"><a class="btn btn-accent" href="quiz-week2.html">Take the quiz</a><a class="btn btn-outline-primary" href="live-coding-week2.html">Live coding</a><p>Check what you learned in Week 2.</p></div>
+</article>
+<article class="reading" id="week3">
+<h2>Week 3: Flexbox and Grid</h2>
+<h3>Flexbox (one-dimensional)</h3>
+<p>Flexbox arranges items in a row or a column. Items can grow to fill space or shrink to fit. It can center content vertically and make columns equal in height.</p>
+<ul><li><b>Flex container</b> &ndash; parent with <code>display: flex</code></li><li><b>Flex items</b> &ndash; its direct children</li><li><b>Main axis</b> &ndash; the primary direction of the layout</li><li><b>Cross axis</b> &ndash; perpendicular to the main axis</li></ul>
+<div class="table-responsive"><table class="table"><thead><tr><th>Level</th><th>Property</th><th>Purpose</th></tr></thead><tbody><tr><td>Container</td><td><code>flex-direction</code></td><td>row, row-reverse, column, column-reverse</td></tr><tr><td>Container</td><td><code>justify-content</code></td><td>Align on the main axis (center, space-between...)</td></tr><tr><td>Container</td><td><code>align-items</code></td><td>Align on the cross axis</td></tr><tr><td>Container</td><td><code>flex-wrap</code></td><td>nowrap, wrap, wrap-reverse</td></tr><tr><td>Item</td><td><code>flex-grow / flex-shrink / flex-basis</code></td><td>How an item grows, shrinks, and its start size</td></tr><tr><td>Item</td><td><code>align-self / order</code></td><td>Override alignment for one item, change order</td></tr></tbody></table></div>
+<pre class="code-card"><code>.container {
+  display: flex;
+  padding: 12px;
+}
+.item {
+  flex: 1;
+  margin: 4px;
+}</code></pre>
+<h3>Grid (two-dimensional)</h3>
+<p>Grid works with rows and columns at the same time. Terms: grid container, grid items, track (row or column), area, line and cell.</p>
+<div class="table-responsive"><table class="table"><thead><tr><th>Feature</th><th>Meaning</th></tr></thead><tbody><tr><td><code>fr</code></td><td>A fraction of the available space</td></tr><tr><td><code>minmax(min, max)</code></td><td>Track that resizes between two values</td></tr><tr><td><code>repeat(n, value)</code></td><td>Repeats a track definition</td></tr><tr><td><code>grid-template-columns / rows</code></td><td>Number and size of columns and rows</td></tr><tr><td><code>gap</code></td><td>Space between tracks</td></tr><tr><td><code>grid-column / grid-row / grid-area</code></td><td>Where an item is placed</td></tr></tbody></table></div>
+<pre class="code-card"><code>.grid-container {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 32px;
+}</code></pre>
+<h3>Flexbox vs Grid</h3>
+<div class="table-responsive"><table class="table"><thead><tr><th></th><th>Flexbox</th><th>Grid</th></tr></thead><tbody><tr><td>Direction</td><td>Row or column</td><td>Rows and columns</td></tr><tr><td>Best for</td><td>Navbars, menus, buttons, form controls</td><td>Full page layout, dashboards, galleries</td></tr></tbody></table></div>
+<p>They work together: use Grid for the large-scale layout and Flexbox to align content inside grid cells.</p>
+<div class="lecture-end"><a class="btn btn-accent" href="quiz-week3.html">Take the quiz</a><a class="btn btn-outline-primary" href="live-coding-week3.html">Live coding</a><p>Check what you learned in Week 3.</p></div>
+</article>
+<article class="reading" id="week4">
+<h2>Week 4: Bootstrap and Media Queries</h2>
+<p>Bootstrap is an open-source front-end framework from Twitter. You add ready-made classes to HTML elements instead of writing long CSS from scratch.</p>
+<h3>Adding Bootstrap</h3>
+<p>The easiest way is a CDN link in <code>&lt;head&gt;</code>. You can also download the files from getbootstrap.com or install with <code>npm install bootstrap</code>.</p>
+<pre class="code-card"><code>&lt;link rel=&quot;stylesheet&quot;
+  href=&quot;https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css&quot;&gt;</code></pre>
+<h3>Grid system and containers</h3>
+<p>Bootstrap uses 12 columns. Structure: container, then row, then columns. <code>.container</code> has a fixed max-width per breakpoint; <code>.container-fluid</code> spans the full viewport width.</p>
+<pre class="code-card"><code>&lt;div class=&quot;container&quot;&gt;
+  &lt;div class=&quot;row&quot;&gt;
+    &lt;div class=&quot;col-4&quot;&gt;Hello&lt;/div&gt;
+    &lt;div class=&quot;col-4&quot;&gt;My name&lt;/div&gt;
+    &lt;div class=&quot;col-4&quot;&gt;is Kuralay&lt;/div&gt;
+  &lt;/div&gt;
+&lt;/div&gt;</code></pre>
+<h3>Responsive breakpoints (mobile-first)</h3>
+<div class="table-responsive"><table class="table"><thead><tr><th>Breakpoint</th><th>Prefix</th><th>Screen</th></tr></thead><tbody><tr><td>Extra small</td><td><code>.col-</code></td><td>&lt; 576px (columns stack)</td></tr><tr><td>Small</td><td><code>.col-sm</code></td><td>&ge; 576px</td></tr><tr><td>Medium</td><td><code>.col-md</code></td><td>&ge; 768px</td></tr><tr><td>Large</td><td><code>.col-lg</code></td><td>&ge; 992px</td></tr><tr><td>Extra large</td><td><code>.col-xl</code></td><td>&ge; 1200px</td></tr></tbody></table></div>
+<p>Example: <code>col-12 col-md-3 col-lg-2</code> is full width on phones, 3 of 12 columns on tablets and 2 of 12 on desktops.</p>
+<h3>Utilities and components</h3>
+<ul><li><code>text-center</code>, <code>text-success</code>, <code>text-danger</code> &ndash; text alignment and color</li><li><code>mt-3</code> (margin-top 1rem), <code>p-4</code> (padding 1.5rem) &ndash; spacing</li><li><code>z-3</code>, <code>position-absolute</code> &ndash; stacking and positioning</li><li>Components: buttons (<code>btn btn-primary</code>), navbar, cards, forms</li></ul>
+<h3>Media queries</h3>
+<p>A media query applies styles based on device characteristics: <code>max-width</code>, <code>min-width</code> or <code>orientation</code>.</p>
+<pre class="code-card"><code>@media (max-width: 575px) {
+  /* mobile styles */
+}</code></pre>
+<div class="table-responsive"><table class="table"><thead><tr><th>Device</th><th>Width</th><th>Query</th></tr></thead><tbody><tr><td>Mobile</td><td>&lt; 576px</td><td>(max-width: 575px)</td></tr><tr><td>Tablet</td><td>576px-768px</td><td>(min-width: 576px) and (max-width: 768px)</td></tr><tr><td>Laptop</td><td>769px-992px</td><td>(min-width: 769px) and (max-width: 992px)</td></tr><tr><td>Desktop</td><td>&gt; 992px</td><td>(min-width: 993px)</td></tr></tbody></table></div>
+<div class="lecture-end"><a class="btn btn-accent" href="quiz-week4.html">Take the quiz</a><a class="btn btn-outline-primary" href="live-coding-week4.html">Live coding</a><p>Check what you learned in Week 4.</p></div>
+</article>
+          </div>
+          <aside class="col-lg-4">
+            <div class="side-box">
+              <h2 class="h5">Lecture schedule</h2>
+              <div class="table-responsive"><table class="table"><thead><tr><th>Week</th><th>Topic</th><th>Content</th></tr></thead><tbody><tr><td>Week 1</td><td>HTML Basics</td><td>Document structure, text tags, tables, lists, links, images, publishing.</td></tr><tr><td>Week 2</td><td>CSS Basics</td><td>Types of CSS, selectors, text, fonts, box model, positioning.</td></tr><tr><td>Week 3</td><td>Flexbox and Grid</td><td>One-dimensional and two-dimensional layouts.</td></tr><tr><td>Week 4</td><td>Bootstrap and Media Queries</td><td>12-column grid, utilities, components, breakpoints.</td></tr></tbody></table></div>
+              <ul class="lec-nav"><li><a href="#week1">Week 1</a></li><li><a href="#week2">Week 2</a></li><li><a href="#week3">Week 3</a></li><li><a href="#week4">Week 4</a></li></ul>
+            </div>
+          </aside>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">
+      <div class="row text-center text-md-start">
+        <div class="col-md-4 mb-3">
+          <img class="footer-logo" src="img/aitu-logo.png" alt="Astana IT University logo" loading="lazy">
+          <h2 class="h6 mt-2">Astana IT University</h2>
+          <p>Web Technologies-1. Read lectures, take the quizzes, code it live.</p>
+        </div>
+        <div class="col-md-4 mb-3">
+          <h2 class="h6">Contact</h2>
+          <p>info@weblearn.example<br>Astana IT University, Astana</p>
+        </div>
+        <div class="col-md-4 mb-3">
+          <h2 class="h6">Follow</h2>
+          <p><a href="https://github.com/" target="_blank" rel="noopener">GitHub</a> | <a href="https://t.me/" target="_blank" rel="noopener">Telegram</a> | <a href="https://instagram.com/" target="_blank" rel="noopener">Instagram</a></p>
+        </div>
+      </div>
+      <p class="text-center copyright mb-0">&copy; 2026 WebLearn. Web Technologies midterm project.</p>
+    </div>
+  </footer>
+</body>
+</html>

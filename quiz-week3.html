@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Quiz Week 3 | WebLearn, Astana IT University</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Sora:wght@400;600;700&display=swap" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link href="css/style.css" rel="stylesheet">
+</head>
+<body>
+  <header class="site-header">
+    <a class="logo" href="index.html"><img class="logo-img" src="img/aitu-logo.png" alt="Astana IT University logo"><span>WebLearn</span></a>
+    <input type="checkbox" id="nav-toggle" class="nav-toggle" aria-label="Open menu">
+    <label for="nav-toggle" class="hamburger"><span></span><span></span><span></span></label>
+    <nav>
+      <ul class="nav-list"><li><a href="index.html">Home</a></li><li><a href="lectures.html">Lectures</a></li><li><a href="quiz.html" class="active">Quiz</a></li><li><a href="live-coding.html">Live Coding</a></li><li><a href="contact.html">Contact</a></li></ul>
+    </nav>
+  </header>
+
+  <main>
+    <section class="page-title"><div class="container"><h1>Quiz &mdash; Week 3: Flexbox and Grid</h1><p>10 questions: 8 on theory and 2 on code. Choose your answers, then press <b>Check Answers</b>.</p></div></section>
+    <section class="section">
+      <div class="container narrow">
+        <form class="card-form quiz">
+          <input type="checkbox" id="check-week3" class="check-toggle">
+          <fieldset class="question">
+            <legend>1. Flexbox is a layout method that is… <span class="q-tag">Theory</span></legend>
+            <input type="radio" class="opt-input" name="q1" id="week3-q1a"><label for="week3-q1a" class="option correct">one-dimensional (a row or a column)</label>
+            <input type="radio" class="opt-input" name="q1" id="week3-q1b"><label for="week3-q1b" class="option">two-dimensional (rows and columns together)</label>
+            <input type="radio" class="opt-input" name="q1" id="week3-q1c"><label for="week3-q1c" class="option">only for images</label>
+            <p class="explain"><b>Correct answer: one-dimensional (a row or a column).</b> Flexbox arranges items in one direction: a row or a column. Grid is the two-dimensional system.</p>
+          </fieldset>
+          <fieldset class="question">
+            <legend>2. What are flex items? <span class="q-tag">Theory</span></legend>
+            <input type="radio" class="opt-input" name="q2" id="week3-q2a"><label for="week3-q2a" class="option">All elements on the page</label>
+            <input type="radio" class="opt-input" name="q2" id="week3-q2b"><label for="week3-q2b" class="option correct">The direct children of a flex container</label>
+            <input type="radio" class="opt-input" name="q2" id="week3-q2c"><label for="week3-q2c" class="option">Only the first and last child</label>
+            <p class="explain"><b>Correct answer: The direct children of a flex container.</b> Only the direct children of the element with display: flex become flex items.</p>
+          </fieldset>
+          <fieldset class="question">
+            <legend>3. What is the cross axis in Flexbox? <span class="q-tag">Theory</span></legend>
+            <input type="radio" class="opt-input" name="q3" id="week3-q3a"><label for="week3-q3a" class="option correct">The axis perpendicular to the main axis</label>
+            <input type="radio" class="opt-input" name="q3" id="week3-q3b"><label for="week3-q3b" class="option">Always the horizontal axis</label>
+            <input type="radio" class="opt-input" name="q3" id="week3-q3c"><label for="week3-q3c" class="option">The diagonal of the container</label>
+            <p class="explain"><b>Correct answer: The axis perpendicular to the main axis.</b> The main axis is set by flex-direction; the cross axis always goes across it (perpendicular).</p>
+          </fieldset>
+          <fieldset class="question">
+            <legend>4. Which property aligns flex items along the cross axis? <span class="q-tag">Theory</span></legend>
+            <input type="radio" class="opt-input" name="q4" id="week3-q4a"><label for="week3-q4a" class="option">justify-content</label>
+            <input type="radio" class="opt-input" name="q4" id="week3-q4b"><label for="week3-q4b" class="option">flex-wrap</label>
+            <input type="radio" class="opt-input" name="q4" id="week3-q4c"><label for="week3-q4c" class="option correct">align-items</label>
+            <p class="explain"><b>Correct answer: align-items.</b> align-items works on the cross axis. justify-content works on the main axis.</p>
+          </fieldset>
+          <fieldset class="question">
+            <legend>5. Which property overrides align-items for one single flex item? <span class="q-tag">Theory</span></legend>
+            <input type="radio" class="opt-input" name="q5" id="week3-q5a"><label for="week3-q5a" class="option">order</label>
+            <input type="radio" class="opt-input" name="q5" id="week3-q5b"><label for="week3-q5b" class="option correct">align-self</label>
+            <input type="radio" class="opt-input" name="q5" id="week3-q5c"><label for="week3-q5c" class="option">flex-basis</label>
+            <p class="explain"><b>Correct answer: align-self.</b> align-self is set on an item and overrides the container's align-items only for that item.</p>
+          </fieldset>
+          <fieldset class="question">
+            <legend>6. What is the default value of the order property? <span class="q-tag">Theory</span></legend>
+            <input type="radio" class="opt-input" name="q6" id="week3-q6a"><label for="week3-q6a" class="option correct">0</label>
+            <input type="radio" class="opt-input" name="q6" id="week3-q6b"><label for="week3-q6b" class="option">1</label>
+            <input type="radio" class="opt-input" name="q6" id="week3-q6c"><label for="week3-q6c" class="option">auto</label>
+            <p class="explain"><b>Correct answer: 0.</b> All flex items have order: 0 by default, so they appear in the same order as in the HTML.</p>
+          </fieldset>
+          <fieldset class="question">
+            <legend>7. What does the fr unit mean in CSS Grid? <span class="q-tag">Theory</span></legend>
+            <input type="radio" class="opt-input" name="q7" id="week3-q7a"><label for="week3-q7a" class="option">A fixed size in pixels</label>
+            <input type="radio" class="opt-input" name="q7" id="week3-q7b"><label for="week3-q7b" class="option correct">A fraction of the available space</label>
+            <input type="radio" class="opt-input" name="q7" id="week3-q7c"><label for="week3-q7c" class="option">The font size of the element</label>
+            <p class="explain"><b>Correct answer: A fraction of the available space.</b> fr is a fractional unit: 1fr 2fr splits the free space into three parts, giving 1 and 2 parts.</p>
+          </fieldset>
+          <fieldset class="question">
+            <legend>8. According to the lecture, when should you use Grid instead of Flexbox? <span class="q-tag">Theory</span></legend>
+            <input type="radio" class="opt-input" name="q8" id="week3-q8a"><label for="week3-q8a" class="option">Navbars and buttons in one line</label>
+            <input type="radio" class="opt-input" name="q8" id="week3-q8b"><label for="week3-q8b" class="option correct">Full page layouts, dashboards and galleries</label>
+            <input type="radio" class="opt-input" name="q8" id="week3-q8c"><label for="week3-q8c" class="option">Never, Flexbox can do everything</label>
+            <p class="explain"><b>Correct answer: Full page layouts, dashboards and galleries.</b> Grid is best for complex two-dimensional layouts. Flexbox is best for one-direction things like navbars and menus.</p>
+          </fieldset>
+          <fieldset class="question">
+            <legend>9. How will the items of .menu be arranged? <span class="q-tag">Code</span></legend>
+            <pre class="code-card"><code>.menu {
+  display: flex;
+  flex-direction: column;
+}</code></pre>
+            <input type="radio" class="opt-input" name="q9" id="week3-q9a"><label for="week3-q9a" class="option">Side by side in one row</label>
+            <input type="radio" class="opt-input" name="q9" id="week3-q9b"><label for="week3-q9b" class="option correct">One under another, top to bottom</label>
+            <input type="radio" class="opt-input" name="q9" id="week3-q9c"><label for="week3-q9c" class="option">In a 2 x 2 grid</label>
+            <p class="explain"><b>Correct answer: One under another, top to bottom.</b> flex-direction: column makes the main axis vertical, so the items stack from top to bottom.</p>
+          </fieldset>
+          <fieldset class="question">
+            <legend>10. What layout does this code create? <span class="q-tag">Code</span></legend>
+            <pre class="code-card"><code>.gallery {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 32px;
+}</code></pre>
+            <input type="radio" class="opt-input" name="q10" id="week3-q10a"><label for="week3-q10a" class="option">Three equal rows with no space</label>
+            <input type="radio" class="opt-input" name="q10" id="week3-q10b"><label for="week3-q10b" class="option correct">Three equal columns with 32px between them</label>
+            <input type="radio" class="opt-input" name="q10" id="week3-q10c"><label for="week3-q10c" class="option">One column that is 32px wide</label>
+            <p class="explain"><b>Correct answer: Three equal columns with 32px between them.</b> repeat(3, 1fr) means three columns of one fraction each, so they are equal; gap adds 32px between tracks.</p>
+          </fieldset>
+          <div class="quiz-actions">
+            <label for="check-week3" class="btn btn-accent check-btn"><span class="show-text">Check Answers</span><span class="hide-text">Hide Answers</span></label>
+            <button type="reset" class="btn btn-outline-primary">Try again</button>
+          </div>
+          <p class="legend-note">Green = correct answer, red = your wrong choice.</p>
+        </form>
+        <ul class="lec-nav quiz-links"><li><a href="lectures.html#week3">Back to the lecture</a></li><li><a href="live-coding-week3.html">Next: Live Coding for this lecture</a></li></ul>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">
+      <div class="row text-center text-md-start">
+        <div class="col-md-4 mb-3">
+          <img class="footer-logo" src="img/aitu-logo.png" alt="Astana IT University logo" loading="lazy">
+          <h2 class="h6 mt-2">Astana IT University</h2>
+          <p>Web Technologies-1. Read lectures, take the quizzes, code it live.</p>
+        </div>
+        <div class="col-md-4 mb-3">
+          <h2 class="h6">Contact</h2>
+          <p>info@weblearn.example<br>Astana IT University, Astana</p>
+        </div>
+        <div class="col-md-4 mb-3">
+          <h2 class="h6">Follow</h2>
+          <p><a href="https://github.com/" target="_blank" rel="noopener">GitHub</a> | <a href="https://t.me/" target="_blank" rel="noopener">Telegram</a> | <a href="https://instagram.com/" target="_blank" rel="noopener">Instagram</a></p>
+        </div>
+      </div>
+      <p class="text-center copyright mb-0">&copy; 2026 WebLearn. Web Technologies midterm project.</p>
+    </div>
+  </footer>
+</body>
+</html>
