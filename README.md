@@ -40,7 +40,7 @@ Quiz after pressing "Check Answers":
 Live coding task with the solution opened:
 
 ![Live coding page](screenshotsm/live-coding.png)
-![Live coding page](screenshotsm/live-coding(1).png)
+
 
 Contact page:
 
