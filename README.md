@@ -123,8 +123,7 @@ Pages: Home, Lectures, Quiz (hub + one quiz page per lecture), Live Coding (hub 
 
 ## Features implemented
 
-## Endterm: what we added
-
+### Endterm: what we added
 The endterm project extends the midterm website (same topic and structure) with interactivity and dynamic behavior. All JavaScript and jQuery code is in js/script.js; jQuery 3.7.1 is loaded from the CDN and Bootstrap 5.3 JS is used for modals. All midterm pages, the responsive layout and the CSS-only quizzes remain intact.
 
 ### 1. Form validation (register.html, contact.html)
@@ -141,7 +140,7 @@ Forms use the js-validate class and novalidate, so all checking is done by our o
 - **Blocking submission:** if any field is invalid, preventDefault() stops the form, a Bootstrap alert fades in with the list of fields to fix, and the focus moves to the first wrong field.
 - **After success:** the register form shows a success alert with the user's name (inserted safely as text) and resets itself; the contact form is sent to thank-you.html.
 
-### 2. Dynamic search and filter (`topics.html`)
+### 2. Dynamic search and filter (topics.html)
 - The page has **33 topic cards** about HTML, CSS, Flexbox & Grid, Bootstrap, JavaScript and jQuery (lectures 1-9).
 - **Real-time search:** results change while the user types (.on(input keyup)) without reloading the page. The search is **case-insensitive** and looks in the card title, the description and hidden tags.
 - **Category buttons:** All, HTML, CSS, Flexbox & Grid, Bootstrap, JavaScript, jQuery. They work **together with the search bar** (a card is shown only if it matches both the text and the category).
