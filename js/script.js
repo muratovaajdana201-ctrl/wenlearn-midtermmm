@@ -1,8 +1,5 @@
-
 $(document).ready(function () {
-    
-
-var EMAIL_RE = /^[A-Za-z0-9._%+-]+@[A-Za-z0-9-]+(\.[A-Za-z0-9-]+)*\.[A-Za-z]{2,}$/;
+    var EMAIL_RE = /^[A-Za-z0-9._%+-]+@[A-Za-z0-9-]+(\.[A-Za-z0-9-]+)*\.[A-Za-z]{2,}$/;
     var NAME_RE = /^[A-Za-zА-Яа-яЁёӘәҒғҚқҢңӨөҰұҮүҺһІі' -]{2,}$/;
 
     var rules = {
@@ -201,7 +198,7 @@ var EMAIL_RE = /^[A-Za-z0-9._%+-]+@[A-Za-z0-9-]+(\.[A-Za-z0-9-]+)*\.[A-Za-z]{2,}
             }
         }
         function saveStudents() {
-            try { localStorage.setItem(STORAGE_KEY, JSON.stringify(students)); } catch (err) {  }
+            try { localStorage.setItem(STORAGE_KEY, JSON.stringify(students)); } catch (err) { }
         }
 
         function renderTable() {
@@ -293,7 +290,7 @@ var EMAIL_RE = /^[A-Za-z0-9._%+-]+@[A-Za-z0-9-]+(\.[A-Za-z0-9-]+)*\.[A-Za-z]{2,}
             saveStudents();
             renderTable();
             studentModal.hide();
-            $('#studentsBody tr[data-id="' + newId + '"]').addClass('row-flash');
+
             showTableAlert(id === '' ? 'Student added.' : 'Student updated.', 'success');
         });
 
@@ -330,8 +327,34 @@ var EMAIL_RE = /^[A-Za-z0-9._%+-]+@[A-Za-z0-9-]+(\.[A-Za-z0-9-]+)*\.[A-Za-z]{2,}
         renderTable();
     }
 
-    
-   
+    if ($('#developersGrid').length) {
+    var $developers = $('#developersGrid .developer-col');
+
+    $('.developer-filter').on('click', function () {
+        var category = $(this).attr('data-filter');
+
+        $('.developer-filter').removeClass('active');
+        $(this).addClass('active');
+
+        $developers.each(function () {
+            var $card = $(this);
+            var match = category === 'all' ||
+                $card.attr('data-category') === category;
+
+            $card.stop(true, true);
+
+            if (match) {
+                if (!$card.is(':visible')) {
+                    $card.fadeIn(350);
+                }
+            } else {
+                if ($card.is(':visible')) {
+                    $card.fadeOut(350);
+                }
+            }
+        });
+    });
+}
 
     if ($('#galleryGrid').length) {
         var $photos = $('#galleryGrid .gallery-item');
@@ -339,217 +362,97 @@ var EMAIL_RE = /^[A-Za-z0-9._%+-]+@[A-Za-z0-9-]+(\.[A-Za-z0-9-]+)*\.[A-Za-z]{2,}
         var current = 0;
 
         function showPhoto(index) {
-            if ($visiblePhotos.length === 0) return;
+            if (!$visiblePhotos.length) return;
 
-            current = (index + $visiblePhotos.length) %
-                $visiblePhotos.length;
+            current = (index + $visiblePhotos.length) % $visiblePhotos.length;
 
             var $item = $visiblePhotos.eq(current);
+            var $img = $item.find('img');
 
             $('#galleryImage')
-                .attr('src', $item.find('img').attr('src'))
-                .attr('alt', $item.find('img').attr('alt'));
+                .attr('src', $img.attr('src'))
+                .attr('alt', $img.attr('alt'));
 
-            $('#galleryCaption').text(
-                $item.find('.gallery-cap').text()
-            );
-
+            $('#galleryCaption').text($item.find('.gallery-cap').text());
             $('#galleryCounter').text(
                 (current + 1) + ' / ' + $visiblePhotos.length
             );
         }
 
-    
         $photos.on('click', function () {
             $visiblePhotos = $photos.filter(':visible');
             current = $visiblePhotos.index(this);
 
-            if (current === -1) return;
+            if (current < 0) return;
 
             showPhoto(current);
-            
-$('#galleryImage')
-    .css({ opacity: 0, marginTop: '30px' })
-    .animate({ opacity: 1, marginTop: '0px' }, 400);
-
 
             $('#galleryLightbox')
                 .css('display', 'flex')
                 .hide()
                 .fadeIn(200);
+
+            $('#galleryImage')
+                .css({ opacity: 0, marginTop: '30px' })
+                .animate({ opacity: 1, marginTop: '0px' }, 400);
         });
 
-       
-        $('#galleryNext').on('click', function () {
-            $('#galleryImage').fadeOut(150, function () {
-                showPhoto(current + 1);
+        function changePhoto(direction) {
+            $('#galleryImage').stop(true, true).fadeOut(150, function () {
+                showPhoto(current + direction);
                 $(this).fadeIn(150);
             });
+        }
+
+        $('#galleryNext').on('click', function () {
+            changePhoto(1);
         });
 
         $('#galleryPrev').on('click', function () {
-            $('#galleryImage').fadeOut(150, function () {
-                showPhoto(current - 1);
-                $(this).fadeIn(150);
-            });
+            changePhoto(-1);
         });
 
-        
         function closeGallery() {
             $('#galleryLightbox').fadeOut(200);
         }
 
         $('#galleryClose').on('click', closeGallery);
 
-        $('#galleryLightbox').on('click', function (event) {
-            if (event.target === this) {
-                closeGallery();
-            }
+        $('#galleryLightbox').on('click', function (e) {
+            if (e.target === this) closeGallery();
         });
 
         $('.gallery-filter').on('click', function () {
+            var category = $(this).attr('data-filter');
+
             $('.gallery-filter').removeClass('active');
             $(this).addClass('active');
 
-            var category = $(this).data('filter');
-
             $photos.each(function () {
                 var $item = $(this);
+                var match = category === 'all' ||
+                    $item.attr('data-category') === category;
 
-                if (category === 'all' ||
-                    $item.data('category') === category) {
-                    $item.fadeIn(200);
+                $item.stop(true, true);
+
+                if (match) {
+                    if (!$item.is(':visible')) {
+                        $item.fadeIn(350).css('display', 'flex');
+                    }
                 } else {
-                    $item.fadeOut(200);
+                    if ($item.is(':visible')) {
+                        $item.fadeOut(350);
+                    }
                 }
             });
         });
 
-        
-        $(document).on('keydown', function (event) {
+        $(document).on('keydown', function (e) {
             if (!$('#galleryLightbox').is(':visible')) return;
 
-            if (event.key === 'Escape') closeGallery();
-            if (event.key === 'ArrowRight') {
-                showPhoto(current + 1);
-            }
-            if (event.key === 'ArrowLeft') {
-                showPhoto(current - 1);
-            }
-        });
-    }
-
-
-
-
-    if ($('#developersGrid').length) {
-        var $developers = $('#developersGrid .developer-col');
-        var $visibleDevelopers = $developers;
-        var developerIndex = 0;
-
-        function showDeveloper(index) {
-            if ($visibleDevelopers.length === 0) return;
-
-            developerIndex = (index + $visibleDevelopers.length)
-                % $visibleDevelopers.length;
-
-            var $developer = $visibleDevelopers.eq(developerIndex);
-            var $image = $developer.find('.developer-image');
-
-            $('#lbImage')
-                .attr('src', $image.attr('src'))
-                .attr('alt', $image.attr('alt'));
-
-            $('#lbCaption').text($image.attr('alt'));
-
-            $('#lbCounter').text(
-                (developerIndex + 1) + ' / ' + $visibleDevelopers.length
-            );
-        }
-
-        
-        $('.developer-image').on('click', function () {
-            $visibleDevelopers = $developers.filter(':visible');
-            developerIndex = $visibleDevelopers.index(
-                $(this).closest('.developer-col')
-            );
-
-            if (developerIndex === -1) return;
-
-            showDeveloper(developerIndex);
-
-            $('#lightbox')
-                .css('display', 'flex')
-                .hide()
-                .fadeIn(200);
-
-            $('#lbImage')
-                .css({ opacity: 0, marginTop: '30px' })
-                .animate({ opacity: 1, marginTop: '0px' }, 400);
-        });
-
-       
-        $('#lbNext').on('click', function () {
-            $('#lbImage').fadeOut(150, function () {
-                showDeveloper(developerIndex + 1);
-                $(this).fadeIn(150);
-            });
-        });
-
-       
-        $('#lbPrev').on('click', function () {
-            $('#lbImage').fadeOut(150, function () {
-                showDeveloper(developerIndex - 1);
-                $(this).fadeIn(150);
-            });
-        });
-
-        
-        function closeDeveloperLightbox() {
-            $('#lightbox').fadeOut(200);
-        }
-
-        $('#lbClose').on('click', closeDeveloperLightbox);
-
-        $('#lightbox').on('click', function (event) {
-            if (event.target === this) {
-                closeDeveloperLightbox();
-            }
-        });
-
-        $('.developer-filter').on('click', function () {
-            $('.developer-filter').removeClass('active');
-            $(this).addClass('active');
-
-            var category = $(this).data('filter');
-
-            $developers.each(function () {
-                var $developer = $(this);
-
-                if (category === 'all' ||
-                    $developer.data('category') === category) {
-                    $developer.stop(true, true).fadeIn(200);
-                } else {
-                    $developer.stop(true, true).fadeOut(200);
-                }
-            });
-        });
-
-        
-        $(document).on('keydown', function (event) {
-            if (!$('#lightbox').is(':visible')) return;
-
-            if (event.key === 'Escape') {
-                closeDeveloperLightbox();
-            }
-
-            if (event.key === 'ArrowRight') {
-                showDeveloper(developerIndex + 1);
-            }
-
-            if (event.key === 'ArrowLeft') {
-                showDeveloper(developerIndex - 1);
-            }
+            if (e.key === 'Escape') closeGallery();
+            if (e.key === 'ArrowRight') changePhoto(1);
+            if (e.key === 'ArrowLeft') changePhoto(-1);
         });
     }
 
