@@ -4,25 +4,47 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Quiz | WebLearn, Astana IT University</title>
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link href="https://fonts.googleapis.com/css2?family=Sora:wght@400;600;700&display=swap" rel="stylesheet">
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
   <link href="css/style.css" rel="stylesheet">
 </head>
 <body>
   <header class="site-header">
-    <a class="logo" href="index.html"><img class="logo-img" src="img/aitu-logo.png" alt="Astana IT University logo"><span>WebLearn</span></a>
-    <input type="checkbox" id="nav-toggle" class="nav-toggle" aria-label="Open menu">
+    <a class="logo" href="index.html">
+      <img class="logo-img" src="img/aitu-logo.png" alt="Astana IT University logo">
+      <span>WebLearn</span></a>
+    <input type="checkbox" id="nav-toggle" class="nav-toggle">
     <label for="nav-toggle" class="hamburger"><span></span><span></span><span></span></label>
     <nav>
-      <ul class="nav-list"><li><a href="index.html">Home</a></li><li><a href="lectures.html">Lectures</a></li><li><a href="quiz.html" class="active">Quiz</a></li><li><a href="live-coding.html">Live Coding</a></li><li><a href="contact.html">Contact</a></li></ul>
+      <ul class="nav-list">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="lectures.html">Lectures</a></li>
+        <li><a href="quiz.html" class="active">Quiz</a></li>
+        <li><a href="live-coding.html">Live Coding</a></li>
+        <li><a href="final-test.html">Final Test</a></li>
+        <li><a href="topics.html">Topics</a></li>
+        <li><a href="students.html">Students</a></li>
+        <li><a href="gallery.html">Gallery</a></li>
+        <li><a href="register.html">Register</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
     </nav>
   </header>
-
   <main>
-    <section class="page-title"><div class="container"><h1>Quiz</h1><p>One quiz for each of the four lectures. Choose a topic.</p></div></section>
+    <section class="page-title">
+      <div class="container">
+        <h1>Quiz</h1>
+        <p>One quiz for each of the nine lectures. Choose a topic.</p>
+      </div>
+    </section>
     <section class="section">
       <div class="container">
+        <div class="final-banner">
+          <div>
+            <h2 class="h4">Final Test</h2>
+            <p class="mb-0">One test for all nine lectures: 27 questions about theory and code. Take it when you finish Week 9.</p>
+          </div>
+          <a class="btn btn-accent btn-lg" href="final-test.html">Start the Final Test</a>
+        </div>
         <div class="row g-4">
           <div class="col-12 col-md-6 col-lg-3">
             <article class="lecture-card">
@@ -60,6 +82,51 @@
               <a class="btn btn-accent" href="quiz-week4.html">Take the quiz</a>
             </article>
           </div>
+          <div class="col-12 col-md-6 col-lg-3">
+            <article class="lecture-card">
+              <span class="badge-tag">Week 5</span>
+              <h3>Bootstrap Grid and Components</h3>
+              <p>Offsets, ordering, nesting, navbar, cards, alerts, forms, modal, carousel.</p>
+              <p class="small">10 questions</p>
+              <a class="btn btn-accent" href="quiz-week5.html">Take the quiz</a>
+            </article>
+          </div>
+          <div class="col-12 col-md-6 col-lg-3">
+            <article class="lecture-card">
+              <span class="badge-tag">Week 6</span>
+              <h3>JavaScript Basics</h3>
+              <p>Variables, data types, operators, type coercion, conditions, loops, functions.</p>
+              <p class="small">11 questions</p>
+              <a class="btn btn-accent" href="quiz-week6.html">Take the quiz</a>
+            </article>
+          </div>
+          <div class="col-12 col-md-6 col-lg-3">
+            <article class="lecture-card">
+              <span class="badge-tag">Week 7</span>
+              <h3>Arrays, Loops and DOM Manipulation</h3>
+              <p>Arrays, forEach and map, the DOM, selecting elements, changing text, styles, classes.</p>
+              <p class="small">10 questions</p>
+              <a class="btn btn-accent" href="quiz-week7.html">Take the quiz</a>
+            </article>
+          </div>
+          <div class="col-12 col-md-6 col-lg-3">
+            <article class="lecture-card">
+              <span class="badge-tag">Week 8</span>
+              <h3>JS Events and Form Validation</h3>
+              <p>Event listeners, keyboard events, objects, callbacks, RegEx, form validation.</p>
+              <p class="small">11 questions</p>
+              <a class="btn btn-accent" href="quiz-week8.html">Take the quiz</a>
+            </article>
+          </div>
+          <div class="col-12 col-md-6 col-lg-3">
+            <article class="lecture-card">
+              <span class="badge-tag">Week 9</span>
+              <h3>jQuery</h3>
+              <p>jQuery syntax, selectors, events, effects, CSS manipulation, traversing the DOM.</p>
+              <p class="small">11 questions</p>
+              <a class="btn btn-accent" href="quiz-week9.html">Take the quiz</a>
+            </article>
+          </div>
         </div>
       </div>
     </section>
@@ -67,9 +134,9 @@
 
   <footer class="site-footer">
     <div class="container">
-      <div class="row text-center text-md-start">
+      <div class="row text-center">
         <div class="col-md-4 mb-3">
-          <img class="footer-logo" src="img/aitu-logo.png" alt="Astana IT University logo" loading="lazy">
+          <img class="footer-logo" src="img/aitu-logo.png" alt="Astana IT University logo">
           <h2 class="h6 mt-2">Astana IT University</h2>
           <p>Web Technologies-1. Read lectures, take the quizzes, code it live.</p>
         </div>
@@ -79,11 +146,15 @@
         </div>
         <div class="col-md-4 mb-3">
           <h2 class="h6">Follow</h2>
-          <p><a href="https://github.com/" target="_blank" rel="noopener">GitHub</a> | <a href="https://t.me/" target="_blank" rel="noopener">Telegram</a> | <a href="https://instagram.com/" target="_blank" rel="noopener">Instagram</a></p>
+          <p><a href="https://github.com/" target="_blank" rel="noopener">GitHub</a> 
+            <a href="https://t.me/" target="_blank" rel="noopener">Telegram</a> 
+            <a href="https://instagram.com/" target="_blank" rel="noopener">Instagram</a></p>
         </div>
       </div>
-      <p class="text-center copyright mb-0">&copy; 2026 WebLearn. Web Technologies midterm project.</p>
+      <p class="text-center copyright mb-0">&copy; 2026 WebLearn. Web Technologies midterm and endterm project.</p>
     </div>
   </footer>
+  <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+  <script src="js/script.js"></script>
 </body>
 </html>
