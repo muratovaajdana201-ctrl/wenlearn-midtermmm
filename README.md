@@ -116,8 +116,6 @@ Download the project and open index.html in a browser. You don't need to install
 
 # WebLearn: Online Courses Website(Endterm)
 
-**WebLearn** is an online courses website for the Web Technologies-1 course at Astana IT University. Students read the lectures, take a quiz and do live coding tasks after each lecture.
-
 ## Short description
 A responsive website (midterm) extended with JavaScript and jQuery interactivity (endterm). It has **nine lectures**: Week 1 (HTML Basics), Week 2 (CSS), Week 3 (Flexbox and Grid), Week 4 (Bootstrap and Media Queries), Week 5 (Bootstrap Grid and Components), Week 6 (JavaScript Basics), Week 7 (Arrays, Loops and DOM Manipulation), Week 8 (JS Events and Form Validation) and Week 9 (jQuery). After each lecture the student takes the quiz for that lecture and then does three live coding tasks. At the end there is a Final Test for all nine lectures.
 
