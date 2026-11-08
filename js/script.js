@@ -1,6 +1,8 @@
 
 $(document).ready(function () {
-    var EMAIL_RE = /^[A-Za-z0-9._%+-]+@[A-Za-z0-9-]+(\.[A-Za-z0-9-]+)*\.[A-Za-z]{2,}$/;
+    
+
+var EMAIL_RE = /^[A-Za-z0-9._%+-]+@[A-Za-z0-9-]+(\.[A-Za-z0-9-]+)*\.[A-Za-z]{2,}$/;
     var NAME_RE = /^[A-Za-zА-Яа-яЁёӘәҒғҚқҢңӨөҰұҮүҺһІі' -]{2,}$/;
 
     var rules = {
@@ -328,73 +330,115 @@ $(document).ready(function () {
         renderTable();
     }
 
+    
+   
+
     if ($('#galleryGrid').length) {
-        var $thumbs = $('#galleryGrid .gallery-item');
+        var $photos = $('#galleryGrid .gallery-item');
+        var $visiblePhotos = $photos;
         var current = 0;
-        var busy = false;
 
-        function fillLightbox(index) {
-            var $a = $thumbs.eq(index);
-            $('#lbImage').attr({ src: $a.attr('href'), alt: $a.find('img').attr('alt') });
-            $('#lbCaption').text($a.data('caption'));
-            $('#lbCounter').text((index + 1) + ' / ' + $thumbs.length);
+        function showPhoto(index) {
+            if ($visiblePhotos.length === 0) return;
+
+            current = (index + $visiblePhotos.length) %
+                $visiblePhotos.length;
+
+            var $item = $visiblePhotos.eq(current);
+
+            $('#galleryImage')
+                .attr('src', $item.find('img').attr('src'))
+                .attr('alt', $item.find('img').attr('alt'));
+
+            $('#galleryCaption').text(
+                $item.find('.gallery-cap').text()
+            );
+
+            $('#galleryCounter').text(
+                (current + 1) + ' / ' + $visiblePhotos.length
+            );
         }
 
-        function openLightbox(index) {
-            current = index;
-            fillLightbox(current);
-            $('#lightbox').stop(true, true).fadeIn(300);
-            $('#lbImage').css({ opacity: 0, marginTop: '30px' })
-                .animate({ opacity: 1, marginTop: '0px' }, 400);
-            $('body').addClass('no-scroll');
-        }
+    
+        $photos.on('click', function () {
+            $visiblePhotos = $photos.filter(':visible');
+            current = $visiblePhotos.index(this);
 
-        function closeLightbox() {
-            $('#lightbox').stop(true, true).fadeOut(250);
-            $('body').removeClass('no-scroll');
-        }
+            if (current === -1) return;
 
-        function showImage(index) {
-            if (busy) return;
-            busy = true;
-            current = (index + $thumbs.length) % $thumbs.length;
-            $('#lbImage').fadeOut(200, function () {
-                fillLightbox(current);
-                $('#lbImage').fadeIn(300, function () { busy = false; });
+            showPhoto(current);
+            
+$('#galleryImage')
+    .css({ opacity: 0, marginTop: '30px' })
+    .animate({ opacity: 1, marginTop: '0px' }, 400);
+
+
+            $('#galleryLightbox')
+                .css('display', 'flex')
+                .hide()
+                .fadeIn(200);
+        });
+
+       
+        $('#galleryNext').on('click', function () {
+            $('#galleryImage').fadeOut(150, function () {
+                showPhoto(current + 1);
+                $(this).fadeIn(150);
             });
+        });
+
+        $('#galleryPrev').on('click', function () {
+            $('#galleryImage').fadeOut(150, function () {
+                showPhoto(current - 1);
+                $(this).fadeIn(150);
+            });
+        });
+
+        
+        function closeGallery() {
+            $('#galleryLightbox').fadeOut(200);
         }
 
-        $thumbs.on('click', function (e) {
-            e.preventDefault();
-            openLightbox($thumbs.index(this));
-        });
-        $('#lbNext').on('click', function () { showImage(current + 1); });
-        $('#lbPrev').on('click', function () { showImage(current - 1); });
-        $('#lbClose').on('click', closeLightbox);
-        $('#lightbox').on('click', function (e) {
-            if (e.target === this || $(e.target).hasClass('lb-stage')) closeLightbox();
-        });
-        $(document).on('keydown', function (e) {
-            if (!$('#lightbox').is(':visible')) return;
-            if (e.key === 'ArrowRight') showImage(current + 1);
-            if (e.key === 'ArrowLeft') showImage(current - 1);
-            if (e.key === 'Escape') closeLightbox();
+        $('#galleryClose').on('click', closeGallery);
+
+        $('#galleryLightbox').on('click', function (event) {
+            if (event.target === this) {
+                closeGallery();
+            }
         });
 
         $('.gallery-filter').on('click', function () {
             $('.gallery-filter').removeClass('active');
             $(this).addClass('active');
-            var cat = $(this).data('filter');
-            $('#galleryGrid .gallery-col').each(function () {
-                var show = cat === 'all' || $(this).data('category') === cat;
-                if (show) { $(this).stop(true, true).fadeIn(250); } else { $(this).stop(true, true).fadeOut(200); }
+
+            var category = $(this).data('filter');
+
+            $photos.each(function () {
+                var $item = $(this);
+
+                if (category === 'all' ||
+                    $item.data('category') === category) {
+                    $item.fadeIn(200);
+                } else {
+                    $item.fadeOut(200);
+                }
             });
-            setTimeout(function () { $thumbs = $('#galleryGrid .gallery-col:visible .gallery-item'); }, 300);
         });
 
-        $thumbs.on('mouseenter', function () { $(this).find('.gallery-cap').stop(true).animate({ bottom: '0px' }, 150); })
-            .on('mouseleave', function () { $(this).find('.gallery-cap').stop(true).animate({ bottom: '-60px' }, 150); });
+        
+        $(document).on('keydown', function (event) {
+            if (!$('#galleryLightbox').is(':visible')) return;
+
+            if (event.key === 'Escape') closeGallery();
+            if (event.key === 'ArrowRight') {
+                showPhoto(current + 1);
+            }
+            if (event.key === 'ArrowLeft') {
+                showPhoto(current - 1);
+            }
+        });
     }
+
 
     $('.quiz:not([data-final])').each(function () {
         var $quiz = $(this);
