@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Quiz Week 6 - WebLearn</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link href="css/style.css" rel="stylesheet">
+</head>
+<body>
+  <header class="site-header">
+    <a class="logo" href="index.html">
+      <img class="logo-img" src="img/aitu-logo.png" alt="Astana IT University logo">
+      <span>WebLearn</span></a>
+    <input type="checkbox" id="nav-toggle" class="nav-toggle">
+    <label for="nav-toggle" class="hamburger"><span></span><span></span><span></span></label>
+    <nav>
+      <ul class="nav-list">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="lectures.html">Lectures</a></li>
+        <li><a href="quiz.html" class="active">Quiz</a></li>
+        <li><a href="live-coding.html">Live Coding</a></li>
+        <li><a href="final-test.html">Final Test</a></li>
+        <li><a href="topics.html">Topics</a></li>
+        <li><a href="students.html">Students</a></li>
+        <li><a href="gallery.html">Gallery</a></li>
+        <li><a href="register.html">Register</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main>
+    <section class="page-title">
+      <div class="container">
+        <h1>Quiz &mdash; Week 6: JavaScript Basics</h1>
+        <p>11 questions: 8 on theory and 3 on code. Choose your answers, then press <b>Check Answers</b>.</p>
+      </div></section>
+    <section class="section">
+      <div class="container narrow">
+        <form class="card-form quiz">
+          <input type="checkbox" id="check-week6" class="check-toggle">
+          <div class="question">
+            <legend>1. Who created JavaScript at Netscape Communications?</legend>
+            <input type="radio" class="opt-input" name="q1" id="week6-q1a">
+            <label for="week6-q1a" class="option">Tim Berners-Lee</label>
+            <input type="radio" class="opt-input" name="q1" id="week6-q1b">
+            <label for="week6-q1b" class="option correct">Brendan Eich</label>
+            <input type="radio" class="opt-input" name="q1" id="week6-q1c">
+            <label for="week6-q1c" class="option">Linus Torvalds</label>
+            <p class="explain"><b>Correct answer: Brendan Eich.</b> Brendan Eich created JavaScript while working at Netscape Communications for the browser.</p>
+          </div>
+          <div class="question">
+            <legend>2. What is the role of JavaScript on a web page?</legend>
+            <input type="radio" class="opt-input" name="q2" id="week6-q2a">
+            <label for="week6-q2a" class="option">It structures the content</label>
+            <input type="radio" class="opt-input" name="q2" id="week6-q2b">
+            <label for="week6-q2b" class="option">It styles the page</label>
+            <input type="radio" class="opt-input" name="q2" id="week6-q2c">
+            <label for="week6-q2c" class="option correct">It adds behavior and interactivity</label>
+            <p class="explain"><b>Correct answer: It adds behavior and interactivity.</b> HTML is the skeleton, CSS is the clothes and JavaScript adds life: behavior and interactivity.</p>
+          </div>
+          <div class="question">
+            <legend>3. Which keyword is the default choice for values that do not change?</legend>
+            <input type="radio" class="opt-input" name="q3" id="week6-q3a">
+            <label for="week6-q3a" class="option correct">const</label>
+            <input type="radio" class="opt-input" name="q3" id="week6-q3b">
+            <label for="week6-q3b" class="option">var</label>
+            <input type="radio" class="opt-input" name="q3" id="week6-q3c">
+            <label for="week6-q3c" class="option">let</label>
+            <p class="explain"><b>Correct answer: const.</b> Use const by default. Use let when the value changes (counter, score, total). Avoid var.</p>
+          </div>
+          <div class="question">
+            <legend>4. What is the scope of a variable declared with var?</legend>
+            <input type="radio" class="opt-input" name="q4" id="week6-q4a">
+            <label for="week6-q4a" class="option">Block scope</label>
+            <input type="radio" class="opt-input" name="q4" id="week6-q4b">
+            <label for="week6-q4b" class="option correct">Function scope</label>
+            <input type="radio" class="opt-input" name="q4" id="week6-q4c">
+            <label for="week6-q4c" class="option">Only inside loops</label>
+            <p class="explain"><b>Correct answer: Function scope.</b> var has function scope. let and const have block scope.</p>
+          </div>
+          <div class="question">
+            <legend>5. Which method writes into the browser developer console?</legend>
+            <input type="radio" class="opt-input" name="q5" id="week6-q5a">
+            <label for="week6-q5a" class="option">window.alert()</label>
+            <input type="radio" class="opt-input" name="q5" id="week6-q5b">
+            <label for="week6-q5b" class="option">document.write()</label>
+            <input type="radio" class="opt-input" name="q5" id="week6-q5c">
+            <label for="week6-q5c" class="option correct">console.log()</label>
+            <p class="explain"><b>Correct answer: console.log().</b> console.log() prints into the developer console. alert() opens a pop-up and document.write() writes into the page.</p>
+          </div>
+          <div class="question">
+            <legend>6. What is the difference between == and ===?</legend>
+            <input type="radio" class="opt-input" name="q6" id="week6-q6a">
+            <label for="week6-q6a" class="option correct">=== compares both type and value, == converts types first</label>
+            <input type="radio" class="opt-input" name="q6" id="week6-q6b">
+            <label for="week6-q6b" class="option">There is no difference</label>
+            <input type="radio" class="opt-input" name="q6" id="week6-q6c">
+            <label for="week6-q6c" class="option">== is stricter than ===</label>
+            <p class="explain"><b>Correct answer: === compares both type and value, == converts types first.</b> == converts types before comparing, === requires the same type and the same value. Always use === and !==.</p>
+          </div>
+          <div class="question">
+            <legend>7. Which loop always runs its body at least once?</legend>
+            <input type="radio" class="opt-input" name="q7" id="week6-q7a">
+            <label for="week6-q7a" class="option">for</label>
+            <input type="radio" class="opt-input" name="q7" id="week6-q7b">
+            <label for="week6-q7b" class="option correct">do...while</label>
+            <input type="radio" class="opt-input" name="q7" id="week6-q7c">
+            <label for="week6-q7c" class="option">while</label>
+            <p class="explain"><b>Correct answer: do...while.</b> do...while checks the condition after the body, so the body runs at least once.</p>
+          </div>
+          <div class="question">
+            <legend>8. What does typeof "AITU" return?</legend>
+            <input type="radio" class="opt-input" name="q8" id="week6-q8a">
+            <label for="week6-q8a" class="option">"text"</label>
+            <input type="radio" class="opt-input" name="q8" id="week6-q8b">
+            <label for="week6-q8b" class="option">"object"</label>
+            <input type="radio" class="opt-input" name="q8" id="week6-q8c">
+            <label for="week6-q8c" class="option correct">"string"</label>
+            <p class="explain"><b>Correct answer: "string".</b> The typeof operator returns the type name. A text value is a "string".</p>
+          </div>
+          <div class="question">
+            <legend>9. What is printed?</legend>
+            <pre class="code-card"><code>console.log("5" + 3);</code></pre>
+            <input type="radio" class="opt-input" name="q9" id="week6-q9a">
+            <label for="week6-q9a" class="option correct">"53"</label>
+            <input type="radio" class="opt-input" name="q9" id="week6-q9b">
+            <label for="week6-q9b" class="option">8</label>
+            <input type="radio" class="opt-input" name="q9" id="week6-q9c">
+            <label for="week6-q9c" class="option">NaN</label>
+            <p class="explain"><b>Correct answer: "53".</b> The + operator with a string concatenates: the number 3 becomes text, so the result is "53".</p>
+          </div>
+          <div class="question">
+            <legend>10. What is printed?</legend>
+            <pre class="code-card"><code>console.log(10 % 3, 2 ** 3);</code></pre>
+            <input type="radio" class="opt-input" name="q10" id="week6-q10a">
+            <label for="week6-q10a" class="option">3 6</label>
+            <input type="radio" class="opt-input" name="q10" id="week6-q10b">
+            <label for="week6-q10b" class="option correct">1 8</label>
+            <input type="radio" class="opt-input" name="q10" id="week6-q10c">
+            <label for="week6-q10c" class="option">3 8</label>
+            <p class="explain"><b>Correct answer: 1 8.</b> 10 % 3 is the remainder of the division (1) and 2 ** 3 is 2 to the power of 3 (8).</p>
+          </div>
+          <div class="question">
+            <legend>11. What is printed?</legend>
+            <pre class="code-card"><code>let sum = 0;
+for (let i = 1; i &lt;= 4; i++) {
+  sum += i;
+}
+console.log(sum);</code></pre>
+            <input type="radio" class="opt-input" name="q11" id="week6-q11a">
+            <label for="week6-q11a" class="option">4</label>
+            <input type="radio" class="opt-input" name="q11" id="week6-q11b">
+            <label for="week6-q11b" class="option correct">10</label>
+            <input type="radio" class="opt-input" name="q11" id="week6-q11c">
+            <label for="week6-q11c" class="option">24</label>
+            <p class="explain"><b>Correct answer: 10.</b> The loop adds 1 + 2 + 3 + 4 = 10.</p>
+          </div>
+          <div class="quiz-actions">
+            <button type="button" class="btn btn-accent check-btn"><span class="show-text">Check Answers</span><span class="hide-text">Hide Answers</span></button>
+            <button type="reset" class="btn btn-outline-primary">Try again</button>
+          </div>
+          <p class="legend-note">Green = correct answer, red = your wrong choice.</p>
+        </form>
+        <ul class="lec-nav quiz-links">
+          <li><a href="lectures.html#week6">Back to the lecture</a></li>
+          <li><a href="live-coding-week6.html">Next: Live Coding for this lecture</a></li>
+        </ul>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">
+      <div class="row text-center">
+        <div class="col-md-4 mb-3">
+          <img class="footer-logo" src="img/aitu-logo.png" alt="Astana IT University logo">
+          <h2 class="h6 mt-2">Astana IT University</h2>
+          <p>Web Technologies-1. Read lectures, take the quizzes, code it live.</p>
+        </div>
+        <div class="col-md-4 mb-3">
+          <h2 class="h6">Contact</h2>
+          <p>info@weblearn.example<br>Astana IT University, Astana</p>
+        </div>
+        <div class="col-md-4 mb-3">
+          <h2 class="h6">Follow</h2>
+          <p><a href="https://github.com/" target="_blank" rel="noopener">GitHub</a> 
+            <a href="https://t.me/" target="_blank" rel="noopener">Telegram</a> 
+            <a href="https://instagram.com/" target="_blank" rel="noopener">Instagram</a></p>
+        </div>
+      </div>
+      <p class="text-center copyright mb-0">&copy; 2026 WebLearn. Web Technologies midterm and endterm project.</p>
+    </div>
+  </footer>
+  <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+  <script src="js/script.js"></script>
+</body>
+</html>

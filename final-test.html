@@ -1,0 +1,389 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Final Test - WebLearn</title>
+  <link href="https://fonts.googleapis.com/css2?family=Sora:wght@400;600;700&display=swap" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link href="css/style.css" rel="stylesheet">
+</head>
+<body>
+  <header class="site-header">
+    <a class="logo" href="index.html">
+      <img class="logo-img" src="img/aitu-logo.png" alt="Astana IT University logo">
+      <span>WebLearn</span>
+    </a>
+    <input type="checkbox" id="nav-toggle" class="nav-toggle">
+    <label for="nav-toggle" class="hamburger"><span></span><span></span><span></span></label>
+    <nav>
+      <ul class="nav-list">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="lectures.html">Lectures</a></li>
+        <li><a href="quiz.html">Quiz</a></li>
+        <li><a href="live-coding.html">Live Coding</a></li>
+        <li><a href="final-test.html" class="active">Final Test</a></li>
+        <li><a href="topics.html">Topics</a></li>
+        <li><a href="students.html">Students</a></li>
+        <li><a href="gallery.html">Gallery</a></li>
+        <li><a href="register.html">Register</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+    </nav>
+  </header>
+  <main>
+    <section class="page-title">
+      <div class="container">
+        <h1>Final Test &mdash; Weeks 1&ndash;9</h1>
+        <p>27 questions from all nine lectures. Choose your answers, then press <b>Check Answers</b> to see your score.</p>
+      </div>
+    </section>
+    <section class="section">
+      <div class="container narrow">
+        <form class="card-form quiz" data-final="1">
+          <input type="checkbox" id="check-final" class="check-toggle">
+          <div class="question">
+            <legend>1. What does HTML stand for? </legend>
+            <input type="radio" class="opt-input" name="q1" id="final-q1a">
+            <label for="final-q1a" class="option correct">Hyper Text Markup Language</label>
+            <input type="radio" class="opt-input" name="q1" id="final-q1b">
+            <label for="final-q1b" class="option">High Tech Modern Language</label>
+            <input type="radio" class="opt-input" name="q1" id="final-q1c">
+            <label for="final-q1c" class="option">Home Tool Markup Language</label>
+            <p class="explain"><b>Correct answer: Hyper Text Markup Language.</b> HTML is the Hyper Text Markup Language, the standard markup language for creating web pages.</p>
+          </div>
+          <div class="question">
+            <legend>2. Which tag forces a line break without starting a new paragraph? </legend>
+            <input type="radio" class="opt-input" name="q2" id="final-q2a">
+            <label for="final-q2a" class="option correct">&lt;br&gt;</label>
+            <input type="radio" class="opt-input" name="q2" id="final-q2b">
+            <label for="final-q2b" class="option">&lt;p&gt;</label>
+            <input type="radio" class="opt-input" name="q2" id="final-q2c">
+            <label for="final-q2c" class="option">&lt;lb&gt;</label>
+            <p class="explain"><b>Correct answer: &lt;br&gt;.</b> &lt;br&gt; starts a new line, like single spacing in a document. &lt;p&gt; starts a new paragraph.</p>
+          </div>
+          <div class="question">
+            <legend>3. What does colspan="2" do here? </legend>
+            <pre class="code-card"><code>&lt;tr&gt;
+  &lt;th colspan="2"&gt;Average age&lt;/th&gt;
+&lt;/tr&gt;</code></pre>
+            <input type="radio" class="opt-input" name="q3" id="final-q3a">
+            <label for="final-q3a" class="option">Makes the text two times bigger</label>
+            <input type="radio" class="opt-input" name="q3" id="final-q3b">
+            <label for="final-q3b" class="option correct">The cell spans (takes the width of) two columns</label>
+            <input type="radio" class="opt-input" name="q3" id="final-q3c">
+            <label for="final-q3c" class="option">Adds two new rows</label>
+            <p class="explain"><b>Correct answer: The cell spans (takes the width of) two columns.</b> colspan joins cells across columns; rowspan joins cells across rows.</p>
+          </div>
+          <div class="question">
+            <legend>4. What does CSS stand for? </legend>
+            <input type="radio" class="opt-input" name="q4" id="final-q4a">
+            <label for="final-q4a" class="option">Creative Style System</label>
+            <input type="radio" class="opt-input" name="q4" id="final-q4b">
+            <label for="final-q4b" class="option correct">Cascading Style Sheets</label>
+            <input type="radio" class="opt-input" name="q4" id="final-q4c">
+            <label for="final-q4c" class="option">Computer Styled Sections</label>
+            <p class="explain"><b>Correct answer: Cascading Style Sheets.</b> CSS means Cascading Style Sheets. It makes pages presentable and keeps styling separate from the HTML.</p>
+          </div>
+          <div class="question">
+            <legend>5. Which selector is used to target one specific, unique element? </legend>
+            <input type="radio" class="opt-input" name="q5" id="final-q5a">
+            <label for="final-q5a" class="option">Element selector (p)</label>
+            <input type="radio" class="opt-input" name="q5" id="final-q5b">
+            <label for="final-q5b" class="option">Class selector (.box)</label>
+            <input type="radio" class="opt-input" name="q5" id="final-q5c">
+            <label for="final-q5c" class="option correct">ID selector (#header)</label>
+            <p class="explain"><b>Correct answer: ID selector (#header).</b> An ID must be unique on the page, so #header selects only one element. Classes can be shared by many elements.</p>
+          </div>
+          <div class="question">
+            <legend>6. How will the text look in the browser? </legend>
+            <pre class="code-card"><code>h2 {
+  text-transform: uppercase;
+  text-align: center;
+}
+
+&lt;h2&gt;Hello world&lt;/h2&gt;</code></pre>
+            <input type="radio" class="opt-input" name="q6" id="final-q6a">
+            <label for="final-q6a" class="option">hello world, aligned left</label>
+            <input type="radio" class="opt-input" name="q6" id="final-q6b">
+            <label for="final-q6b" class="option correct">HELLO WORLD, centered</label>
+            <input type="radio" class="opt-input" name="q6" id="final-q6c">
+            <label for="final-q6c" class="option">Hello World, aligned right</label>
+            <p class="explain"><b>Correct answer: HELLO WORLD, centered.</b> text-transform: uppercase changes all letters to capitals and text-align: center centers the line.</p>
+          </div>
+          <div class="question">
+            <legend>7. Flexbox is a layout method that is… </legend>
+            <input type="radio" class="opt-input" name="q7" id="final-q7a">
+            <label for="final-q7a" class="option correct">one-dimensional (a row or a column)</label>
+            <input type="radio" class="opt-input" name="q7" id="final-q7b">
+            <label for="final-q7b" class="option">two-dimensional (rows and columns together)</label>
+            <input type="radio" class="opt-input" name="q7" id="final-q7c">
+            <label for="final-q7c" class="option">only for images</label>
+            <p class="explain"><b>Correct answer: one-dimensional (a row or a column).</b> Flexbox arranges items in one direction: a row or a column. Grid is the two-dimensional system.</p>
+          </div>
+          <div class="question">
+            <legend>8. Which property overrides align-items for one single flex item? </legend>
+            <input type="radio" class="opt-input" name="q8" id="final-q8a">
+            <label for="final-q8a" class="option">order</label>
+            <input type="radio" class="opt-input" name="q8" id="final-q8b">
+            <label for="final-q8b" class="option correct">align-self</label>
+            <input type="radio" class="opt-input" name="q8" id="final-q8c">
+            <label for="final-q8c" class="option">flex-basis</label>
+            <p class="explain"><b>Correct answer: align-self.</b> align-self is set on an item and overrides the container's align-items only for that item.</p>
+          </div>
+          <div class="question">
+            <legend>9. What layout does this code create? </legend>
+            <pre class="code-card"><code>.gallery {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 32px;
+}</code></pre>
+            <input type="radio" class="opt-input" name="q9" id="final-q9a">
+            <label for="final-q9a" class="option">Three equal rows with no space</label>
+            <input type="radio" class="opt-input" name="q9" id="final-q9b">
+            <label for="final-q9b" class="option correct">Three equal columns with 32px between them</label>
+            <input type="radio" class="opt-input" name="q9" id="final-q9c">
+            <label for="final-q9c" class="option">One column that is 32px wide</label>
+            <p class="explain"><b>Correct answer: Three equal columns with 32px between them.</b> repeat(3, 1fr) means three columns of one fraction each, so they are equal; gap adds 32px between tracks.</p>
+          </div>
+          <div class="question">
+            <legend>10. What is Bootstrap? </legend>
+            <input type="radio" class="opt-input" name="q10" id="final-q10a">
+            <label for="final-q10a" class="option">A programming language</label>
+            <input type="radio" class="opt-input" name="q10" id="final-q10b">
+            <label for="final-q10b" class="option correct">An open-source front-end framework with ready-made classes</label>
+            <input type="radio" class="opt-input" name="q10" id="final-q10c">
+            <label for="final-q10c" class="option">A web browser</label>
+            <p class="explain"><b>Correct answer: An open-source front-end framework with ready-made classes.</b> Bootstrap is an open-source front-end framework (created at Twitter) with ready-made CSS classes and components.</p>
+          </div>
+          <div class="question">
+            <legend>11. Bootstrap follows which approach to responsive design? </legend>
+            <input type="radio" class="opt-input" name="q11" id="final-q11a">
+            <label for="final-q11a" class="option">Desktop-first</label>
+            <input type="radio" class="opt-input" name="q11" id="final-q11b">
+            <label for="final-q11b" class="option">Print-first</label>
+            <input type="radio" class="opt-input" name="q11" id="final-q11c">
+            <label for="final-q11c" class="option correct">Mobile-first</label>
+            <p class="explain"><b>Correct answer: Mobile-first.</b> Bootstrap is mobile-first: styles start from small screens and classes like col-md- add changes for wider ones.</p>
+          </div>
+          <div class="question">
+            <legend>12. What do these Bootstrap classes do? </legend>
+            <pre class="code-card"><code>&lt;p class="text-center text-danger mt-3"&gt;
+  Error!
+&lt;/p&gt;</code></pre>
+            <input type="radio" class="opt-input" name="q12" id="final-q12a">
+            <label for="final-q12a" class="option">Green text, aligned left, padding 3px</label>
+            <input type="radio" class="opt-input" name="q12" id="final-q12b">
+            <label for="final-q12b" class="option correct">Red centered text with margin-top 1rem</label>
+            <input type="radio" class="opt-input" name="q12" id="final-q12c">
+            <label for="final-q12c" class="option">Bold text with a border</label>
+            <p class="explain"><b>Correct answer: Red centered text with margin-top 1rem.</b> text-center centers the text, text-danger makes it red and mt-3 adds a margin-top of 1rem.</p>
+          </div>
+          <div class="question">
+            <legend>13. Which classes create a navbar that collapses on screens smaller than 992px? </legend>
+            <input type="radio" class="opt-input" name="q13" id="final-q13a">
+            <label for="final-q13a" class="option correct">navbar navbar-expand-lg</label>
+            <input type="radio" class="opt-input" name="q13" id="final-q13b">
+            <label for="final-q13b" class="option">navbar navbar-collapse-lg</label>
+            <input type="radio" class="opt-input" name="q13" id="final-q13c">
+            <label for="final-q13c" class="option">nav nav-small</label>
+            <p class="explain"><b>Correct answer: navbar navbar-expand-lg.</b> navbar-expand-lg means: expanded from the lg breakpoint (992px) and up, collapsed into a hamburger button below it.</p>
+          </div>
+          <div class="question">
+            <legend>14. What does g-4 do on a .row? </legend>
+            <input type="radio" class="opt-input" name="q14" id="final-q14a">
+            <label for="final-q14a" class="option correct">Adds spacing (gutters) between the columns</label>
+            <input type="radio" class="opt-input" name="q14" id="final-q14b">
+            <label for="final-q14b" class="option">Makes 4 columns</label>
+            <input type="radio" class="opt-input" name="q14" id="final-q14c">
+            <label for="final-q14c" class="option">Hides the row on mobile</label>
+            <p class="explain"><b>Correct answer: Adds spacing (gutters) between the columns.</b> g-* sets the gutter: the space between columns. gx-* is horizontal and gy-* is vertical only.</p>
+          </div>
+          <div class="question">
+            <legend>15. How is this column placed on a screen 1000px wide? </legend>
+            <pre class="code-card"><code>&lt;div class="row"&gt;
+  &lt;div class="col-md-6 offset-md-3"&gt;Hello&lt;/div&gt;
+&lt;/div&gt;</code></pre>
+            <input type="radio" class="opt-input" name="q15" id="final-q15a">
+            <label for="final-q15a" class="option correct">6 columns wide, centered</label>
+            <input type="radio" class="opt-input" name="q15" id="final-q15b">
+            <label for="final-q15b" class="option">6 columns wide, aligned to the left</label>
+            <input type="radio" class="opt-input" name="q15" id="final-q15c">
+            <label for="final-q15c" class="option">3 columns wide, centered</label>
+            <p class="explain"><b>Correct answer: 6 columns wide, centered.</b> 1000px is at least md (768px), so col-md-6 gives 6 columns and offset-md-3 leaves 3 empty columns on the left. 3 + 6 + 3 = 12: centered.</p>
+          </div>
+          <div class="question">
+            <legend>16. Who created JavaScript at Netscape Communications? </legend>
+            <input type="radio" class="opt-input" name="q16" id="final-q16a">
+            <label for="final-q16a" class="option">Tim Berners-Lee</label>
+            <input type="radio" class="opt-input" name="q16" id="final-q16b">
+            <label for="final-q16b" class="option correct">Brendan Eich</label>
+            <input type="radio" class="opt-input" name="q16" id="final-q16c">
+            <label for="final-q16c" class="option">Linus Torvalds</label>
+            <p class="explain"><b>Correct answer: Brendan Eich.</b> Brendan Eich created JavaScript while working at Netscape Communications for the browser.</p>
+          </div>
+          <div class="question">
+            <legend>17. What is the difference between == and ===? </legend>
+            <input type="radio" class="opt-input" name="q17" id="final-q17a">
+            <label for="final-q17a" class="option correct">=== compares both type and value, == converts types first</label>
+            <input type="radio" class="opt-input" name="q17" id="final-q17b">
+            <label for="final-q17b" class="option">There is no difference</label>
+            <input type="radio" class="opt-input" name="q17" id="final-q17c">
+            <label for="final-q17c" class="option">== is stricter than ===</label>
+            <p class="explain"><b>Correct answer: === compares both type and value, == converts types first.</b> == converts types before comparing, === requires the same type and the same value. Always use === and !==.</p>
+          </div>
+          <div class="question">
+            <legend>18. What is printed? </legend>
+            <pre class="code-card"><code>let sum = 0;
+for (let i = 1; i &lt;= 4; i++) {
+  sum += i;
+}
+console.log(sum);</code></pre>
+            <input type="radio" class="opt-input" name="q18" id="final-q18a">
+            <label for="final-q18a" class="option">4</label>
+            <input type="radio" class="opt-input" name="q18" id="final-q18b">
+            <label for="final-q18b" class="option correct">10</label>
+            <input type="radio" class="opt-input" name="q18" id="final-q18c">
+            <label for="final-q18c" class="option">24</label>
+            <p class="explain"><b>Correct answer: 10.</b> The loop adds 1 + 2 + 3 + 4 = 10.</p>
+          </div>
+          <div class="question">
+            <legend>19. What is the index of the first element of an array? </legend>
+            <input type="radio" class="opt-input" name="q19" id="final-q19a">
+            <label for="final-q19a" class="option">1</label>
+            <input type="radio" class="opt-input" name="q19" id="final-q19b">
+            <label for="final-q19b" class="option correct">0</label>
+            <input type="radio" class="opt-input" name="q19" id="final-q19c">
+            <label for="final-q19c" class="option">-1</label>
+            <p class="explain"><b>Correct answer: 0.</b> Array indexes start from 0.</p>
+          </div>
+          <div class="question">
+            <legend>20. Which method returns the first element that matches a CSS selector? </legend>
+            <input type="radio" class="opt-input" name="q20" id="final-q20a">
+            <label for="final-q20a" class="option">getElementsByTagName()</label>
+            <input type="radio" class="opt-input" name="q20" id="final-q20b">
+            <label for="final-q20b" class="option correct">querySelector()</label>
+            <input type="radio" class="opt-input" name="q20" id="final-q20c">
+            <label for="final-q20c" class="option">getElementsByName()</label>
+            <p class="explain"><b>Correct answer: querySelector().</b> querySelector() takes a CSS selector and returns the first match. querySelectorAll() returns all matches.</p>
+          </div>
+          <div class="question">
+            <legend>21. What is printed? </legend>
+            <pre class="code-card"><code>const fruits = ["apple", "banana"];
+fruits.push("kiwi");
+console.log(fruits.length);</code></pre>
+            <input type="radio" class="opt-input" name="q21" id="final-q21a">
+            <label for="final-q21a" class="option">2</label>
+            <input type="radio" class="opt-input" name="q21" id="final-q21b">
+            <label for="final-q21b" class="option correct">3</label>
+            <input type="radio" class="opt-input" name="q21" id="final-q21c">
+            <label for="final-q21c" class="option">"kiwi"</label>
+            <p class="explain"><b>Correct answer: 3.</b> push adds "kiwi" to the end, so the array has 3 items.</p>
+          </div>
+          <div class="question">
+            <legend>22. Which method attaches a click handler to an element? </legend>
+            <input type="radio" class="opt-input" name="q22" id="final-q22a">
+            <label for="final-q22a" class="option">el.onClickAdd()</label>
+            <input type="radio" class="opt-input" name="q22" id="final-q22b">
+            <label for="final-q22b" class="option correct">el.addEventListener("click", fn)</label>
+            <input type="radio" class="opt-input" name="q22" id="final-q22c">
+            <label for="final-q22c" class="option">el.listen(fn)</label>
+            <p class="explain"><b>Correct answer: el.addEventListener("click", fn).</b> addEventListener(type, callback) registers a function that runs when the event happens.</p>
+          </div>
+          <div class="question">
+            <legend>23. Which two ways read the property name of the object person? </legend>
+            <input type="radio" class="opt-input" name="q23" id="final-q23a">
+            <label for="final-q23a" class="option correct">person.name and person["name"]</label>
+            <input type="radio" class="opt-input" name="q23" id="final-q23b">
+            <label for="final-q23b" class="option">person-&gt;name and person(name)</label>
+            <input type="radio" class="opt-input" name="q23" id="final-q23c">
+            <label for="final-q23c" class="option">person:name and person#name</label>
+            <p class="explain"><b>Correct answer: person.name and person["name"].</b> JavaScript uses dot notation and bracket notation.</p>
+          </div>
+          <div class="question">
+            <legend>24. What happens when the input is empty? </legend>
+            <pre class="code-card"><code>form.addEventListener("submit", function (e) {
+  if (input.value === "") {
+    e.preventDefault();
+  }
+});</code></pre>
+            <input type="radio" class="opt-input" name="q24" id="final-q24a">
+            <label for="final-q24a" class="option">The form is sent anyway</label>
+            <input type="radio" class="opt-input" name="q24" id="final-q24b">
+            <label for="final-q24b" class="option correct">The form is not sent</label>
+            <input type="radio" class="opt-input" name="q24" id="final-q24c">
+            <label for="final-q24c" class="option">The page reloads twice</label>
+            <p class="explain"><b>Correct answer: The form is not sent.</b> preventDefault() cancels the submission when the field is empty.</p>
+          </div>
+          <div class="question">
+            <legend>25. What is jQuery? </legend>
+            <input type="radio" class="opt-input" name="q25" id="final-q25a">
+            <label for="final-q25a" class="option correct">A JavaScript library with predefined methods for selecting and manipulating DOM elements</label>
+            <input type="radio" class="opt-input" name="q25" id="final-q25b">
+            <label for="final-q25b" class="option">A database</label>
+            <input type="radio" class="opt-input" name="q25" id="final-q25c">
+            <label for="final-q25c" class="option">A CSS framework</label>
+            <p class="explain"><b>Correct answer: A JavaScript library with predefined methods for selecting and manipulating DOM elements.</b> jQuery is a JavaScript library that simplifies DOM manipulation and needs fewer lines of code.</p>
+          </div>
+          <div class="question">
+            <legend>26. What does .closest() return? </legend>
+            <input type="radio" class="opt-input" name="q26" id="final-q26a">
+            <label for="final-q26a" class="option correct">The nearest matching element, including itself or its ancestors</label>
+            <input type="radio" class="opt-input" name="q26" id="final-q26b">
+            <label for="final-q26b" class="option">The last child</label>
+            <input type="radio" class="opt-input" name="q26" id="final-q26c">
+            <label for="final-q26c" class="option">All siblings</label>
+            <p class="explain"><b>Correct answer: The nearest matching element, including itself or its ancestors.</b> .closest() goes up the tree from the element and returns the first match.</p>
+          </div>
+          <div class="question">
+            <legend>27. What does this code do? </legend>
+            <pre class="code-card"><code>$("#box").addClass("active");</code></pre>
+            <input type="radio" class="opt-input" name="q27" id="final-q27a">
+            <label for="final-q27a" class="option">Removes the class active</label>
+            <input type="radio" class="opt-input" name="q27" id="final-q27b">
+            <label for="final-q27b" class="option correct">Adds the class "active" to the element with id="box"</label>
+            <input type="radio" class="opt-input" name="q27" id="final-q27c">
+            <label for="final-q27c" class="option">Creates a new element</label>
+            <p class="explain"><b>Correct answer: Adds the class "active" to the element with id="box".</b> addClass() adds one or more CSS classes to the selected elements.</p>
+          </div>
+          <p id="finalScore" class="final-score" aria-live="polite"></p>
+          <div class="quiz-actions">
+            <label for="check-final" class="btn btn-accent check-btn"><span class="show-text">Check Answers</span><span class="hide-text">Hide Answers</span></label>
+            <button type="reset" class="btn btn-outline-primary">Try again</button>
+          </div>
+          <p class="legend-note">Green = correct answer, red = your wrong choice.</p>
+        </form>
+        <ul class="lec-nav quiz-links">
+          <li><a href="lectures.html">Back to the lectures</a></li>
+          <li><a href="quiz.html">All quizzes</a></li>
+          <li><a href="live-coding.html">Live Coding</a></li>
+        </ul>
+      </div>
+    </section>
+  </main>
+  <footer class="site-footer">
+    <div class="container">
+      <div class="row text-center">
+        <div class="col-md-4 mb-3">
+          <img class="footer-logo" src="img/aitu-logo.png" alt="Astana IT University logo">
+          <h2 class="h6 mt-2">Astana IT University</h2>
+          <p>Web Technologies-1. Read lectures, take the quizzes, code it live.</p>
+        </div>
+        <div class="col-md-4 mb-3">
+          <h2 class="h6">Contact</h2>
+          <p>info@weblearn.example<br>Astana IT University, Astana</p>
+        </div>
+        <div class="col-md-4 mb-3">
+          <h2 class="h6">Follow</h2>
+          <p><a href="https://github.com/" target="_blank" rel="noopener">GitHub</a>
+            <a href="https://t.me/" target="_blank" rel="noopener">Telegram</a>
+            <a href="https://instagram.com/" target="_blank" rel="noopener">Instagram</a></p>
+        </div>
+      </div>
+      <p class="text-center copyright mb-0">&copy; 2026 WebLearn. Web Technologies midterm and endterm project.</p>
+    </div>
+  </footer>
+  <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+  <script src="js/script.js"></script>
+</body>
+</html>

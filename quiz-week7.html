@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Quiz Week 7 - WebLearn,</title>
+  <link href="https://fonts.googleapis.com/css2?family=Sora:wght@400;600;700&display=swap" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link href="css/style.css" rel="stylesheet">
+</head>
+<body>
+  <header class="site-header">
+    <a class="logo" href="index.html">
+      <img class="logo-img" src="img/aitu-logo.png" alt="Astana IT University logo">
+      <span>WebLearn</span></a>
+    <input type="checkbox" id="nav-toggle" class="nav-toggle">
+    <label for="nav-toggle" class="hamburger"><span></span><span></span><span></span></label>
+    <nav>
+      <ul class="nav-list">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="lectures.html">Lectures</a></li>
+        <li><a href="quiz.html" class="active">Quiz</a></li>
+        <li><a href="live-coding.html">Live Coding</a></li>
+        <li><a href="final-test.html">Final Test</a></li>
+        <li><a href="topics.html">Topics</a></li>
+        <li><a href="students.html">Students</a></li>
+        <li><a href="gallery.html">Gallery</a></li>
+        <li><a href="register.html">Register</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+    </nav>
+  </header>
+  <main>
+    <section class="page-title">
+      <div class="container">
+        <h1>Quiz &mdash; Week 7: Arrays, Loops and DOM Manipulation</h1>
+        <p>10 questions: 7 on theory and 3 on code. Choose your answers, then press <b>Check Answers</b>.</p>
+      </div></section>
+    <section class="section">
+      <div class="container narrow">
+        <form class="card-form quiz">
+          <input type="checkbox" id="check-week7" class="check-toggle">
+          <div class="question">
+            <legend>1. What is the index of the first element of an array?</legend>
+            <input type="radio" class="opt-input" name="q1" id="week7-q1a">
+            <label for="week7-q1a" class="option">1</label>
+            <input type="radio" class="opt-input" name="q1" id="week7-q1b">
+            <label for="week7-q1b" class="option correct">0</label>
+            <input type="radio" class="opt-input" name="q1" id="week7-q1c">
+            <label for="week7-q1c" class="option">-1</label>
+            <p class="explain"><b>Correct answer: 0.</b> Array indexes start from 0.</p>
+          </div>
+          <div class="question">
+            <legend>2. Which method adds a new item to the end of an array?</legend>
+            <input type="radio" class="opt-input" name="q2" id="week7-q2a">
+            <label for="week7-q2a" class="option">pop()</label>
+            <input type="radio" class="opt-input" name="q2" id="week7-q2b">
+            <label for="week7-q2b" class="option">shift()</label>
+            <input type="radio" class="opt-input" name="q2" id="week7-q2c">
+            <label for="week7-q2c" class="option correct">push()</label>
+            <p class="explain"><b>Correct answer: push().</b> push() adds to the end, pop() removes the last item. unshift() and shift() work with the start.</p>
+          </div>
+          <div class="question">
+            <legend>3. Which method runs a function for every item of an array?</legend>
+            <input type="radio" class="opt-input" name="q3" id="week7-q3a">
+            <label for="week7-q3a" class="option correct">forEach()</label>
+            <input type="radio" class="opt-input" name="q3" id="week7-q3b">
+            <label for="week7-q3b" class="option">indexOf()</label>
+            <input type="radio" class="opt-input" name="q3" id="week7-q3c">
+            <label for="week7-q3c" class="option">join()</label>
+            <p class="explain"><b>Correct answer: forEach().</b> forEach() calls the function once for each array item.</p>
+          </div>
+          <div class="question">
+            <legend>4. What does DOM stand for and what is it?</legend>
+            <input type="radio" class="opt-input" name="q4" id="week7-q4a">
+            <label for="week7-q4a" class="option">Data Option Manager, a database tool</label>
+            <input type="radio" class="opt-input" name="q4" id="week7-q4b">
+            <label for="week7-q4b" class="option correct">Document Object Model, the page as objects that JavaScript can change</label>
+            <input type="radio" class="opt-input" name="q4" id="week7-q4c">
+            <label for="week7-q4c" class="option">Digital Output Mode, a display setting</label>
+            <p class="explain"><b>Correct answer: Document Object Model, the page as objects that JavaScript can change.</b> The Document Object Model represents all page content as objects. Anything in an HTML document can be accessed, changed, deleted or added with it.</p>
+          </div>
+          <div class="question">
+            <legend>5. Which method returns the first element that matches a CSS selector?</legend>
+            <input type="radio" class="opt-input" name="q5" id="week7-q5a">
+            <label for="week7-q5a" class="option">getElementsByTagName()</label>
+            <input type="radio" class="opt-input" name="q5" id="week7-q5b">
+            <label for="week7-q5b" class="option correct">querySelector()</label>
+            <input type="radio" class="opt-input" name="q5" id="week7-q5c">
+            <label for="week7-q5c" class="option">getElementsByName()</label>
+            <p class="explain"><b>Correct answer: querySelector().</b> querySelector() takes a CSS selector and returns the first match. querySelectorAll() returns all matches.</p>
+          </div>
+          <div class="question">
+            <legend>6. Why is textContent safer than innerHTML?</legend>
+            <input type="radio" class="opt-input" name="q6" id="week7-q6a">
+            <label for="week7-q6a" class="option">It is not safer</label>
+            <input type="radio" class="opt-input" name="q6" id="week7-q6b">
+            <label for="week7-q6b" class="option">It works only in old browsers</label>
+            <input type="radio" class="opt-input" name="q6" id="week7-q6c">
+            <label for="week7-q6c" class="option correct">It does not parse HTML, so it will not run injected code (XSS)</label>
+            <p class="explain"><b>Correct answer: It does not parse HTML, so it will not run injected code (XSS).</b> innerHTML parses HTML and can run injected code (XSS). textContent only sets text, so it is faster and more secure.</p>
+          </div>
+          <div class="question">
+            <legend>7. Which code adds the CSS class "active" to an element?</legend>
+            <input type="radio" class="opt-input" name="q7" id="week7-q7a">
+            <label for="week7-q7a" class="option correct">el.classList.add("active")</label>
+            <input type="radio" class="opt-input" name="q7" id="week7-q7b">
+            <label for="week7-q7b" class="option">el.class = "active"</label>
+            <input type="radio" class="opt-input" name="q7" id="week7-q7c">
+            <label for="week7-q7c" class="option">el.addStyle("active")</label>
+            <p class="explain"><b>Correct answer: el.classList.add("active").</b> classList has add(), remove() and toggle() methods for CSS classes.</p>
+          </div>
+          <div class="question">
+            <legend>8. What is printed?</legend>
+            <pre class="code-card"><code>const fruits = ["apple", "banana"];
+fruits.push("kiwi");
+console.log(fruits.length);</code></pre>
+            <input type="radio" class="opt-input" name="q8" id="week7-q8a">
+            <label for="week7-q8a" class="option">2</label>
+            <input type="radio" class="opt-input" name="q8" id="week7-q8b">
+            <label for="week7-q8b" class="option correct">3</label>
+            <input type="radio" class="opt-input" name="q8" id="week7-q8c">
+            <label for="week7-q8c" class="option">"kiwi"</label>
+            <p class="explain"><b>Correct answer: 3.</b> push adds "kiwi" to the end, so the array has 3 items.</p>
+          </div>
+          <div class="question">
+            <legend>9. What does this code do?</legend>
+            <pre class="code-card"><code>document.querySelector("h1").textContent = "Hi";</code></pre>
+            <input type="radio" class="opt-input" name="q9" id="week7-q9a">
+            <label for="week7-q9a" class="option correct">Changes the text of the first h1 to "Hi"</label>
+            <input type="radio" class="opt-input" name="q9" id="week7-q9b">
+            <label for="week7-q9b" class="option">Changes the text of all h1 elements</label>
+            <input type="radio" class="opt-input" name="q9" id="week7-q9c">
+            <label for="week7-q9c" class="option">Adds a new h1 to the page</label>
+            <p class="explain"><b>Correct answer: Changes the text of the first h1 to "Hi".</b> querySelector returns only the first h1 and textContent replaces its text.</p>
+          </div>
+          <div class="question">
+            <legend>10. What is printed?</legend>
+            <pre class="code-card"><code>const nums = [1, 2, 3];
+const doubled = nums.map(n =&gt; n * 2);
+console.log(doubled);</code></pre>
+            <input type="radio" class="opt-input" name="q10" id="week7-q10a">
+            <label for="week7-q10a" class="option">[1, 2, 3]</label>
+            <input type="radio" class="opt-input" name="q10" id="week7-q10b">
+            <label for="week7-q10b" class="option correct">[2, 4, 6]</label>
+            <input type="radio" class="opt-input" name="q10" id="week7-q10c">
+            <label for="week7-q10c" class="option">12</label>
+            <p class="explain"><b>Correct answer: [2, 4, 6].</b> map() builds a new array from the result of the function for each item: [2, 4, 6].</p>
+          </div>
+          <div class="quiz-actions">
+            <button type="button" class="btn btn-accent check-btn"><span class="show-text">Check Answers</span><span class="hide-text">Hide Answers</span></button>
+            <button type="reset" class="btn btn-outline-primary">Try again</button>
+          </div>
+          <p class="legend-note">Green = correct answer, red = your wrong choice.</p>
+        </form>
+        <ul class="lec-nav quiz-links">
+          <li><a href="lectures.html#week7">Back to the lecture</a></li>
+          <li><a href="live-coding-week7.html">Next: Live Coding for this lecture</a></li>
+        </ul>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">
+      <div class="row text-center">
+        <div class="col-md-4 mb-3">
+          <img class="footer-logo" src="img/aitu-logo.png" alt="Astana IT University logo">
+          <h2 class="h6 mt-2">Astana IT University</h2>
+          <p>Web Technologies-1. Read lectures, take the quizzes, code it live.</p>
+        </div>
+        <div class="col-md-4 mb-3">
+          <h2 class="h6">Contact</h2>
+          <p>info@weblearn.example<br>Astana IT University, Astana</p>
+        </div>
+        <div class="col-md-4 mb-3">
+          <h2 class="h6">Follow</h2>
+          <p><a href="https://github.com/" target="_blank" rel="noopener">GitHub</a> 
+            <a href="https://t.me/" target="_blank" rel="noopener">Telegram</a> 
+            <a href="https://instagram.com/" target="_blank" rel="noopener">Instagram</a></p>
+        </div>
+      </div>
+      <p class="text-center copyright mb-0">&copy; 2026 WebLearn. Web Technologies midterm and endterm project.</p>
+    </div>
+  </footer>
+  <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+  <script src="js/script.js"></script>
+</body>
+</html>

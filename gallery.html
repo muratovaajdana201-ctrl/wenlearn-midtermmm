@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Gallery | WebLearn, Astana IT University</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Sora:wght@400;600;700&display=swap" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link href="css/style.css" rel="stylesheet">
+</head>
+<body>
+  <header class="site-header">
+    <a class="logo" href="index.html"><img class="logo-img" src="img/aitu-logo.png" alt="Astana IT University logo"><span>WebLearn</span></a>
+    <input type="checkbox" id="nav-toggle" class="nav-toggle" aria-label="Open menu">
+    <label for="nav-toggle" class="hamburger"><span></span><span></span><span></span></label>
+    <nav>
+      <ul class="nav-list"><li><a href="index.html">Home</a></li><li><a href="lectures.html">Lectures</a></li><li><a href="quiz.html">Quiz</a></li><li><a href="live-coding.html">Live Coding</a></li><li><a href="final-test.html">Final Test</a></li><li><a href="topics.html">Topics</a></li><li><a href="students.html">Students</a></li><li><a href="gallery.html" class="active">Gallery</a></li><li><a href="register.html">Register</a></li><li><a href="contact.html">Contact</a></li></ul>
+    </nav>
+  </header>
+
+  <main>
+    <section class="page-title"><div class="container"><h1>Gallery</h1><p>Pictures from the course lectures.</p></div></section>
+    <section class="section">
+      <div class="container">
+        <div class="filter-bar mb-4" role="group" aria-label="Filter gallery">
+          <button type="button" class="btn filter-btn gallery-filter active" data-filter="all">All</button>
+          <button type="button" class="btn filter-btn gallery-filter" data-filter="html">HTML &amp; CSS</button>
+          <button type="button" class="btn filter-btn gallery-filter" data-filter="responsive">Responsive</button>
+          <button type="button" class="btn filter-btn gallery-filter" data-filter="js">JavaScript</button>
+        </div>
+        <div class="row g-3" id="galleryGrid">
+          <div class="col-6 col-md-4 col-lg-3 gallery-col" data-category="html">
+            <a href="img/gallery/html-basics.jpg" class="gallery-item" data-caption="HTML Basics — Week 1: the skeleton of an HTML page">
+              <img src="img/gallery/html-basics.jpg" alt="HTML Basics: Week 1: the skeleton of an HTML page" loading="lazy">
+              <span class="gallery-cap">HTML Basics</span>
+            </a>
+          </div>
+          <div class="col-6 col-md-4 col-lg-3 gallery-col" data-category="html">
+            <a href="img/gallery/css-box-model.jpg" class="gallery-item" data-caption="CSS Box Model — Week 2: content, padding, border and margin">
+              <img src="img/gallery/css-box-model.jpg" alt="CSS Box Model: Week 2: content, padding, border and margin" loading="lazy">
+              <span class="gallery-cap">CSS Box Model</span>
+            </a>
+          </div>
+          <div class="col-6 col-md-4 col-lg-3 gallery-col" data-category="html">
+            <a href="img/gallery/flexbox.jpg" class="gallery-item" data-caption="Flexbox — Week 3: a one-dimensional layout">
+              <img src="img/gallery/flexbox.jpg" alt="Flexbox: Week 3: a one-dimensional layout" loading="lazy">
+              <span class="gallery-cap">Flexbox</span>
+            </a>
+          </div>
+          <div class="col-6 col-md-4 col-lg-3 gallery-col" data-category="html">
+            <a href="img/gallery/css-grid.jpg" class="gallery-item" data-caption="CSS Grid — Week 3: a two-dimensional layout">
+              <img src="img/gallery/css-grid.jpg" alt="CSS Grid: Week 3: a two-dimensional layout" loading="lazy">
+              <span class="gallery-cap">CSS Grid</span>
+            </a>
+          </div>
+          <div class="col-6 col-md-4 col-lg-3 gallery-col" data-category="responsive">
+            <a href="img/gallery/bootstrap-grid.jpg" class="gallery-item" data-caption="Bootstrap Grid — Week 4: the 12-column grid">
+              <img src="img/gallery/bootstrap-grid.jpg" alt="Bootstrap Grid: Week 4: the 12-column grid" loading="lazy">
+              <span class="gallery-cap">Bootstrap Grid</span>
+            </a>
+          </div>
+          <div class="col-6 col-md-4 col-lg-3 gallery-col" data-category="responsive">
+            <a href="img/gallery/media-queries.jpg" class="gallery-item" data-caption="Media Queries — Week 4: mobile, tablet and desktop">
+              <img src="img/gallery/media-queries.jpg" alt="Media Queries: Week 4: mobile, tablet and desktop" loading="lazy">
+              <span class="gallery-cap">Media Queries</span>
+            </a>
+          </div>
+          <div class="col-6 col-md-4 col-lg-3 gallery-col" data-category="js">
+            <a href="img/gallery/javascript.jpg" class="gallery-item" data-caption="JavaScript — Week 6: variables, functions and JavaScript basics">
+              <img src="img/gallery/javascript.jpg" alt="JavaScript: Week 6: variables, functions and JavaScript basics" loading="lazy">
+              <span class="gallery-cap">JavaScript</span>
+            </a>
+          </div>
+          <div class="col-6 col-md-4 col-lg-3 gallery-col" data-category="js">
+            <a href="img/gallery/jquery.jpg" class="gallery-item" data-caption="jQuery — Week 9: selectors, events and effects">
+              <img src="img/gallery/jquery.jpg" alt="jQuery: Week 9: selectors, events and effects" loading="lazy">
+              <span class="gallery-cap">jQuery</span>
+            </a>
+          </div>
+        </div>
+        <p class="small text-muted mt-3">Click an image to enlarge it. Use the arrows (or the keyboard arrows) to move, Esc to close.</p>
+      </div>
+    </section>
+
+    <div id="lightbox" class="lightbox" style="display:none" role="dialog" aria-modal="true" aria-label="Image viewer">
+      <button type="button" id="lbClose" class="lb-btn lb-close" aria-label="Close">&times;</button>
+      <button type="button" id="lbPrev" class="lb-btn lb-prev" aria-label="Previous image">&#10094;</button>
+      <div class="lb-stage">
+        <img id="lbImage" src="" alt="">
+        <p class="lb-info"><span id="lbCaption"></span> <span id="lbCounter" class="lb-counter"></span></p>
+      </div>
+      <button type="button" id="lbNext" class="lb-btn lb-next" aria-label="Next image">&#10095;</button>
+    </div>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">
+      <div class="row text-center text-md-start">
+        <div class="col-md-4 mb-3">
+          <img class="footer-logo" src="img/aitu-logo.png" alt="Astana IT University logo" loading="lazy">
+          <h2 class="h6 mt-2">Astana IT University</h2>
+          <p>Web Technologies-1. Read lectures, take the quizzes, code it live.</p>
+        </div>
+        <div class="col-md-4 mb-3">
+          <h2 class="h6">Contact</h2>
+          <p>info@weblearn.example<br>Astana IT University, Astana</p>
+        </div>
+        <div class="col-md-4 mb-3">
+          <h2 class="h6">Follow</h2>
+          <p><a href="https://github.com/" target="_blank" rel="noopener">GitHub</a> | <a href="https://t.me/" target="_blank" rel="noopener">Telegram</a> | <a href="https://instagram.com/" target="_blank" rel="noopener">Instagram</a></p>
+        </div>
+      </div>
+      <p class="text-center copyright mb-0">&copy; 2026 WebLearn. Web Technologies midterm and endterm project.</p>
+    </div>
+  </footer>
+  <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+  <script src="js/script.js"></script>
+</body>
+</html>
