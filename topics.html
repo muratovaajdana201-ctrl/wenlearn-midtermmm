@@ -1,0 +1,337 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Topics | WebLearn, Astana IT University</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Sora:wght@400;600;700&display=swap" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link href="css/style.css" rel="stylesheet">
+</head>
+<body>
+  <header class="site-header">
+    <a class="logo" href="index.html"><img class="logo-img" src="img/aitu-logo.png" alt="Astana IT University logo"><span>WebLearn</span></a>
+    <input type="checkbox" id="nav-toggle" class="nav-toggle" aria-label="Open menu">
+    <label for="nav-toggle" class="hamburger"><span></span><span></span><span></span></label>
+    <nav>
+      <ul class="nav-list"><li><a href="index.html">Home</a></li><li><a href="lectures.html">Lectures</a></li><li><a href="quiz.html">Quiz</a></li><li><a href="live-coding.html">Live Coding</a></li><li><a href="final-test.html">Final Test</a></li><li><a href="topics.html" class="active">Topics</a></li><li><a href="students.html">Students</a></li><li><a href="gallery.html">Gallery</a></li><li><a href="register.html">Register</a></li><li><a href="contact.html">Contact</a></li></ul>
+    </nav>
+  </header>
+
+  <main>
+    <section class="page-title"><div class="container"><h1>Topic Search</h1><p>Find any topic of the course while you type.</p></div></section>
+    <section class="section">
+      <div class="container">
+        <div class="search-panel">
+          <label for="searchInput" class="visually-hidden">Search topics</label>
+          <div class="input-group">
+            <input type="search" id="searchInput" class="form-control form-control-lg" placeholder="Search a topic, e.g. flex, table, grid..." autocomplete="off">
+            <button class="btn btn-outline-secondary" type="button" id="clearSearch">Clear</button>
+          </div>
+          <div class="filter-bar" role="group" aria-label="Filter by category">
+            <button type="button" class="btn filter-btn active" data-filter="all" aria-pressed="true">All</button>
+            <button type="button" class="btn filter-btn" data-filter="html" aria-pressed="false">HTML</button>
+            <button type="button" class="btn filter-btn" data-filter="css" aria-pressed="false">CSS</button>
+            <button type="button" class="btn filter-btn" data-filter="layout" aria-pressed="false">Flexbox &amp; Grid</button>
+            <button type="button" class="btn filter-btn" data-filter="bootstrap" aria-pressed="false">Bootstrap</button>
+            <button type="button" class="btn filter-btn" data-filter="js" aria-pressed="false">JavaScript</button>
+            <button type="button" class="btn filter-btn" data-filter="jquery" aria-pressed="false">jQuery</button>
+          </div>
+          <p id="resultCount" class="small text-muted mb-0" aria-live="polite"></p>
+        </div>
+        <div class="row g-4" id="topicGrid">
+          <div class="col-12 col-md-6 col-lg-4 topic-item" data-category="html" data-tags="doctype head body title">
+            <article class="lecture-card">
+              <span class="badge-tag">Week 1</span>
+              <h3>The basic skeleton</h3>
+              <p>DOCTYPE, html, head, body and the title: the structure of every page.</p>
+              <a class="btn btn-accent btn-sm" href="lectures.html#week1">Read in lecture</a>
+            </article>
+          </div>
+          <div class="col-12 col-md-6 col-lg-4 topic-item" data-category="html" data-tags="h1 p strong em br">
+            <article class="lecture-card">
+              <span class="badge-tag">Week 1</span>
+              <h3>Text tags</h3>
+              <p>Headings h1-h6, paragraphs, bold, italic, line breaks.</p>
+              <a class="btn btn-accent btn-sm" href="lectures.html#week1">Read in lecture</a>
+            </article>
+          </div>
+          <div class="col-12 col-md-6 col-lg-4 topic-item" data-category="html" data-tags="table colspan rowspan">
+            <article class="lecture-card">
+              <span class="badge-tag">Week 1</span>
+              <h3>Tables</h3>
+              <p>table, tr, th, td, thead, tbody, colspan and rowspan.</p>
+              <a class="btn btn-accent btn-sm" href="lectures.html#week1">Read in lecture</a>
+            </article>
+          </div>
+          <div class="col-12 col-md-6 col-lg-4 topic-item" data-category="html" data-tags="ul ol li dl">
+            <article class="lecture-card">
+              <span class="badge-tag">Week 1</span>
+              <h3>Lists</h3>
+              <p>Ordered, unordered and description lists.</p>
+              <a class="btn btn-accent btn-sm" href="lectures.html#week1">Read in lecture</a>
+            </article>
+          </div>
+          <div class="col-12 col-md-6 col-lg-4 topic-item" data-category="html" data-tags="a href img alt">
+            <article class="lecture-card">
+              <span class="badge-tag">Week 1</span>
+              <h3>Links and images</h3>
+              <p>The a tag with href and the img tag with src and alt.</p>
+              <a class="btn btn-accent btn-sm" href="lectures.html#week1">Read in lecture</a>
+            </article>
+          </div>
+          <div class="col-12 col-md-6 col-lg-4 topic-item" data-category="html" data-tags="form input label">
+            <article class="lecture-card">
+              <span class="badge-tag">Week 1</span>
+              <h3>Forms</h3>
+              <p>form, input, label, select, textarea and button.</p>
+              <a class="btn btn-accent btn-sm" href="lectures.html#week1">Read in lecture</a>
+            </article>
+          </div>
+          <div class="col-12 col-md-6 col-lg-4 topic-item" data-category="css" data-tags="inline internal external link">
+            <article class="lecture-card">
+              <span class="badge-tag">Week 2</span>
+              <h3>Types of CSS</h3>
+              <p>Inline, internal and external styles, and which one to use.</p>
+              <a class="btn btn-accent btn-sm" href="lectures.html#week2">Read in lecture</a>
+            </article>
+          </div>
+          <div class="col-12 col-md-6 col-lg-4 topic-item" data-category="css" data-tags="class id hover selector">
+            <article class="lecture-card">
+              <span class="badge-tag">Week 2</span>
+              <h3>Selectors</h3>
+              <p>Tag, class, id, group, descendant and pseudo-class selectors.</p>
+              <a class="btn btn-accent btn-sm" href="lectures.html#week2">Read in lecture</a>
+            </article>
+          </div>
+          <div class="col-12 col-md-6 col-lg-4 topic-item" data-category="css" data-tags="font text color">
+            <article class="lecture-card">
+              <span class="badge-tag">Week 2</span>
+              <h3>Text and fonts</h3>
+              <p>color, font-size, font-family, text-align, line-height.</p>
+              <a class="btn btn-accent btn-sm" href="lectures.html#week2">Read in lecture</a>
+            </article>
+          </div>
+          <div class="col-12 col-md-6 col-lg-4 topic-item" data-category="css" data-tags="padding margin border">
+            <article class="lecture-card">
+              <span class="badge-tag">Week 2</span>
+              <h3>Box model</h3>
+              <p>Content, padding, border and margin of every element.</p>
+              <a class="btn btn-accent btn-sm" href="lectures.html#week2">Read in lecture</a>
+            </article>
+          </div>
+          <div class="col-12 col-md-6 col-lg-4 topic-item" data-category="css" data-tags="position absolute fixed sticky">
+            <article class="lecture-card">
+              <span class="badge-tag">Week 2</span>
+              <h3>Positioning</h3>
+              <p>static, relative, absolute, fixed and sticky, plus z-index.</p>
+              <a class="btn btn-accent btn-sm" href="lectures.html#week2">Read in lecture</a>
+            </article>
+          </div>
+          <div class="col-12 col-md-6 col-lg-4 topic-item" data-category="layout" data-tags="flex justify-content align-items">
+            <article class="lecture-card">
+              <span class="badge-tag">Week 3</span>
+              <h3>Flexbox</h3>
+              <p>A one-dimensional layout with a main axis and a cross axis.</p>
+              <a class="btn btn-accent btn-sm" href="lectures.html#week3">Read in lecture</a>
+            </article>
+          </div>
+          <div class="col-12 col-md-6 col-lg-4 topic-item" data-category="layout" data-tags="flex-direction wrap gap">
+            <article class="lecture-card">
+              <span class="badge-tag">Week 3</span>
+              <h3>Flex properties</h3>
+              <p>flex-direction, flex-wrap, gap, flex-grow and order.</p>
+              <a class="btn btn-accent btn-sm" href="lectures.html#week3">Read in lecture</a>
+            </article>
+          </div>
+          <div class="col-12 col-md-6 col-lg-4 topic-item" data-category="layout" data-tags="grid fr template columns rows">
+            <article class="lecture-card">
+              <span class="badge-tag">Week 3</span>
+              <h3>CSS Grid</h3>
+              <p>A two-dimensional layout with rows, columns and the fr unit.</p>
+              <a class="btn btn-accent btn-sm" href="lectures.html#week3">Read in lecture</a>
+            </article>
+          </div>
+          <div class="col-12 col-md-6 col-lg-4 topic-item" data-category="layout" data-tags="compare flex grid">
+            <article class="lecture-card">
+              <span class="badge-tag">Week 3</span>
+              <h3>Flexbox vs Grid</h3>
+              <p>When to choose a one-dimensional or a two-dimensional layout.</p>
+              <a class="btn btn-accent btn-sm" href="lectures.html#week3">Read in lecture</a>
+            </article>
+          </div>
+          <div class="col-12 col-md-6 col-lg-4 topic-item" data-category="bootstrap" data-tags="cdn link framework">
+            <article class="lecture-card">
+              <span class="badge-tag">Week 4</span>
+              <h3>Adding Bootstrap</h3>
+              <p>Connect Bootstrap with a CDN link in the head of the page.</p>
+              <a class="btn btn-accent btn-sm" href="lectures.html#week4">Read in lecture</a>
+            </article>
+          </div>
+          <div class="col-12 col-md-6 col-lg-4 topic-item" data-category="bootstrap" data-tags="container row col">
+            <article class="lecture-card">
+              <span class="badge-tag">Week 4</span>
+              <h3>12-column grid</h3>
+              <p>Containers, rows and columns: col-md-6, col-lg-3 and more.</p>
+              <a class="btn btn-accent btn-sm" href="lectures.html#week4">Read in lecture</a>
+            </article>
+          </div>
+          <div class="col-12 col-md-6 col-lg-4 topic-item" data-category="bootstrap" data-tags="sm md lg xl responsive">
+            <article class="lecture-card">
+              <span class="badge-tag">Week 4</span>
+              <h3>Breakpoints</h3>
+              <p>Mobile-first breakpoints: sm, md, lg, xl and xxl.</p>
+              <a class="btn btn-accent btn-sm" href="lectures.html#week4">Read in lecture</a>
+            </article>
+          </div>
+          <div class="col-12 col-md-6 col-lg-4 topic-item" data-category="bootstrap" data-tags="utility card button navbar alert">
+            <article class="lecture-card">
+              <span class="badge-tag">Week 4</span>
+              <h3>Utilities and components</h3>
+              <p>Spacing, colors, buttons, cards, navbar and alerts.</p>
+              <a class="btn btn-accent btn-sm" href="lectures.html#week4">Read in lecture</a>
+            </article>
+          </div>
+          <div class="col-12 col-md-6 col-lg-4 topic-item" data-category="bootstrap" data-tags="media query max-width min-width">
+            <article class="lecture-card">
+              <span class="badge-tag">Week 4</span>
+              <h3>Media queries</h3>
+              <p>Change styles for a given screen width with @media.</p>
+              <a class="btn btn-accent btn-sm" href="lectures.html#week4">Read in lecture</a>
+            </article>
+          </div>
+          <div class="col-12 col-md-6 col-lg-4 topic-item" data-category="bootstrap" data-tags="navbar nav collapse toggler">
+            <article class="lecture-card">
+              <span class="badge-tag">Week 5</span>
+              <h3>Navbar</h3>
+              <p>A responsive navbar that collapses with navbar-expand-lg.</p>
+              <a class="btn btn-accent btn-sm" href="lectures.html#week5">Read in lecture</a>
+            </article>
+          </div>
+          <div class="col-12 col-md-6 col-lg-4 topic-item" data-category="bootstrap" data-tags="card modal alert badge">
+            <article class="lecture-card">
+              <span class="badge-tag">Week 5</span>
+              <h3>Cards and modals</h3>
+              <p>Cards, alerts and modal windows with data-bs attributes.</p>
+              <a class="btn btn-accent btn-sm" href="lectures.html#week5">Read in lecture</a>
+            </article>
+          </div>
+          <div class="col-12 col-md-6 col-lg-4 topic-item" data-category="bootstrap" data-tags="offset order gutter nesting">
+            <article class="lecture-card">
+              <span class="badge-tag">Week 5</span>
+              <h3>Grid offsets and order</h3>
+              <p>offset-*, order-*, gutters and nested rows.</p>
+              <a class="btn btn-accent btn-sm" href="lectures.html#week5">Read in lecture</a>
+            </article>
+          </div>
+          <div class="col-12 col-md-6 col-lg-4 topic-item" data-category="js" data-tags="let const var scope">
+            <article class="lecture-card">
+              <span class="badge-tag">Week 6</span>
+              <h3>Variables: let, const, var</h3>
+              <p>Scope and reassigning: const by default, let for changing values.</p>
+              <a class="btn btn-accent btn-sm" href="lectures.html#week6">Read in lecture</a>
+            </article>
+          </div>
+          <div class="col-12 col-md-6 col-lg-4 topic-item" data-category="js" data-tags="string number boolean typeof coercion">
+            <article class="lecture-card">
+              <span class="badge-tag">Week 6</span>
+              <h3>Data types and coercion</h3>
+              <p>Primitive types, typeof, == vs === and type coercion.</p>
+              <a class="btn btn-accent btn-sm" href="lectures.html#week6">Read in lecture</a>
+            </article>
+          </div>
+          <div class="col-12 col-md-6 col-lg-4 topic-item" data-category="js" data-tags="if else for while loop function">
+            <article class="lecture-card">
+              <span class="badge-tag">Week 6</span>
+              <h3>Conditions, loops, functions</h3>
+              <p>if / else, for, while, do...while and functions.</p>
+              <a class="btn btn-accent btn-sm" href="lectures.html#week6">Read in lecture</a>
+            </article>
+          </div>
+          <div class="col-12 col-md-6 col-lg-4 topic-item" data-category="js" data-tags="array push pop map filter foreach">
+            <article class="lecture-card">
+              <span class="badge-tag">Week 7</span>
+              <h3>Arrays</h3>
+              <p>Array indexes and methods: push, pop, forEach, map, filter.</p>
+              <a class="btn btn-accent btn-sm" href="lectures.html#week7">Read in lecture</a>
+            </article>
+          </div>
+          <div class="col-12 col-md-6 col-lg-4 topic-item" data-category="js" data-tags="dom queryselector getelementbyid textcontent innerhtml classlist">
+            <article class="lecture-card">
+              <span class="badge-tag">Week 7</span>
+              <h3>The DOM</h3>
+              <p>Selecting elements and changing text, styles, classes and attributes.</p>
+              <a class="btn btn-accent btn-sm" href="lectures.html#week7">Read in lecture</a>
+            </article>
+          </div>
+          <div class="col-12 col-md-6 col-lg-4 topic-item" data-category="js" data-tags="event addeventlistener click keydown callback">
+            <article class="lecture-card">
+              <span class="badge-tag">Week 8</span>
+              <h3>Events and callbacks</h3>
+              <p>addEventListener, keyboard events and callbacks.</p>
+              <a class="btn btn-accent btn-sm" href="lectures.html#week8">Read in lecture</a>
+            </article>
+          </div>
+          <div class="col-12 col-md-6 col-lg-4 topic-item" data-category="js" data-tags="object property method regex validation preventdefault">
+            <article class="lecture-card">
+              <span class="badge-tag">Week 8</span>
+              <h3>Objects and validation</h3>
+              <p>Objects, RegEx and client-side form validation.</p>
+              <a class="btn btn-accent btn-sm" href="lectures.html#week8">Read in lecture</a>
+            </article>
+          </div>
+          <div class="col-12 col-md-6 col-lg-4 topic-item" data-category="jquery" data-tags="jquery selector ready dollar">
+            <article class="lecture-card">
+              <span class="badge-tag">Week 9</span>
+              <h3>jQuery syntax and selectors</h3>
+              <p>$(selector).action(), document ready and selectors.</p>
+              <a class="btn btn-accent btn-sm" href="lectures.html#week9">Read in lecture</a>
+            </article>
+          </div>
+          <div class="col-12 col-md-6 col-lg-4 topic-item" data-category="jquery" data-tags="click fade slide animate hide show toggle">
+            <article class="lecture-card">
+              <span class="badge-tag">Week 9</span>
+              <h3>jQuery events and effects</h3>
+              <p>click, hover, input events and fade, slide, animate effects.</p>
+              <a class="btn btn-accent btn-sm" href="lectures.html#week9">Read in lecture</a>
+            </article>
+          </div>
+          <div class="col-12 col-md-6 col-lg-4 topic-item" data-category="jquery" data-tags="children parent next find siblings closest append remove">
+            <article class="lecture-card">
+              <span class="badge-tag">Week 9</span>
+              <h3>Traversing the DOM</h3>
+              <p>children, parent, next, find, siblings and closest.</p>
+              <a class="btn btn-accent btn-sm" href="lectures.html#week9">Read in lecture</a>
+            </article>
+          </div>
+        </div>
+        <p id="noResults" class="no-results" style="display:none">Nothing found. Try another word or choose a different category.</p>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">
+      <div class="row text-center text-md-start">
+        <div class="col-md-4 mb-3">
+          <img class="footer-logo" src="img/aitu-logo.png" alt="Astana IT University logo" loading="lazy">
+          <h2 class="h6 mt-2">Astana IT University</h2>
+          <p>Web Technologies-1. Read lectures, take the quizzes, code it live.</p>
+        </div>
+        <div class="col-md-4 mb-3">
+          <h2 class="h6">Contact</h2>
+          <p>info@weblearn.example<br>Astana IT University, Astana</p>
+        </div>
+        <div class="col-md-4 mb-3">
+          <h2 class="h6">Follow</h2>
+          <p><a href="https://github.com/" target="_blank" rel="noopener">GitHub</a> | <a href="https://t.me/" target="_blank" rel="noopener">Telegram</a> | <a href="https://instagram.com/" target="_blank" rel="noopener">Instagram</a></p>
+        </div>
+      </div>
+      <p class="text-center copyright mb-0">&copy; 2026 WebLearn. Web Technologies midterm and endterm project.</p>
+    </div>
+  </footer>
+  <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+  <script src="js/script.js"></script>
+</body>
+</html>
