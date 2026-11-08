@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Live Coding Week 6 | WebLearn, Astana IT University</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Sora:wght@400;600;700&display=swap" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link href="css/style.css" rel="stylesheet">
+</head>
+<body>
+  <header class="site-header">
+    <a class="logo" href="index.html"><img class="logo-img" src="img/aitu-logo.png" alt="Astana IT University logo"><span>WebLearn</span></a>
+    <input type="checkbox" id="nav-toggle" class="nav-toggle" aria-label="Open menu">
+    <label for="nav-toggle" class="hamburger"><span></span><span></span><span></span></label>
+    <nav>
+      <ul class="nav-list">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="lectures.html">Lectures</a></li>
+        <li><a href="quiz.html">Quiz</a></li>
+        <li><a href="live-coding.html" class="active">Live Coding</a></li>
+        <li><a href="final-test.html">Final Test</a></li>
+        <li><a href="topics.html">Topics</a></li>
+        <li><a href="students.html">Students</a></li>
+        <li><a href="gallery.html">Gallery</a></li>
+        <li><a href="register.html">Register</a></li>
+        <li><a href="developers.html">Developers</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main>
+    <section class="page-title">
+      <div class="container">
+        <h1>Live Coding - Week 6: JavaScript Basics</h1>
+        <p>Three coding tasks. Write your code in your editor or in the box below, then press <b>Show Solution</b> to compare.</p>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="container narrow">
+        <div class="task">
+          <input type="checkbox" id="sol-week6-1" class="check-toggle">
+          <h2>Task 1: Variables and output</h2>
+          <p>Practice let, const, data types and console output.</p>
+          <ul class="task-reqs">
+            <li>Create const university = "AITU" and let students = 100</li>
+            <li>Increase students by 5 with +=</li>
+            <li>Print one line with a template literal and print typeof students</li>
+          </ul>
+          <p class="pg-label">Expected result</p>
+          <div class="ex-preview">
+            <p class="mb-0">AITU has 105 students</p>
+            <p class="mb-0">number</p>
+          </div>
+          <label for="week6-code1" class="pg-label mt-3">Your code</label>
+          <textarea id="week6-code1" class="code-box" rows="6" placeholder="Write your solution here"></textarea>
+          <div class="quiz-actions">
+            <label for="sol-week6-1" class="btn btn-accent check-btn">
+              <span class="show-text">Show Solution</span>
+              <span class="hide-text">Hide Solution</span>
+            </label>
+          </div>
+          <div class="solution">
+            <p class="pg-label">Solution</p>
+            <pre class="code-card"><code>const university = "AITU";
+let students = 100;
+students += 5;
+console.log(`${university} has ${students} students`);
+console.log(typeof students); // "number"</code></pre>
+          </div>
+        </div>
+
+        <div class="task">
+          <input type="checkbox" id="sol-week6-2" class="check-toggle">
+          <h2>Task 2: Conditions</h2>
+          <p>Write a function that returns a grade by score.</p>
+          <ul class="task-reqs">
+            <li>Create function getGrade(score)</li>
+            <li>Return "A" for 90 and more, "B" for 70 and more, "C" for 50 and more, otherwise "F"</li>
+            <li>Call it with 95, 72 and 30 and print the results</li>
+          </ul>
+          <p class="pg-label">Expected result</p>
+          <div class="ex-preview">
+            <p class="mb-0">A</p>
+            <p class="mb-0">B</p>
+            <p class="mb-0">F</p>
+          </div>
+          <label for="week6-code2" class="pg-label mt-3">Your code</label>
+          <textarea id="week6-code2" class="code-box" rows="6" placeholder="Write your solution here"></textarea>
+          <div class="quiz-actions">
+            <label for="sol-week6-2" class="btn btn-accent check-btn">
+              <span class="show-text">Show Solution</span>
+              <span class="hide-text">Hide Solution</span>
+            </label>
+          </div>
+          <div class="solution">
+            <p class="pg-label">Solution</p>
+            <pre class="code-card"><code>function getGrade(score) {
+  if (score >= 90) return "A";
+  else if (score >= 70) return "B";
+  else if (score >= 50) return "C";
+  return "F";
+}
+console.log(getGrade(95)); // A
+console.log(getGrade(72)); // B
+console.log(getGrade(30)); // F</code></pre>
+          </div>
+        </div>
+
+        <div class="task">
+          <input type="checkbox" id="sol-week6-3" class="check-toggle">
+          <h2>Task 3: Loops</h2>
+          <p>Use loops to print a table and calculate a sum.</p>
+          <ul class="task-reqs">
+            <li>With a for loop print the multiplication table of 5 from 1 to 5, for example 5 x 1 = 5</li>
+            <li>With a while loop calculate the sum of numbers from 1 to 10</li>
+            <li>Print the sum (it must be 55)</li>
+          </ul>
+          <p class="pg-label">Expected result</p>
+          <div class="ex-preview">
+            <p>5 x 1 = 5</p>
+            <p>5 x 2 = 10</p>
+            <p>5 x 3 = 15</p>
+            <p>5 x 4 = 20</p>
+            <p>5 x 5 = 25</p>
+            <p>Sum: 55</p>
+          </div>
+          <label for="week6-code3" class="pg-label mt-3">Your code</label>
+          <textarea id="week6-code3" class="code-box" rows="6" placeholder="Write your solution here"></textarea>
+          <div class="quiz-actions">
+            <label for="sol-week6-3" class="btn btn-accent check-btn">
+              <span class="show-text">Show Solution</span>
+              <span class="hide-text">Hide Solution</span>
+            </label>
+          </div>
+          <div class="solution">
+            <p class="pg-label">Solution</p>
+            <pre class="code-card"><code>for (let i = 1; i &lt;= 5; i++) {
+  console.log(`5 x ${i} = ${5 * i}`);
+}
+let n = 1;
+let sum = 0;
+while (n &lt;= 10) {
+  sum += n;
+  n++;
+}
+console.log("Sum: " + sum); // Sum: 55</code></pre>
+          </div>
+        </div>
+
+        <ul class="lec-nav quiz-links">
+          <li><a href="lectures.html#week6">Back to the lecture</a></li>
+          <li><a href="quiz-week6.html">Quiz for this lecture</a></li>
+          <li><a href="contact.html">Questions? Contact us</a></li>
+        </ul>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">
+      <div class="row text-center text-md-start">
+        <div class="col-md-4 mb-3">
+          <img class="footer-logo" src="img/aitu-logo.png" alt="Astana IT University logo">
+          <h2 class="h6 mt-2">Astana IT University</h2>
+          <p>Web Technologies-1. Read lectures, take the quizzes, code it live.</p>
+        </div>
+        <div class="col-md-4 mb-3">
+          <h2 class="h6">Contact</h2>
+          <p>info@weblearn.com<br>Astana IT University, Astana</p>
+        </div>
+        <div class="col-md-4 mb-3">
+          <h2 class="h6">Follow</h2>
+          <p><a href="https://github.com/" target="_blank" rel="noopener noreferrer">GitHub</a>
+            <a href="https://t.me/" target="_blank" rel="noopener noreferrer">Telegram</a>
+            <a href="https://instagram.com/" target="_blank" rel="noopener noreferrer">Instagram</a></p>
+        </div>
+      </div>
+      <p class="text-center copyright mb-0">2026 WebLearn. Web Technologies midterm and endterm project.</p>
+    </div>
+  </footer>
+  <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+  <script src="js/script.js"></script>
+</body>
+</html>
