@@ -137,10 +137,9 @@ AI usage: AI tools (Claude by Anthropic) were used as a supporting tool during d
 ### Khanzada Nyshanbek
 1. Quizzes for all ten lectures: quiz.html as the hub, and quiz-week1.html to quiz-week10.html
 2. index.html
-3. css/style.css
-4. final-test.html with the jQuery score counter and 30 questions
-5. students.html with the dynamic table, CRUD operations and modals
-6. Final project: books.html with the Open Library API, with fetch, search, sorting and error handling
+3. final-test.html with the jQuery score counter and 30 questions
+4. students.html with the dynamic table, CRUD operations and modals
+5. Final project: books.html with the Open Library API, with fetch, search, sorting and error handling
 
 ### Aidana Muratova
 1. Lectures 1 to 10: lectures.html with the lecture text and the lecture schedule table
@@ -158,3 +157,4 @@ AI usage: AI tools (Claude by Anthropic) were used as a supporting tool during d
 ### Shared work
 1. js/script.js was written by all group members together: form validation, search and filter, CRUD table, gallery and lightbox, final test score, and the final project code for theme, sign-in, FAQ and the API.
 2. The new navigation links FAQ and Books on all pages, the fixes and this README.
+3.  css/style.css
