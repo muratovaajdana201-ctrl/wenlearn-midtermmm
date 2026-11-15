@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -24,8 +25,9 @@
         <li><a href="topics.html" class="active">Topics</a></li>
         <li><a href="students.html">Students</a></li>
         <li><a href="gallery.html">Gallery</a></li>
-        <li><a href="register.html">Register</a></li>
         <li><a href="developers.html">Developers</a></li>
+        <li><a href="faq.html">FAQ</a></li>
+        <li><a href="books.html">Books</a></li>
         <li><a href="contact.html">Contact</a></li>
       </ul>
     </nav>
@@ -49,6 +51,7 @@
             <button type="button" class="btn filter-btn" data-filter="bootstrap" aria-pressed="false">Bootstrap</button>
             <button type="button" class="btn filter-btn" data-filter="js" aria-pressed="false">JavaScript</button>
             <button type="button" class="btn filter-btn" data-filter="jquery" aria-pressed="false">jQuery</button>
+            <button type="button" class="btn filter-btn" data-filter="async" aria-pressed="false">Asynchronous JS</button>
           </div>
           <p id="resultCount" class="small text-muted mb-0" aria-live="polite"></p>
         </div>
@@ -213,27 +216,27 @@
               <a class="btn btn-accent btn-sm" href="lectures.html#week4">Read in lecture</a>
             </div>
           </div>
-          <div class="col-12 col-md-6 col-lg-4 topic-item" data-category="bootstrap" data-tags="navbar nav collapse toggler">
+          <div class="col-12 col-md-6 col-lg-4 topic-item" data-category="bootstrap" data-tags="form html5 required minlength maxlength pattern">
             <div class="lecture-card">
               <span class="badge-tag">Week 5</span>
-              <h3>Navbar</h3>
-              <p>A responsive navbar that collapses with navbar-expand-lg.</p>
+              <h3>HTML Forms</h3>
+              <p>Form elements, input types, labels, required fields and HTML5 validation.</p>
               <a class="btn btn-accent btn-sm" href="lectures.html#week5">Read in lecture</a>
             </div>
           </div>
-          <div class="col-12 col-md-6 col-lg-4 topic-item" data-category="bootstrap" data-tags="card modal alert badge">
+          <div class="col-12 col-md-6 col-lg-4 topic-item" data-category="bootstrap" data-tags="form bootstrap form-control form-label is-valid is-invalid">
             <div class="lecture-card">
               <span class="badge-tag">Week 5</span>
-              <h3>Cards and modals</h3>
-              <p>Cards, alerts and modal windows with data-bs attributes.</p>
+              <h3>Bootstrap Forms</h3>
+              <p>form-control, form-label, form-select, validation feedback and form states.</p>
               <a class="btn btn-accent btn-sm" href="lectures.html#week5">Read in lecture</a>
             </div>
           </div>
-          <div class="col-12 col-md-6 col-lg-4 topic-item" data-category="bootstrap" data-tags="offset order gutter nesting">
+          <div class="col-12 col-md-6 col-lg-4 topic-item" data-category="bootstrap" data-tags="form validation pattern regex javascript preventdefault">
             <div class="lecture-card">
               <span class="badge-tag">Week 5</span>
-              <h3>Grid offsets and order</h3>
-              <p>offset-*, order-*, gutters and nested rows.</p>
+              <h3>Form Validation</h3>
+              <p>HTML5 constraints, custom validation and error messages.</p>
               <a class="btn btn-accent btn-sm" href="lectures.html#week5">Read in lecture</a>
             </div>
           </div>
@@ -261,60 +264,84 @@
               <a class="btn btn-accent btn-sm" href="lectures.html#week6">Read in lecture</a>
             </div>
           </div>
-          <div class="col-12 col-md-6 col-lg-4 topic-item" data-category="js" data-tags="array push pop map filter foreach">
+          <div class="col-12 col-md-6 col-lg-4 topic-item" data-category="js" data-tags="dom document tree nodes parent child element">
             <div class="lecture-card">
               <span class="badge-tag">Week 7</span>
-              <h3>Arrays</h3>
-              <p>Array indexes and methods: push, pop, forEach, map, filter.</p>
+              <h3>DOM Structure</h3>
+              <p>Document Object Model, DOM tree, nodes and element relationships.</p>
               <a class="btn btn-accent btn-sm" href="lectures.html#week7">Read in lecture</a>
             </div>
           </div>
           <div class="col-12 col-md-6 col-lg-4 topic-item" data-category="js" data-tags="dom queryselector getelementbyid textcontent innerhtml classlist">
             <div class="lecture-card">
               <span class="badge-tag">Week 7</span>
-              <h3>The DOM</h3>
-              <p>Selecting elements and changing text, styles, classes and attributes.</p>
+              <h3>DOM Manipulation</h3>
+              <p>Select, modify, create and remove elements, attributes and CSS classes.</p>
               <a class="btn btn-accent btn-sm" href="lectures.html#week7">Read in lecture</a>
             </div>
           </div>
-          <div class="col-12 col-md-6 col-lg-4 topic-item" data-category="js" data-tags="event addeventlistener click keydown callback">
+          <div class="col-12 col-md-6 col-lg-4 topic-item" data-category="jquery" data-tags="jquery selector ready dollar event click on">
             <div class="lecture-card">
               <span class="badge-tag">Week 8</span>
-              <h3>Events and callbacks</h3>
-              <p>addEventListener, keyboard events and callbacks.</p>
+              <h3>jQuery Syntax and Events</h3>
+              <p>$(selector).action(), document ready, selectors and event methods.</p>
               <a class="btn btn-accent btn-sm" href="lectures.html#week8">Read in lecture</a>
             </div>
           </div>
-          <div class="col-12 col-md-6 col-lg-4 topic-item" data-category="js" data-tags="object property method regex validation preventdefault">
+          <div class="col-12 col-md-6 col-lg-4 topic-item" data-category="jquery" data-tags="jquery fade slide animate css effects hide show toggle">
             <div class="lecture-card">
               <span class="badge-tag">Week 8</span>
-              <h3>Objects and validation</h3>
-              <p>Objects, RegEx and client-side form validation.</p>
+              <h3>jQuery Effects and CSS</h3>
+              <p>hide, show, fade, slide, animate and CSS class manipulation.</p>
               <a class="btn btn-accent btn-sm" href="lectures.html#week8">Read in lecture</a>
             </div>
           </div>
-          <div class="col-12 col-md-6 col-lg-4 topic-item" data-category="jquery" data-tags="jquery selector ready dollar">
+          <div class="col-12 col-md-6 col-lg-4 topic-item" data-category="jquery" data-tags="jquery traversing children parent next find siblings closest append remove">
+            <div class="lecture-card">
+              <span class="badge-tag">Week 8</span>
+              <h3>jQuery DOM Traversing</h3>
+              <p>children, parent, next, find, siblings, closest, append and remove.</p>
+              <a class="btn btn-accent btn-sm" href="lectures.html#week8">Read in lecture</a>
+            </div>
+          </div>
+          <div class="col-12 col-md-6 col-lg-4 topic-item" data-category="js" data-tags="javascript events addeventlistener click keyboard keydown">
             <div class="lecture-card">
               <span class="badge-tag">Week 9</span>
-              <h3>jQuery syntax and selectors</h3>
-              <p>$(selector).action(), document ready and selectors.</p>
+              <h3>JavaScript Events</h3>
+              <p>Event listeners, mouse and keyboard events, event objects and callbacks.</p>
               <a class="btn btn-accent btn-sm" href="lectures.html#week9">Read in lecture</a>
             </div>
           </div>
-          <div class="col-12 col-md-6 col-lg-4 topic-item" data-category="jquery" data-tags="click fade slide animate hide show toggle">
+          <div class="col-12 col-md-6 col-lg-4 topic-item" data-category="js" data-tags="javascript objects properties methods this keys">
             <div class="lecture-card">
               <span class="badge-tag">Week 9</span>
-              <h3>jQuery events and effects</h3>
-              <p>click, hover, input events and fade, slide, animate effects.</p>
+              <h3>JavaScript Objects</h3>
+              <p>Object properties, methods, dot and bracket notation, and this.</p>
               <a class="btn btn-accent btn-sm" href="lectures.html#week9">Read in lecture</a>
             </div>
           </div>
-          <div class="col-12 col-md-6 col-lg-4 topic-item" data-category="jquery" data-tags="children parent next find siblings closest append remove">
+          <div class="col-12 col-md-6 col-lg-4 topic-item" data-category="js" data-tags="javascript callback timeout animation regex events">
             <div class="lecture-card">
               <span class="badge-tag">Week 9</span>
-              <h3>Traversing the DOM</h3>
-              <p>children, parent, next, find, siblings and closest.</p>
+              <h3>Callbacks and Animation</h3>
+              <p>Callbacks, setTimeout, requestAnimationFrame and event-driven behavior.</p>
               <a class="btn btn-accent btn-sm" href="lectures.html#week9">Read in lecture</a>
+            </div>
+          </div>
+          <div class="col-12 col-md-6 col-lg-4 topic-item" data-category="js async" data-tags="asynchronous event loop call stack microtasks tasks callbacks promises">
+            <div class="lecture-card">
+              <span class="badge-tag">Week 10</span>
+              <h3>Asynchronous JavaScript</h3>
+              <p>Synchronous vs asynchronous execution, Event Loop, tasks and microtasks.</p>
+              <a class="btn btn-accent btn-sm" href="lectures.html#week10">Read in lecture</a>
+            </div>
+          </div>
+          <div class="col-12 col-md-6 col-lg-4 topic-item" data-category="js async" data-tags="promise async await fetch api json catch">
+            <div class="lecture-card">
+              <span class="badge-tag">Week 10</span>
+              <h3>Promises, Async/Await and Fetch</h3>
+              <p>Promises, async/await, Fetch API, JSON and error handling.</p>
+              <a class="btn btn-accent btn-sm" href="lectures.html#week10">Read in lecture</a>
             </div>
           </div>
         </div>
@@ -342,7 +369,7 @@
             <a href="https://instagram.com/" target="_blank">Instagram</a></p>
         </div>
       </div>
-      <p class="text-center copyright mb-0">2026 WebLearn. Web Technologies midterm and endterm project.</p>
+      <p class="text-center copyright mb-0">2026 WebLearn. Web Technologies midterm, endterm and final project. AI usage: AI tools (Claude by Anthropic) were used as a supporting tool during development and are credited here.</p>
     </div>
   </footer>
   <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
