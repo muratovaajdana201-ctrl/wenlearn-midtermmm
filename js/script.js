@@ -159,7 +159,8 @@ $(document).ready(function () {
                 var $item = $(this);
                 var text = ($item.find('h3').text() + ' ' + $item.find('p').text() + ' ' + $item.data('tags')).toLowerCase();
                 var matchSearch = text.indexOf(query) !== -1;
-                var matchCategory = activeCategory === 'all' || $item.data('category') === activeCategory;
+                var categories = String($item.attr('data-category') || '').split(/\s+/);
+var matchCategory = activeCategory === 'all' || categories.indexOf(activeCategory) !== -1;
                 if (matchSearch && matchCategory) {
                     visible++;
                     if (!$item.is(':visible')) $item.stop(true, true).fadeIn(200);
