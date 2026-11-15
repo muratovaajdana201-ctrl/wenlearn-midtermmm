@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -22,11 +23,13 @@
         <li><a href="lectures.html" class="active">Lectures</a></li>
         <li><a href="quiz.html">Quiz</a></li>
         <li><a href="live-coding.html">Live Coding</a></li>
+        <li><a href="final-test.html">Final Test</a></li>
         <li><a href="topics.html">Topics</a></li>
         <li><a href="students.html">Students</a></li>
         <li><a href="gallery.html">Gallery</a></li>
-        <li><a href="register.html">Register</a></li>
         <li><a href="developers.html">Developers</a></li>
+        <li><a href="faq.html">FAQ</a></li>
+        <li><a href="books.html">Books</a></li>
         <li><a href="contact.html">Contact</a></li>
       </ul>
     </nav>
@@ -45,6 +48,7 @@
           <div class="col-lg-8">
             <article class="reading" id="week1">
               <h2>Week 1: HTML Basics</h2>
+              <p><strong>Video Lecture — Gulzhan Yegemberdiyeva:</strong> <a href="https://www.youtube.com/playlist?list=PLPT6CF0r4E3rOUj9uAS-SPOsJKJ1O1uxn" target="_blank" rel="noopener noreferrer">Watch Lecture 1 on YouTube</a></p>
               <p>A website has a <b>frontend</b> (everything the user sees) and a <b>backend</b> (the server side: how
                 the site works and stores data). The frontend is built with three languages:</p>
               <ul>
@@ -134,6 +138,7 @@
             </article>
             <article class="reading" id="week2">
               <h2>Week 2: CSS Basics</h2>
+              <p><strong>Video Lecture — Gulzhan Yegemberdiyeva:</strong> <a href="https://www.youtube.com/playlist?list=PLPT6CF0r4E3rleEg0XEAhKBmPxppLExfe" target="_blank" rel="noopener noreferrer">Watch Lecture 2 on YouTube</a></p>
               <p>CSS (Cascading Style Sheets) makes web pages presentable and keeps styling separate from the HTML.</p>
               <h3>Three types of CSS</h3>
               <ul>
@@ -240,6 +245,7 @@
             </article>
             <article class="reading" id="week3">
               <h2>Week 3: Flexbox and Grid</h2>
+              <p><strong>Video Lecture — Gulzhan Yegemberdiyeva:</strong> <a href="https://www.youtube.com/playlist?list=PLPT6CF0r4E3rkvy1rLUKdDHf_HmWZeURW" target="_blank" rel="noopener noreferrer">Watch Lecture 3 on YouTube</a></p>
               <h3>Flexbox (one-dimensional)</h3>
               <p>Flexbox arranges items in a row or a column. Items can grow to fill space or shrink to fit. It can
                 center content vertically and make columns equal in height.</p>
@@ -377,6 +383,7 @@
             </article>
             <article class="reading" id="week4">
               <h2>Week 4: Bootstrap and Media Queries</h2>
+              <p><strong>Video Lecture — Gulzhan Yegemberdiyeva:</strong> <a href="https://www.youtube.com/playlist?list=PLPT6CF0r4E3qKXpTLbqJC7HgIpiznyL3Z" target="_blank" rel="noopener noreferrer">Watch Lecture 4 on YouTube</a></p>
               <p>Bootstrap is an open-source front-end framework from Twitter. You add ready-made classes to HTML
                 elements instead of writing long CSS from scratch.</p>
               <h3>Adding Bootstrap</h3>
@@ -488,153 +495,60 @@
               </div>
             </article>
             <article class="reading" id="week5">
-              <h2>Week 5: Bootstrap Grid and Components</h2>
-              <p>In Week 4 we met the 12-column grid. This week we use the grid for real page layouts and add Bootstrap
-                <b>components</b>: ready-made blocks such as the navbar, cards, alerts, forms and modals.</p>
-              <h3>Grid: offsets, ordering, nesting, gutters</h3>
-              <div class="table-responsive">
-                <table class="table">
-                  <thead>
-                    <tr>
-                      <th>Feature</th>
-                      <th>Class</th>
-                      <th>What it does</th>
-                    </tr>
-                  </thead>
-                  <tbody>
-                    <tr>
-                      <td>Offset</td>
-                      <td><code>offset-md-3</code></td>
-                      <td>Pushes a column to the right by 3 columns</td>
-                    </tr>
-                    <tr>
-                      <td>Auto layout</td>
-                      <td><code>col</code></td>
-                      <td>Equal-width columns that share the free space</td>
-                    </tr>
-                    <tr>
-                      <td>Order</td>
-                      <td><code>order-1 / order-md-2</code></td>
-                      <td>Changes the visual order of columns</td>
-                    </tr>
-                    <tr>
-                      <td>Gutters</td>
-                      <td><code>g-3, gx-4, gy-2</code></td>
-                      <td>Space between columns (all, horizontal, vertical)</td>
-                    </tr>
-                    <tr>
-                      <td>Alignment</td>
-                      <td><code>align-items-center, justify-content-between</code></td>
-                      <td>Aligns columns inside a row (Flexbox under the hood)</td>
-                    </tr>
-                    <tr>
-                      <td>Nesting</td>
-                      <td><code>row inside col</code></td>
-                      <td>A column can contain its own row with 12 new columns</td>
-                    </tr>
-                  </tbody>
-                </table>
-              </div>
-              <p>If the columns in one row add up to more than 12, the extra column wraps to the next line.</p>
-              <pre class="code-card"><code>&lt;div class="container"&gt;
-  &lt;div class="row g-3 justify-content-center"&gt;
-    &lt;div class="col-12 col-md-6 offset-md-3"&gt;Centered 6 of 12&lt;/div&gt;
-  &lt;/div&gt;
-&lt;/div&gt;</code></pre>
-              <h3>Display utilities</h3>
-              <p>Show or hide elements at a breakpoint: <code>d-none d-lg-block</code> hides an element below 992px and
-                shows it from lg up. <code>d-flex</code> turns an element into a Flexbox container. Other helpful
-                utilities: <code>w-100</code>, <code>bg-light</code>, <code>border rounded</code>, <code>shadow</code>,
-                <code>fw-bold</code>.</p>
-              <h3>Navbar</h3>
-              <p>A responsive navbar collapses into a hamburger button on small screens. <code>navbar-expand-lg</code>
-                means: expanded from 992px, collapsed below.</p>
-              <pre class="code-card"><code>&lt;nav class="navbar navbar-expand-lg bg-light"&gt;
-  &lt;div class="container"&gt;
-    &lt;a class="navbar-brand" href="#"&gt;WebLearn&lt;/a&gt;
-    &lt;button class="navbar-toggler" data-bs-toggle="collapse"
-            data-bs-target="#menu"&gt;
-      &lt;span class="navbar-toggler-icon"&gt;&lt;/span&gt;
-    &lt;/button&gt;
-    &lt;div class="collapse navbar-collapse" id="menu"&gt;
-      &lt;ul class="navbar-nav ms-auto"&gt;
-        &lt;li class="nav-item"&gt;&lt;a class="nav-link" href="#"&gt;Home&lt;/a&gt;&lt;/li&gt;
-        &lt;li class="nav-item"&gt;&lt;a class="nav-link" href="#"&gt;Lectures&lt;/a&gt;&lt;/li&gt;
-      &lt;/ul&gt;
-    &lt;/div&gt;
-  &lt;/div&gt;
-&lt;/nav&gt;</code></pre>
-              <h3>Cards, buttons, badges, alerts</h3>
-              <div class="table-responsive">
-                <table class="table">
-                  <thead>
-                    <tr>
-                      <th>Component</th>
-                      <th>Main classes</th>
-                    </tr>
-                  </thead>
-                  <tbody>
-                    <tr>
-                      <td>Card</td>
-                      <td><code>card, card-img-top, card-body, card-title, card-text</code></td>
-                    </tr>
-                    <tr>
-                      <td>Button</td>
-                      <td><code>btn btn-primary, btn-outline-secondary, btn-lg, btn-sm</code></td>
-                    </tr>
-                    <tr>
-                      <td>Badge</td>
-                      <td><code>badge text-bg-success</code></td>
-                    </tr>
-                    <tr>
-                      <td>Alert</td>
-                      <td><code>alert alert-success / alert-danger / alert-warning</code></td>
-                    </tr>
-                    <tr>
-                      <td>List group</td>
-                      <td><code>list-group, list-group-item</code></td>
-                    </tr>
-                  </tbody>
-                </table>
-              </div>
-              <pre class="code-card"><code>&lt;div class="card" style="width: 18rem;"&gt;
-  &lt;div class="card-body"&gt;
-    &lt;h5 class="card-title"&gt;Week 5&lt;/h5&gt;
-    &lt;p class="card-text"&gt;Bootstrap components.&lt;/p&gt;
-    &lt;a href="#" class="btn btn-primary"&gt;Read&lt;/a&gt;
-  &lt;/div&gt;
-&lt;/div&gt;</code></pre>
-              <h3>Forms</h3>
-              <p>Use <code>form-label</code>, <code>form-control</code>, <code>form-select</code> and
-                <code>form-check</code>. Validation states: <code>is-valid</code> and <code>is-invalid</code> with
-                <code>invalid-feedback</code> for the message.</p>
+              <h2>Week 5: Forms and Validation</h2>
+              <p><strong>Video Lecture — Gulzhan Yegemberdiyeva:</strong> <a href="https://www.youtube.com/playlist?list=PLPT6CF0r4E3rWTjktAL1XNTuFCFVQSmwk" target="_blank" rel="noopener noreferrer">Watch Lecture 5 on YouTube</a></p>
+              <p>Forms collect user information. HTML5 provides built-in validation, while Bootstrap helps style form controls and display validation feedback.</p>
+              <h3>HTML Form Structure</h3>
+              <p>The <code>&lt;form&gt;</code> element groups controls. The <code>action</code> attribute defines the submission URL, and <code>method</code> selects GET or POST. The <code>name</code> attribute identifies values submitted to the server.</p>
+              <pre class="code-card"><code>&lt;form action="/register" method="post"&gt;
+  &lt;label for="email"&gt;Email&lt;/label&gt;
+  &lt;input type="email" id="email" name="email" required&gt;
+  &lt;button type="submit"&gt;Register&lt;/button&gt;
+&lt;/form&gt;</code></pre>
+              <h3>Form Controls</h3>
+              <p>Common input types include <code>text</code>, <code>email</code>, <code>password</code>, <code>number</code>, <code>date</code>, <code>radio</code> and <code>checkbox</code>. Other controls include <code>textarea</code>, <code>select</code> and <code>button</code>. Labels should be associated with controls using matching <code>for</code> and <code>id</code> attributes.</p>
+              <h3>HTML5 Built-in Validation</h3>
+              <div class="table-responsive"><table class="table"><thead><tr><th>Attribute</th><th>Purpose</th></tr></thead><tbody>
+                <tr><td><code>required</code></td><td>Field cannot be left empty</td></tr>
+                <tr><td><code>minlength / maxlength</code></td><td>Minimum and maximum text length</td></tr>
+                <tr><td><code>min / max</code></td><td>Numeric or date limits</td></tr>
+                <tr><td><code>pattern</code></td><td>Regular expression for a text value</td></tr>
+                <tr><td><code>type="email"</code></td><td>Checks basic email syntax</td></tr>
+              </tbody></table></div>
+              <pre class="code-card"><code>&lt;input type="text" name="username" minlength="3" maxlength="20" required&gt;
+&lt;input type="password" name="password" minlength="8" required&gt;
+&lt;input type="number" name="age" min="16" max="100"&gt;</code></pre>
+              <h3>Bootstrap Form Components</h3>
+              <p>Use <code>form-label</code> for labels, <code>form-control</code> for inputs, <code>form-select</code> for dropdowns, <code>form-check</code> for checkboxes and radio buttons, and spacing utilities such as <code>mb-3</code>.</p>
               <pre class="code-card"><code>&lt;div class="mb-3"&gt;
-  &lt;label for="email" class="form-label"&gt;Email&lt;/label&gt;
-  &lt;input type="email" class="form-control" id="email"&gt;
+  &lt;label for="userEmail" class="form-label"&gt;Email&lt;/label&gt;
+  &lt;input type="email" class="form-control" id="userEmail" required&gt;
 &lt;/div&gt;</code></pre>
-              <h3>Modal and JavaScript components</h3>
-              <p>Modal, collapse, carousel and dropdown need Bootstrap's JavaScript. Add the bundle (it includes Popper)
-                before the end of <code>&lt;body&gt;</code>: <code>bootstrap.bundle.min.js</code>. Then connect elements
-                with data attributes: <code>data-bs-toggle</code> (what to do) and <code>data-bs-target</code> (which
-                element).</p>
-              <pre class="code-card"><code>&lt;button class="btn btn-primary" data-bs-toggle="modal"
-        data-bs-target="#info"&gt;Open&lt;/button&gt;
-
-&lt;div class="modal fade" id="info" tabindex="-1&"&gt;
-  &lt;div class="modal-dialog"&gt;
-    &lt;div class="modal-content"&gt;
-      &lt;div class="modal-header"&gt;&lt;h5 class="modal-title"&gt;Hello&lt;/h5&gt;&lt;/div&gt;
-      &lt;div class="modal-body"&gt;Modal text&lt;/div&gt;
-    &lt;/div&gt;
-  &lt;/div&gt;
+              <h3>Bootstrap Validation Feedback</h3>
+              <p><code>is-valid</code> and <code>is-invalid</code> show validation states. <code>valid-feedback</code> and <code>invalid-feedback</code> provide messages. The <code>was-validated</code> class can show browser validation states after a form submission attempt.</p>
+              <pre class="code-card"><code>&lt;div class="mb-3"&gt;
+  &lt;input type="email" class="form-control is-invalid" required&gt;
+  &lt;div class="invalid-feedback"&gt;Please enter a valid email.&lt;/div&gt;
 &lt;/div&gt;</code></pre>
-              <div class="lecture-end"><a class="btn btn-accent" href="quiz-week5.html">Take the quiz</a><a
-                  class="btn btn-outline-primary" href="live-coding-week5.html">Live coding</a>
-                <p>Check what you learned in Week 5.</p>
-              </div>
+              <h3>JavaScript Validation</h3>
+              <p>Use <code>checkValidity()</code> to check HTML constraints and <code>event.preventDefault()</code> to stop invalid form submission. Client-side validation improves usability, but server-side validation is still required.</p>
+              <pre class="code-card"><code>const form = document.querySelector("#registerForm");
+form.addEventListener("submit", function (event) {
+  if (!form.checkValidity()) {
+    event.preventDefault();
+    event.stopPropagation();
+  }
+  form.classList.add("was-validated");
+});</code></pre>
+              <h3>Regular Expressions</h3>
+              <p>A regular expression describes a text pattern. Use <code>regex.test(value)</code> to check a string. Common tokens include <code>^</code> (start), <code>$</code> (end), <code>\d</code> (digit), <code>+</code> (one or more) and <code>*</code> (zero or more).</p>
+              <pre class="code-card"><code>const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+console.log(emailRegex.test("student@example.com")); // true</code></pre>
+              <div class="lecture-end"><a class="btn btn-accent" href="quiz-week5.html">Take the quiz</a><a class="btn btn-outline-primary" href="live-coding-week5.html">Live coding</a><p>Check what you learned in Week 5.</p></div>
             </article>
             <article class="reading" id="week6">
               <h2>Week 6: JavaScript Basics</h2>
+              <p><strong>Video Lecture — Gulzhan Yegemberdiyeva:</strong> <a href="https://www.youtube.com/playlist?list=PLPT6CF0r4E3qOlnNkS3UXcTe7I_V8kviI" target="_blank" rel="noopener noreferrer">Watch Lecture 6 on YouTube</a></p>
               <p>JavaScript is a high-level, dynamic, single-threaded programming language that powers interactivity on
                 the modern web. It was created by <b>Brendan Eich</b> at Netscape Communications and runs directly in
                 the browser, where it can update HTML and CSS dynamically.</p>
@@ -860,9 +774,9 @@ const square = (x) =&gt; x * x;</code></pre>
               </div>
             </article>
             <article class="reading" id="week7">
-              <h2>Week 7: Arrays, Loops and DOM Manipulation</h2>
-              <p>This week we build a mini-app: data is stored in an <b>array</b>, a <b>loop</b> goes through it and the
-                <b>DOM</b> shows the result on the page.</p>
+              <h2>Week 7: JavaScript DOM</h2>
+              <p><strong>Video Lecture — Gulzhan Yegemberdiyeva:</strong> <a href="https://www.youtube.com/playlist?list=PLPT6CF0r4E3oeXhlV0N3ol5mdoOlkdH9y" target="_blank" rel="noopener noreferrer">Watch Lecture 7 on YouTube</a></p>
+              <p>This lecture focuses on the Document Object Model (DOM): selecting, reading, changing, creating and removing HTML elements. Arrays and loops are used in practical DOM examples.</p>
               <h3>Arrays</h3>
               <p>An array stores many values in one variable. Items have an index that starts from <b>0</b>. The
                 <code>length</code> property returns the number of items.</p>
@@ -982,188 +896,26 @@ link.getAttribute("href");</code></pre>
 const topics = ["HTML", "CSS", "JS"];
 
 topics.forEach(function (t) {
-  const li = document.createElement("li&");
+  const li = document.createElement("li");
   li.textContent = t;
   ul.appendChild(li);        // add to the page
 });
 
 ul.removeChild(ul.firstElementChild);   // remove one item</code></pre>
+              <h3>DOM Events and Event Listeners</h3>
+              <p>Events let JavaScript respond to clicks, keyboard input and form actions. Use <code>addEventListener()</code> to attach a callback to an element.</p>
+              <pre class="code-card"><code>const button = document.querySelector("#btn");
+button.addEventListener("click", function () {
+  document.querySelector("#title").textContent = "Button clicked!";
+});</code></pre>
               <div class="lecture-end"><a class="btn btn-accent" href="quiz-week7.html">Take the quiz</a><a
                   class="btn btn-outline-primary" href="live-coding-week7.html">Live coding</a>
                 <p>Check what you learned in Week 7.</p>
               </div>
             </article>
             <article class="reading" id="week8">
-              <h2>Week 8: JS Events and Form Validation</h2>
-              <p>Events make a page interactive: JavaScript reacts to clicks, key presses, typing and form submission.
-              </p>
-              <h3>Event listeners</h3>
-              <p>Event listeners allow JavaScript to react to user interactions like clicks and key presses. The
-                function that runs when the event happens is a <b>callback</b>.</p>
-              <pre class="code-card"><code>const btn = document.querySelector("#btn&");
-let count = 0;
-
-btn.addEventListener("click", function (event) {
-  count++;
-  btn.textContent = "Clicked: " + count;
-});</code></pre>
-              <div class="table-responsive">
-                <table class="table">
-                  <thead>
-                    <tr>
-                      <th>Group</th>
-                      <th>Events</th>
-                    </tr>
-                  </thead>
-                  <tbody>
-                    <tr>
-                      <td>Mouse</td>
-                      <td><code>click, dblclick, mouseenter, mouseleave</code></td>
-                    </tr>
-                    <tr>
-                      <td>Keyboard</td>
-                      <td><code>keydown, keyup</code></td>
-                    </tr>
-                    <tr>
-                      <td>Form</td>
-                      <td><code>submit, input, change, focus, blur</code></td>
-                    </tr>
-                    <tr>
-                      <td>Document / window</td>
-                      <td><code>DOMContentLoaded, load, resize, scroll</code></td>
-                    </tr>
-                  </tbody>
-                </table>
-              </div>
-              <h3>Keyboard events</h3>
-              <p>The KeyboardEvent object handles events that occur when a user presses a key.</p>
-              <div class="table-responsive">
-                <table class="table">
-                  <thead>
-                    <tr>
-                      <th>Property</th>
-                      <th>Returns</th>
-                    </tr>
-                  </thead>
-                  <tbody>
-                    <tr>
-                      <td><code>key</code></td>
-                      <td>The value of the key that triggered the event ("a", "Enter")</td>
-                    </tr>
-                    <tr>
-                      <td><code>code</code></td>
-                      <td>The code of the physical key ("KeyA")</td>
-                    </tr>
-                    <tr>
-                      <td><code>ctrlKey / altKey / shiftKey</code></td>
-                      <td>true if that modifier key was pressed</td>
-                    </tr>
-                    <tr>
-                      <td><code>location</code></td>
-                      <td>Where the key is: 0 almost every key, 1 left, 2 right, 3 Numpad, 4 mobile, 5 game controller
-                      </td>
-                    </tr>
-                    <tr>
-                      <td><code>repeat</code></td>
-                      <td>true if the key is being held down</td>
-                    </tr>
-                  </tbody>
-                </table>
-              </div>
-              <pre class="code-card"><code>document.addEventListener("keydown", function (e) {
-  if (e.ctrlKey && e.key === "s") {
-    e.preventDefault();         // stop the browser default
-    console.log("Save!");
-  }
-});</code></pre>
-              <h3>Objects</h3>
-              <p>Objects are collections of key-value pairs. Keys are strings (or symbols) and values can be any data
-                type, including other objects or functions (called methods). Properties store data and methods are
-                functions inside the object. Access properties with dot notation (<code>person.name</code>) or bracket
-                notation (<code>person["name"]</code>). Properties can be added, modified or deleted at runtime.</p>
-              <pre class="code-card"><code>const person = {
-  name: "John",
-  age: 30,
-  greet() {
-    return "Hi, I am " + this.name;
-  }
-};
-person.age = 31;           // change
-person.city = "Astana";    // add
-delete person.age;         // delete
-console.log(person.greet());</code></pre>
-              <h3>Callbacks and event responses</h3>
-              <p>A callback is a function passed into another function as an argument and executed later. Event
-                handlers, <code>setTimeout</code> and <code>forEach</code> all use callbacks.</p>
-              <pre class="code-card"><code>function done() { console.log("Finished"); }
-setTimeout(done, 1000);    // done runs after 1 second
-[1, 2].forEach(function (n) { console.log(n); });</code></pre>
-              <h3>Sounds and animation</h3>
-              <p>Create an <code>Audio</code> object to play a sound; it is an audio player with <code>play()</code> and
-                <code>pause()</code> methods. <code>requestAnimationFrame()</code> allows smooth, frame-by-frame
-                animations.</p>
-              <pre class="code-card"><code>const sound = new Audio("click.mp3");
-sound.play();
-
-let x = 0;
-function move() {
-  x += 2;
-  box.style.left = x + "px";
-  if (x &lt; 300) requestAnimationFrame(move);
-}
-requestAnimationFrame(move);</code></pre>
-              <h3>Form validation with RegEx</h3>
-              <p>Client-side validation checks the data before the form is sent. A <b>regular expression</b> (RegEx)
-                describes a text pattern; <code>regex.test(text)</code> returns true or false. If the data is wrong,
-                call <code>event.preventDefault()</code> in the <code>submit</code> handler and show a message.</p>
-              <pre class="code-card"><code>const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-
-form.addEventListener("submit", function (e) {
-  const email = form.email.value.trim();
-  if (email === "" || !emailRegex.test(email)) {
-    e.preventDefault();                       // block sending
-    error.textContent = "Enter a valid email";
-  }
-});</code></pre>
-              <div class="table-responsive">
-                <table class="table">
-                  <thead>
-                    <tr>
-                      <th>Pattern</th>
-                      <th>Meaning</th>
-                    </tr>
-                  </thead>
-                  <tbody>
-                    <tr>
-                      <td><code>^ and $</code></td>
-                      <td>Start and end of the text</td>
-                    </tr>
-                    <tr>
-                      <td><code>\d</code></td>
-                      <td>A digit</td>
-                    </tr>
-                    <tr>
-                      <td><code>\S</code></td>
-                      <td>Any character except a space</td>
-                    </tr>
-                    <tr>
-                      <td><code>+ and *</code></td>
-                      <td>One or more / zero or more times</td>
-                    </tr>
-                    <tr>
-                      <td><code>[a-z]</code></td>
-                      <td>One character from the range</td>
-                    </tr>
-                  </tbody>
-                </table>
-              </div>
-              <div class="lecture-end"><a class="btn btn-accent" href="quiz-week8.html">Take the quiz</a><a
-                  class="btn btn-outline-primary" href="live-coding-week8.html">Live coding</a>
-                <p>Check what you learned in Week 8.</p>
-              </div>
-            </article>
-            <article class="reading" id="week9">
-              <h2>Week 9: jQuery</h2>
+              <h2>Week 8: jQuery</h2>
+              <p><strong>Video Lecture — Gulzhan Yegemberdiyeva:</strong> <a href="https://www.youtube.com/playlist?list=PLPT6CF0r4E3oCA-JwzCc9fgWz6-6mVp-4" target="_blank" rel="noopener noreferrer">Watch Lecture 8 on YouTube</a></p>
               <h3>What is jQuery?</h3>
               <p>jQuery is a JavaScript library that streamlines the creation of dynamic behavior with predefined
                 methods for selecting and manipulating DOM elements. It offers a simplified approach to responsiveness
@@ -1372,10 +1124,199 @@ $("#box").addClass("active");</code></pre>
                 <li>Learn jQuery on Codecademy</li>
                 <li>jQuery tutorial on W3Schools</li>
               </ul>
+              <div class="lecture-end"><a class="btn btn-accent" href="quiz-week8.html">Take the quiz</a><a
+                  class="btn btn-outline-primary" href="live-coding-week8.html">Live coding</a>
+                <p>Check what you learned in Week 8.</p>
+              </div>
+            </article>
+            <article class="reading" id="week9">
+              <h2>Week 9: JavaScript Events and Objects</h2>
+              
+              <p>Events make a page interactive: JavaScript reacts to clicks, key presses, typing and form submission.
+              </p>
+              <h3>Event listeners</h3>
+              <p>Event listeners allow JavaScript to react to user interactions like clicks and key presses. The
+                function that runs when the event happens is a <b>callback</b>.</p>
+              <pre class="code-card"><code>const btn = document.querySelector("#btn&");
+let count = 0;
+
+btn.addEventListener("click", function (event) {
+  count++;
+  btn.textContent = "Clicked: " + count;
+});</code></pre>
+              <div class="table-responsive">
+                <table class="table">
+                  <thead>
+                    <tr>
+                      <th>Group</th>
+                      <th>Events</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr>
+                      <td>Mouse</td>
+                      <td><code>click, dblclick, mouseenter, mouseleave</code></td>
+                    </tr>
+                    <tr>
+                      <td>Keyboard</td>
+                      <td><code>keydown, keyup</code></td>
+                    </tr>
+                    <tr>
+                      <td>Form</td>
+                      <td><code>submit, input, change, focus, blur</code></td>
+                    </tr>
+                    <tr>
+                      <td>Document / window</td>
+                      <td><code>DOMContentLoaded, load, resize, scroll</code></td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+              <h3>Keyboard events</h3>
+              <p>The KeyboardEvent object handles events that occur when a user presses a key.</p>
+              <div class="table-responsive">
+                <table class="table">
+                  <thead>
+                    <tr>
+                      <th>Property</th>
+                      <th>Returns</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr>
+                      <td><code>key</code></td>
+                      <td>The value of the key that triggered the event ("a", "Enter")</td>
+                    </tr>
+                    <tr>
+                      <td><code>code</code></td>
+                      <td>The code of the physical key ("KeyA")</td>
+                    </tr>
+                    <tr>
+                      <td><code>ctrlKey / altKey / shiftKey</code></td>
+                      <td>true if that modifier key was pressed</td>
+                    </tr>
+                    <tr>
+                      <td><code>location</code></td>
+                      <td>Where the key is: 0 almost every key, 1 left, 2 right, 3 Numpad, 4 mobile, 5 game controller
+                      </td>
+                    </tr>
+                    <tr>
+                      <td><code>repeat</code></td>
+                      <td>true if the key is being held down</td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+              <pre class="code-card"><code>document.addEventListener("keydown", function (e) {
+  if (e.ctrlKey && e.key === "s") {
+    e.preventDefault();         // stop the browser default
+    console.log("Save!");
+  }
+});</code></pre>
+              <h3>Objects</h3>
+              <p>Objects are collections of key-value pairs. Keys are strings (or symbols) and values can be any data
+                type, including other objects or functions (called methods). Properties store data and methods are
+                functions inside the object. Access properties with dot notation (<code>person.name</code>) or bracket
+                notation (<code>person["name"]</code>). Properties can be added, modified or deleted at runtime.</p>
+              <pre class="code-card"><code>const person = {
+  name: "John",
+  age: 30,
+  greet() {
+    return "Hi, I am " + this.name;
+  }
+};
+person.age = 31;           // change
+person.city = "Astana";    // add
+delete person.age;         // delete
+console.log(person.greet());</code></pre>
+              <h3>Callbacks and event responses</h3>
+              <p>A callback is a function passed into another function as an argument and executed later. Event
+                handlers, <code>setTimeout</code> and <code>forEach</code> all use callbacks.</p>
+              <pre class="code-card"><code>function done() { console.log("Finished"); }
+setTimeout(done, 1000);    // done runs after 1 second
+[1, 2].forEach(function (n) { console.log(n); });</code></pre>
+              <h3>Sounds and animation</h3>
+              <p>Create an <code>Audio</code> object to play a sound; it is an audio player with <code>play()</code> and
+                <code>pause()</code> methods. <code>requestAnimationFrame()</code> allows smooth, frame-by-frame
+                animations.</p>
+              <pre class="code-card"><code>const sound = new Audio("click.mp3");
+sound.play();
+
+let x = 0;
+function move() {
+  x += 2;
+  box.style.left = x + "px";
+  if (x &lt; 300) requestAnimationFrame(move);
+}
+requestAnimationFrame(move);</code></pre>
+              <h3>Event Delegation and Bubbling</h3>
+              <p>Events often bubble from a child element to its ancestors. Event delegation attaches one listener to a parent and checks which child triggered the event.</p>
+              <pre class="code-card"><code>document.querySelector("#list").addEventListener("click", function (event) {
+  if (event.target.matches("button.remove")) {
+    event.target.closest("li").remove();
+  }
+});</code></pre>
               <div class="lecture-end"><a class="btn btn-accent" href="quiz-week9.html">Take the quiz</a><a
                   class="btn btn-outline-primary" href="live-coding-week9.html">Live coding</a>
                 <p>Check what you learned in Week 9.</p>
               </div>
+            </article>
+            <article class="reading" id="week10">
+              <h2>Week 10: Asynchronous JavaScript</h2>
+              <p>This lecture explains how JavaScript handles delayed operations without blocking the execution of other code. Topics follow the Week 9–10 Asynchronous JS presentation.</p>
+              <h3>Synchronous vs Asynchronous JavaScript</h3>
+              <p><b>Synchronous</b> statements execute in order, and each must finish before the next begins. <b>Asynchronous</b> operations such as timers and network requests can complete later while other JavaScript continues to run.</p>
+              <pre class="code-card"><code>console.log("Start");
+setTimeout(() =&gt; console.log("Timer"), 0);
+console.log("End");
+// Start, End, Timer</code></pre>
+              <h3>JavaScript Runtime and Event Loop</h3>
+              <p>The <b>Call Stack</b> tracks executing functions. Browser <b>Web APIs</b> handle timers, fetch requests and events. <b>Queues</b> hold callbacks ready to execute. The <b>Event Loop</b> schedules queued work when the call stack is available.</p>
+              <h3>Microtasks and Tasks</h3>
+              <p>Promise handlers (<code>.then()</code>, <code>.catch()</code>, <code>.finally()</code>) are <b>microtasks</b>. Timer callbacks (<code>setTimeout()</code>, <code>setInterval()</code>) are <b>tasks (macrotasks)</b>. After the current synchronous code finishes, the runtime processes microtasks before the next task.</p>
+              <pre class="code-card"><code>console.log("A");
+setTimeout(() =&gt; console.log("B"), 0);
+Promise.resolve().then(() =&gt; console.log("C"));
+console.log("D");
+// A, D, C, B</code></pre>
+              <h3>Callbacks and Callback Hell</h3>
+              <p>A <b>callback</b> is a function passed to another function to run at a particular time. Deeply nested asynchronous callbacks create <b>Callback Hell</b>, making code difficult to read, maintain and handle errors in.</p>
+              <pre class="code-card"><code>setTimeout(function () {
+  console.log("Callback executed");
+}, 1000);</code></pre>
+              <h3>Promises: Pending, Fulfilled, Rejected</h3>
+              <p>A <b>Promise</b> represents an eventual asynchronous result. Its states are <b>pending</b> (not settled), <b>fulfilled</b> (successful) and <b>rejected</b> (failed). Use <code>.then()</code> for a result, <code>.catch()</code> for errors and <code>.finally()</code> for cleanup regardless of outcome.</p>
+              <pre class="code-card"><code>const request = Promise.resolve("Data loaded");
+request
+  .then(data =&gt; console.log(data))
+  .catch(error =&gt; console.error(error))
+  .finally(() =&gt; console.log("Finished"));</code></pre>
+              <h3>Async / Await</h3>
+              <p>An <code>async</code> function always returns a Promise. The <code>await</code> keyword pauses that function until a Promise settles, without blocking the whole JavaScript thread. Use <code>try...catch</code> to handle failures.</p>
+              <pre class="code-card"><code>async function loadMessage() {
+  try {
+    const message = await Promise.resolve("Hello!");
+    console.log(message);
+  } catch (error) {
+    console.error(error);
+  }
+}
+loadMessage();</code></pre>
+              <h3>Fetch API, Client, Server and JSON</h3>
+              <p>The <b>client</b> sends a <b>request</b> to a <b>server</b>, which returns a <b>response</b>. Web APIs commonly exchange data in <b>JSON</b> format. <code>fetch()</code> returns a Promise; <code>response.json()</code> reads and parses the JSON response.</p>
+              <pre class="code-card"><code>async function loadUsers() {
+  try {
+    const response = await fetch("https://jsonplaceholder.typicode.com/users");
+    if (!response.ok) throw new Error("HTTP " + response.status);
+    const users = await response.json();
+    console.log(users);
+  } catch (error) {
+    console.error("Request failed:", error);
+  }
+}
+loadUsers();</code></pre>
+              <p><b>Remember:</b> <code>fetch()</code> does not automatically reject for HTTP errors such as 404, so check <code>response.ok</code>.</p>
+              <div class="lecture-end"><p>Review the examples and practice predicting the order of asynchronous output.</p></div>
             </article>
           </div>
           <aside class="col-lg-4">
@@ -1413,8 +1354,8 @@ $("#box").addClass("active");</code></pre>
                     </tr>
                     <tr>
                       <td>Week 5</td>
-                      <td>Bootstrap Grid and Components</td>
-                      <td>Grid offsets, order, nesting, navbar, cards, modal, forms.</td>
+                      <td>Forms and Validation</td>
+                      <td>Form controls, HTML5 validation, Bootstrap feedback, JavaScript validation, RegEx.</td>
                     </tr>
                     <tr>
                       <td>Week 6</td>
@@ -1423,18 +1364,23 @@ $("#box").addClass("active");</code></pre>
                     </tr>
                     <tr>
                       <td>Week 7</td>
-                      <td>Arrays, Loops and DOM Manipulation</td>
-                      <td>Arrays, array methods, the DOM, selecting and changing elements.</td>
+                      <td>JavaScript DOM</td>
+                      <td>Arrays, the DOM, selecting and changing elements, events.</td>
                     </tr>
                     <tr>
                       <td>Week 8</td>
-                      <td>JS Events and Form Validation</td>
-                      <td>Events, keyboard, objects, callbacks, RegEx, form validation.</td>
+                      <td>jQuery</td>
+                      <td>Selectors, events, effects, CSS, traversing the DOM.</td>
                     </tr>
                     <tr>
                       <td>Week 9</td>
-                      <td>jQuery</td>
-                      <td>jQuery syntax, selectors, events, effects, CSS, traversing.</td>
+                      <td>JavaScript Events and Objects</td>
+                      <td>Event listeners, keyboard events, objects, callbacks, delegation.</td>
+                    </tr>
+                    <tr>
+                      <td>Week 10</td>
+                      <td>Asynchronous JavaScript</td>
+                      <td>Event Loop, callbacks, Promises, async/await, Fetch API and JSON.</td>
                     </tr>
                   </tbody>
                 </table>
@@ -1449,6 +1395,7 @@ $("#box").addClass("active");</code></pre>
                 <li><a href="#week7">Week 7</a></li>
                 <li><a href="#week8">Week 8</a></li>
                 <li><a href="#week9">Week 9</a></li>
+                <li><a href="#week10">Week 10</a></li>
                 <li><a href="final-test.html">Final Test</a></li>
               </ul>
             </div>
@@ -1477,7 +1424,7 @@ $("#box").addClass("active");</code></pre>
             <a href="https://instagram.com/" target="_blank">Instagram</a></p>
         </div>
       </div>
-      <p class="text-center copyright mb-0">2026 WebLearn. Web Technologies midterm and endterm project.</p>
+      <p class="text-center copyright mb-0">2026 WebLearn. Web Technologies midterm and endterm project. AI usage: AI tools (Claude by Anthropic) were used as a supporting tool during development and are credited here.</p>
     </div>
   </footer>
   <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
@@ -1485,3 +1432,7 @@ $("#box").addClass("active");</code></pre>
 </body>
 
 </html>
+
+
+
+
