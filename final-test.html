@@ -26,8 +26,9 @@
         <li><a href="topics.html">Topics</a></li>
         <li><a href="students.html">Students</a></li>
         <li><a href="gallery.html">Gallery</a></li>
-        <li><a href="register.html">Register</a></li>
         <li><a href="developers.html">Developers</a></li>
+        <li><a href="faq.html">FAQ</a></li>
+        <li><a href="books.html">Books</a></li>
         <li><a href="contact.html">Contact</a></li>
       </ul>
     </nav>
@@ -35,8 +36,8 @@
   <main>
     <section class="page-title">
       <div class="container">
-        <h1>Final Test - Weeks 1-9</h1>
-        <p>27 questions from all nine lectures. Choose your answers, then press <b>Check Answers</b> to see your score.</p>
+        <h1>Final Test - Weeks 1-10</h1>
+        <p>30 questions from all ten lectures. Choose your answers, then press <b>Check Answers</b> to see your score.</p>
       </div>
     </section>
     <section class="section">
@@ -347,6 +348,40 @@ console.log(fruits.length);</code></pre>
             <label for="final-q27c" class="option">Creates a new element</label>
             <p class="explain"><b>Correct answer: Adds the class "active" to the element with id="box".</b> addClass() adds one or more CSS classes to the selected elements.</p>
           </div>
+          <div class="question">
+            <legend>28. What are the three states of a Promise? </legend>
+            <input type="radio" class="opt-input" name="q28" id="final-q28a">
+            <label for="final-q28a" class="option">waiting, running, finished</label>
+            <input type="radio" class="opt-input" name="q28" id="final-q28b">
+            <label for="final-q28b" class="option">start, loop, stop</label>
+            <input type="radio" class="opt-input" name="q28" id="final-q28c">
+            <label for="final-q28c" class="option correct">pending, fulfilled, rejected</label>
+            <p class="explain"><b>Correct answer: pending, fulfilled, rejected.</b> A Promise is pending while it is not settled, fulfilled when it succeeds and rejected when it fails.</p>
+          </div>
+          <div class="question">
+            <legend>29. Why should you check response.ok after fetch()? </legend>
+            <input type="radio" class="opt-input" name="q29" id="final-q29a">
+            <label for="final-q29a" class="option">Because response.ok sends the request again</label>
+            <input type="radio" class="opt-input" name="q29" id="final-q29b">
+            <label for="final-q29b" class="option correct">Because fetch() does not reject for HTTP errors such as 404</label>
+            <input type="radio" class="opt-input" name="q29" id="final-q29c">
+            <label for="final-q29c" class="option">Because response.ok converts the data to JSON</label>
+            <p class="explain"><b>Correct answer: Because fetch() does not reject for HTTP errors such as 404.</b> fetch() rejects only when the network request fails. For a 404 or 500 response the Promise is still fulfilled, so you must check response.ok yourself.</p>
+          </div>
+          <div class="question">
+            <legend>30. What is the output order? </legend>
+            <pre class="code-card"><code>console.log("A");
+setTimeout(() =&gt; console.log("B"), 0);
+Promise.resolve().then(() =&gt; console.log("C"));
+console.log("D");</code></pre>
+            <input type="radio" class="opt-input" name="q30" id="final-q30a">
+            <label for="final-q30a" class="option">A, B, C, D</label>
+            <input type="radio" class="opt-input" name="q30" id="final-q30b">
+            <label for="final-q30b" class="option correct">A, D, C, B</label>
+            <input type="radio" class="opt-input" name="q30" id="final-q30c">
+            <label for="final-q30c" class="option">A, D, B, C</label>
+            <p class="explain"><b>Correct answer: A, D, C, B.</b> A and D are synchronous. The Promise handler C is a microtask and runs before the timer callback B, which is a task.</p>
+          </div>
           <p id="finalScore" class="final-score" aria-live="polite"></p>
           <div class="quiz-actions">
             <label for="check-final" class="btn btn-accent check-btn"><span class="show-text">Check Answers</span><span class="hide-text">Hide Answers</span></label>
@@ -381,7 +416,7 @@ console.log(fruits.length);</code></pre>
             <a href="https://instagram.com/" target="_blank">Instagram</a></p>
         </div>
       </div>
-      <p class="text-center copyright mb-0">2026 WebLearn. Web Technologies midterm and endterm project.</p>
+      <p class="text-center copyright mb-0">2026 WebLearn. Web Technologies midterm, endterm and final project. AI usage: AI tools (Claude by Anthropic) were used as a supporting tool during development and are credited here.</p>
     </div>
   </footer>
   <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
