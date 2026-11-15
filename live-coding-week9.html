@@ -24,8 +24,9 @@
         <li><a href="topics.html">Topics</a></li>
         <li><a href="students.html">Students</a></li>
         <li><a href="gallery.html">Gallery</a></li>
-        <li><a href="register.html">Register</a></li>
         <li><a href="developers.html">Developers</a></li>
+        <li><a href="faq.html">FAQ</a></li>
+        <li><a href="books.html">Books</a></li>
         <li><a href="contact.html">Contact</a></li>
       </ul>
     </nav>
@@ -34,29 +35,25 @@
   <main>
     <section class="page-title">
       <div class="container">
-        <h1>Live Coding - Week 9: jQuery</h1>
+        <h1>Live Coding - Week 9: JavaScript Events and Objects</h1>
         <p>Three coding tasks. Write your code in your editor or in the box below, then press <b>Show Solution</b> to compare.</p>
       </div>
     </section>
+
     <section class="section">
       <div class="container narrow">
         <div class="task">
           <input type="checkbox" id="sol-week9-1" class="check-toggle">
-          <h2>Task 1: Selectors and document ready</h2>
-          <p>Select elements and change them when the DOM is ready.</p>
+          <h2>Task 1: Click counter</h2>
+          <p>React to a button click.</p>
           <ul class="task-reqs">
-            <li>Wrap the code in $(document).ready(function () { ... })</li>
-            <li>Make all p.intro blue with .css() and add the class first to the first li of the ul</li>
-            <li>Select links with target="_blank" and add the text " (new tab)" with .append()</li>
+            <li>HTML: button with id="counter" and the text "Clicked: 0"</li>
+            <li>Use addEventListener("click", ...) to increase a variable and update textContent</li>
+            <li>Change the button color with style.background when the count reaches 5</li>
           </ul>
           <p class="pg-label">Expected result</p>
           <div class="ex-preview">
-            <p style="color: rgb(13, 110, 253);">Intro paragraph</p>
-            <ul>
-              <li style="background: rgb(255, 243, 205);">First item</li>
-              <li>Second item</li>
-            </ul>
-            <a href="#">External link (new tab)</a>
+            <button class="btn btn-primary" type="button">Clicked: 3</button>
           </div>
           <label for="week9-code1" class="pg-label mt-3">Your code</label>
           <textarea id="week9-code1" class="code-box" rows="6" placeholder="Write your solution here"></textarea>
@@ -68,36 +65,34 @@
           </div>
           <div class="solution">
             <p class="pg-label">Solution</p>
-            <pre class="code-card"><code>&lt;p class="intro"&gt;Intro paragraph&lt;/p&gt;
-&lt;ul&gt;
-  &lt;li&gt;First item&lt;/li&gt;
-  &lt;li&gt;Second item&lt;/li&gt;
-&lt;/ul&gt;
-&lt;a href="https://jquery.com" target="_blank"&gt;External link&lt;/a&gt;
-
+            <pre class="code-card"><code>&lt;button id="counter"&gt;Clicked: 0&lt;/button&gt;
 &lt;script&gt;
-  $(document).ready(function () {
-    $("p.intro").css("color", "blue");
-    $("ul li:first").addClass("first");
-    $("a[target='_blank']").append(" (new tab)");
+  const btn = document.getElementById("counter");
+  let count = 0;
+
+  btn.addEventListener("click", function () {
+    count++;
+    btn.textContent = "Clicked: " + count;
+    if (count === 5) {
+      btn.style.background = "green";
+    }
   });
 &lt;/script&gt;</code></pre>
           </div>
         </div>
+
         <div class="task">
           <input type="checkbox" id="sol-week9-2" class="check-toggle">
-          <h2>Task 2: Events and effects</h2>
-          <p>Use jQuery events with fade and slide effects.</p>
+          <h2>Task 2: Keyboard events and objects</h2>
+          <p>Show information about the pressed key.</p>
           <ul class="task-reqs">
-            <li>A button #toggleBtn toggles #box with .slideToggle() on click</li>
-            <li>On mouseenter the box gets the class hover, on mouseleave it is removed</li>
-            <li>A second button #hideBtn hides #msg with .fadeOut()</li>
+            <li>Listen to keydown on document</li>
+            <li>Store key and ctrlKey in an object and show them in p with id="info"</li>
+            <li>When Ctrl + Enter is pressed show an alert("Sent!")</li>
           </ul>
           <p class="pg-label">Expected result</p>
           <div class="ex-preview">
-            <button class="btn btn-primary btn-sm me-2" type="button">Toggle box</button>
-            <button class="btn btn-outline-primary btn-sm" type="button">Hide message</button>
-            <div class="mt-2 p-3 bg-light border rounded">A box that slides up and down</div>
+            <p class="mb-0">Key: a, Ctrl: false</p>
           </div>
           <label for="week9-code2" class="pg-label mt-3">Your code</label>
           <textarea id="week9-code2" class="code-box" rows="6" placeholder="Write your solution here"></textarea>
@@ -109,52 +104,37 @@
           </div>
           <div class="solution">
             <p class="pg-label">Solution</p>
-            <pre class="code-card"><code>&lt;button id="toggleBtn"&gt;Toggle box&lt;/button&gt;
-&lt;button id="hideBtn"&gt;Hide message&lt;/button&gt;
-&lt;div id="box"&gt;A box that slides up and down&lt;/div&gt;
-&lt;p id="msg"&gt;Hello!&lt;/p&gt;
+            <pre class="code-card"><code>&lt;p id="info"&gt;Press any key&lt;/p&gt;
 &lt;script&gt;
-  $("#toggleBtn").click(function () {
-    $("#box").slideToggle();
-  });
+  document.addEventListener("keydown", function (e) {
+    const pressed = { key: e.key, ctrl: e.ctrlKey };
+    document.getElementById("info").textContent =
+      "Key: " + pressed.key + ", Ctrl: " + pressed.ctrl;
 
-  $("#box").on("mouseenter", function () {
-    $(this).addClass("hover");
-  }).on("mouseleave", function () {
-    $(this).removeClass("hover");
-  });
-
-  $("#hideBtn").click(function () {
-    $("#msg").fadeOut();
+    if (e.ctrlKey &amp;&amp; e.key === "Enter") {
+      alert("Sent!");
+    }
   });
 &lt;/script&gt;</code></pre>
           </div>
         </div>
+
         <div class="task">
           <input type="checkbox" id="sol-week9-3" class="check-toggle">
-          <h2>Task 3: Traversing and a dynamic list</h2>
-          <p>Add and remove list items with jQuery.</p>
+          <h2>Task 3: Form validation</h2>
+          <p>Validate a small form before it is sent.</p>
           <ul class="task-reqs">
-            <li>Input #task, button #add and ul#todo; on click append a new li with the text from .val()</li>
-            <li>Every li has a button.del; on click remove the item with $(this).closest("li").remove()</li>
-            <li>Clicking the text of an item toggles the class done with .toggleClass(); use .on() on ul#todo so new items work too</li>
+            <li>A form with name, email and a submit button; every field must be filled</li>
+            <li>Check the email with a RegEx (regex.test())</li>
+            <li>If something is wrong, call preventDefault() and show a red message in p with id="error"; otherwise show a green "Success"</li>
           </ul>
           <p class="pg-label">Expected result</p>
           <div class="ex-preview">
-            <div class="d-flex gap-2 mb-2">
-              <input class="form-control" placeholder="New task" disabled>
-              <button class="btn btn-primary" type="button">Add</button>
+            <div class="mb-2">
+              <input class="form-control is-invalid" value="aida@mail" disabled>
+              <div class="invalid-feedback d-block">Enter a valid email</div>
             </div>
-            <ul class="list-group">
-              <li class="list-group-item d-flex justify-content-between">
-                <span>Read lecture</span>
-                <button class="btn btn-sm btn-outline-danger" type="button">x</button>
-              </li>
-              <li class="list-group-item d-flex justify-content-between">
-                <span class="text-decoration-line-through">Take the quiz</span>
-                <button class="btn btn-sm btn-outline-danger" type="button">x</button>
-              </li>
-            </ul>
+            <button class="btn btn-primary" type="button">Send</button>
           </div>
           <label for="week9-code3" class="pg-label mt-3">Your code</label>
           <textarea id="week9-code3" class="code-box" rows="6" placeholder="Write your solution here"></textarea>
@@ -166,27 +146,32 @@
           </div>
           <div class="solution">
             <p class="pg-label">Solution</p>
-            <pre class="code-card"><code>&lt;input id="task" placeholder="New task"&gt;
-&lt;button id="add"&gt;Add&lt;/button&gt;
-&lt;ul id="todo"&gt;&lt;/ul&gt;
+            <pre class="code-card"><code>&lt;form id="form"&gt;
+  &lt;input id="name" placeholder="Name"&gt;
+  &lt;input id="email" placeholder="Email"&gt;
+  &lt;button type="submit"&gt;Send&lt;/button&gt;
+  &lt;p id="error"&gt;&lt;/p&gt;
+&lt;/form&gt;
 &lt;script&gt;
-  $("#add").click(function () {
-    const text = $("#task").val().trim();
-    if (text !== "") {
-      $("#todo").append(
-        "&lt;li&gt;&lt;span&gt;" + $("&lt;div&gt;").text(text).html() + "&lt;/span&gt; " +
-        "&lt;button class='del'&gt;x&lt;/button&gt;&lt;/li&gt;"
-      );
-      $("#task").val("");
+  const form = document.getElementById("form");
+  const error = document.getElementById("error");
+  const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+
+  form.addEventListener("submit", function (e) {
+    e.preventDefault();
+    const name = document.getElementById("name").value.trim();
+    const email = document.getElementById("email").value.trim();
+
+    if (name === "" || email === "") {
+      error.style.color = "red";
+      error.textContent = "Fill in all fields";
+    } else if (!emailRegex.test(email)) {
+      error.style.color = "red";
+      error.textContent = "Enter a valid email";
+    } else {
+      error.style.color = "green";
+      error.textContent = "Success";
     }
-  });
-
-  $("#todo").on("click", ".del", function () {
-    $(this).closest("li").remove();
-  });
-
-  $("#todo").on("click", "span", function () {
-    $(this).toggleClass("done");
   });
 &lt;/script&gt;</code></pre>
           </div>
@@ -215,11 +200,11 @@
         <div class="col-md-4 mb-3">
           <h2 class="h6">Follow</h2>
           <p><a href="https://github.com/" target="_blank">GitHub</a> 
-            <a href="https://t.me/" target="_blank" >Telegram</a> 
+            <a href="https://t.me/" target="_blank">Telegram</a> 
             <a href="https://instagram.com/" target="_blank">Instagram</a></p>
           </div>
       </div>
-      <p class="text-center copyright mb-0">2026 WebLearn | Web Technologies midterm and endterm project.</p>
+      <p class="text-center copyright mb-0">2026 WebLearn | Web Technologies midterm, endterm and final project. AI usage: AI tools (Claude by Anthropic) were used as a supporting tool during development and are credited here.</p>
     </div>
   </footer>
   <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
