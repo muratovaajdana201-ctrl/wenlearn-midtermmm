@@ -146,15 +146,15 @@ AI usage:  Claude by Anthropic, were used as a supporting tool during developmen
 ### Aidana Muratova
 1. Lectures 1 to 10: lectures.html with the lecture text and the lecture schedule table
 2. register.html with the registration form
-3. contact.html and thank-you.html with the contact form and the confirmation page
-4. Final project: signin.html with the sign-in form, validation, localStorage login state, signed-in interface and Sign out
+3.  topics.html with real time search and the category filter
+4. contact.html and thank-you.html with the contact form and the confirmation page
+5. Final project: signin.html with the sign-in form, validation, localStorage login state, signed-in interface and Sign out
 
 ### Zhasmira Mamyrbayeva
 1. Live Coding tasks: live-coding.html as the hub, and live-coding-week1.html to live-coding-week9.html
-2. topics.html with real time search and the category filter
-3. gallery.html and img/gallery/ with the image gallery and lightbox
-4. developers.html and img/developers/
-5. Final project: the Light and Dark theme toggle with the button, dark theme CSS and localStorage, and faq.html with the jQuery .slideToggle accordion
+2. gallery.html and img/gallery/ with the image gallery and lightbox
+3. developers.html and img/developers/
+4. Final project: the Light and Dark theme toggle with the button, dark theme CSS and localStorage, and faq.html with the jQuery .slideToggle accordion
 
 ### Shared work
 1. js/script.js and css/style.css were written by all group members together.
