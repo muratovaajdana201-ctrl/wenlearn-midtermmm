@@ -21,7 +21,7 @@ Pages: Home, Lectures, Quiz with a hub and one quiz page for each lecture, Live 
 4. External CSS with variables, Flexbox, Grid, positioning, hover, focus and nth-child selectors
 5. Responsive design with the Bootstrap grid, utility classes and media queries for tablet and mobile
 6. Take the quiz and Live coding buttons after every lecture
-7. Quizzes with theory and code questions. Check Answers shows correct answers in green, wrong choices in red and an explanation, made with CSS only using :checked and sibling selectors. Try again is a reset button
+7. Quizzes with theory and code questions. Check Answers shows correct answers in green, wrong choices in red and an explanation, made with CSS only using :checked and sibling selectors. Try again is a reset button. For the final project, jQuery in js/script.js also counts the correct answers when Check Answers is pressed and shows the score, for example 10 / 13 (77%), with a pass mark of 70%. The score is hidden by Hide Answers and Try again. Check Answers works only when every question is answered: otherwise a red message shows how many questions are answered and the page scrolls to the first unanswered question. A wrong choice is marked red and the correct answer green in all quizzes and in the Final Test
 8. Live Coding with three tasks for each lecture, each with requirements, an expected result, a code box and a CSS only Show Solution button
 9. Google Font Sora and lazy loading for images below the fold
 
@@ -86,6 +86,7 @@ The final project continues the same website. We did not create a new project: t
 ### Links
 1. Deployed website on GitHub Pages: https://muratovaajdana201-ctrl.github.io/wenlearn-midtermmm/
 2. GitHub repository: https://github.com/muratovaajdana201-ctrl/wenlearn-midtermmm
+3. Footer social links on every page: GitHub https://github.com/nyshanbekovakhan-glitch, Telegram https://t.me/simple_frontend_tg and Instagram https://www.instagram.com/aiidkonn
 
 ### 1. Light and Dark theme on all pages
 1. A Dark and Light button in the navigation bar on every page.
@@ -130,31 +131,30 @@ The final project continues the same website. We did not create a new project: t
 ## Technologies used
 HTML5, CSS3, Bootstrap 5.3, JavaScript ES6, jQuery 3.7.1, Fetch API and the public Open Library API, Regular Expressions, localStorage, Google Fonts, Git and GitHub, GitHub Pages
 
-AI usage: AI tools (Claude by Anthropic) were used as a supporting tool during development. This is also credited in the footer of the website.
+AI usage:  Claude by Anthropic, were used as a supporting tool during development.We used it ro learn how to work with Open Library API, with fetch, search, sorting and error handling.
+ 
 
 ## Individual contributions
 
 ### Khanzada Nyshanbek
 1. Quizzes for all ten lectures: quiz.html as the hub, and quiz-week1.html to quiz-week10.html
 2. index.html
-3. final-test.html with the jQuery score counter and 30 questions
-4. students.html with the dynamic table, CRUD operations and modals
-5. Final project: books.html with the Open Library API, with fetch, search, sorting and error handling
+4. final-test.html with the jQuery score counter and 30 questions
+5. students.html with the dynamic table, CRUD operations and modals
+6. Final project: books.html with the Open Library API, with fetch, search, sorting and error handling
 
 ### Aidana Muratova
 1. Lectures 1 to 10: lectures.html with the lecture text and the lecture schedule table
 2. register.html with the registration form
-3. topics.html with real time search and the category filter
-4. contact.html and thank-you.html with the contact form and the confirmation page
-5. Final project: signin.html with the sign-in form, validation, localStorage login state, signed-in interface and Sign out
+3. contact.html and thank-you.html with the contact form and the confirmation page
+4. Final project: signin.html with the sign-in form, validation, localStorage login state, signed-in interface and Sign out
 
 ### Zhasmira Mamyrbayeva
 1. Live Coding tasks: live-coding.html as the hub, and live-coding-week1.html to live-coding-week9.html
-2. gallery.html and img/gallery/ with the image gallery and lightbox
-3. developers.html and img/developers/
-4. Final project: the Light and Dark theme toggle with the button, dark theme CSS and localStorage, and faq.html with the jQuery .slideToggle accordion
+2. topics.html with real time search and the category filter
+3. gallery.html and img/gallery/ with the image gallery and lightbox
+4. developers.html and img/developers/
+5. Final project: the Light and Dark theme toggle with the button, dark theme CSS and localStorage, and faq.html with the jQuery .slideToggle accordion
 
 ### Shared work
-1. js/script.js was written by all group members together: form validation, search and filter, CRUD table, gallery and lightbox, final test score, and the final project code for theme, sign-in, FAQ and the API.
-2. The new navigation links FAQ and Books on all pages, the fixes and this README.
-3.  css/style.css
+1. js/script.js and css/style.css were written by all group members together.
