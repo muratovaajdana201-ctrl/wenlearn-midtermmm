@@ -131,7 +131,7 @@ The final project continues the same website. We did not create a new project: t
 ## Technologies used
 HTML5, CSS3, Bootstrap 5.3, JavaScript ES6, jQuery 3.7.1, Fetch API and the public Open Library API, Regular Expressions, localStorage, Google Fonts, Git and GitHub, GitHub Pages
 
-AI usage:  Claude by Anthropic, were used as a supporting tool during development.We used it ro learn how to work with Open Library API, with fetch, search, sorting and error handling.
+AI usage:  Claude by Anthropic, were used as a supporting tool during development.We used it ro learn how to work with Open Library API, with fetch, search, sorting and error handling, to better understand how localStorage works, including how to save, retrieve, and remove data.
  
 
 ## Individual contributions
