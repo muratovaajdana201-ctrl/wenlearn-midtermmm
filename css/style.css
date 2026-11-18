@@ -380,9 +380,15 @@ details summary {
     border-color: #198754;
     background: #e3f5ea;
 }
-.option.wrong-answer {
+.option.wrong-answer,
+.opt-input:checked + .option.wrong-answer {
     border-color: #dc3545;
     background: #fde8ea;
+    color: #842029;
+}
+.opt-input:checked + .option.correct-answer {
+    border-color: #198754;
+    background: #e3f5ea;
 }
 .explain {
     display: none;
@@ -1232,8 +1238,15 @@ html[data-theme="dark"] .code-box {
 html[data-theme="dark"] .option.correct-answer {
     background: #123524;
 }
-html[data-theme="dark"] .option.wrong-answer {
+html[data-theme="dark"] .option.wrong-answer,
+html[data-theme="dark"] .opt-input:checked + .option.wrong-answer {
     background: #3a161c;
+    border-color: #dc3545;
+    color: #f5c2c7;
+}
+html[data-theme="dark"] .opt-input:checked + .option.correct-answer {
+    background: #123524;
+    border-color: #198754;
 }
 html[data-theme="dark"] .question small,
 html[data-theme="dark"] .pg-label,
