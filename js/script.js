@@ -159,8 +159,7 @@ $(document).ready(function () {
                 var $item = $(this);
                 var text = ($item.find('h3').text() + ' ' + $item.find('p').text() + ' ' + $item.data('tags')).toLowerCase();
                 var matchSearch = text.indexOf(query) !== -1;
-                var categories = String($item.attr('data-category') || '').split(/\s+/);
-var matchCategory = activeCategory === 'all' || categories.indexOf(activeCategory) !== -1;
+                var matchCategory = activeCategory === 'all' || $item.data('category') === activeCategory;
                 if (matchSearch && matchCategory) {
                     visible++;
                     if (!$item.is(':visible')) $item.stop(true, true).fadeIn(200);
@@ -418,66 +417,113 @@ var matchCategory = activeCategory === 'all' || categories.indexOf(activeCategor
             if (e.key === 'ArrowLeft') changePhoto(-1);
         });
     }
+    function quizAnswered($quiz) {
+        return $quiz.find('.question').filter(function () {
+            return $(this).find('.opt-input:checked').length > 0;
+        }).length;
+    }
+    function quizMark($quiz) {
+        $quiz.find('.question').each(function () {
+            var $question = $(this);
+            var $selected = $question.find('.opt-input:checked + .option');
+            $question.find('.option').removeClass('correct-answer wrong-answer');
+            $question.find('.option.correct').addClass('correct-answer');
+            if ($selected.length && !$selected.hasClass('correct')) {
+                $selected.addClass('wrong-answer');
+            }
+            $question.find('.explain').addClass('show');
+        });
+    }
+    function quizUnmark($quiz) {
+        $quiz.find('.option').removeClass('correct-answer wrong-answer');
+        $quiz.find('.explain').removeClass('show');
+    }
+    function quizShowScore($quiz, $score, hint) {
+        var total = $quiz.find('.question').length;
+        var right = 0;
+        $quiz.find('.question').each(function () {
+            var $chosen = $(this).find('.opt-input:checked + .option');
+            if ($chosen.length && $chosen.hasClass('correct')) right++;
+        });
+        var percent = Math.round(right / total * 100);
+        var passed = percent >= 70;
+        var message = 'Your score: ' + right + ' / ' + total + ' (' + percent + '%). ';
+        message += passed ? 'Well done, you passed!' : hint;
+        $score.text(message).toggleClass('pass', passed).toggleClass('fail', !passed).addClass('show');
+    }
+    function quizWarn($quiz, $score) {
+        var total = $quiz.find('.question').length;
+        var answered = quizAnswered($quiz);
+        $score.text('Please answer all questions first: ' + answered + ' / ' + total + ' answered.')
+            .removeClass('pass').addClass('fail show');
+        var $first = $quiz.find('.question').filter(function () {
+            return $(this).find('.opt-input:checked').length === 0;
+        }).first();
+        if ($first.length) {
+            $('html, body').animate({ scrollTop: $first.offset().top - 120 }, 400);
+        }
+    }
     $('.quiz:not([data-final])').each(function () {
         var $quiz = $(this);
         var answersVisible = false;
+        var $weekScore = $('<p class="final-score" aria-live="polite"></p>').insertBefore($quiz.find('.quiz-actions'));
         $quiz.find('.check-btn').on('click', function () {
+            if (!answersVisible && quizAnswered($quiz) < $quiz.find('.question').length) {
+                quizWarn($quiz, $weekScore);
+                return;
+            }
             answersVisible = !answersVisible;
             if (answersVisible) {
-                $quiz.find('.question').each(function () {
-                    var $question = $(this);
-                    var $correct = $question.find('.option.correct');
-                    var $selected = $question.find('.opt-input:checked + .option');
-                    $question.find('.option').removeClass('correct-answer wrong-answer');
-                    $correct.addClass('correct-answer');
-                    if ($selected.length && !$selected.hasClass('correct')) {
-                        $selected.addClass('wrong-answer');
-                    }
-                    $question.find('.explain').addClass('show');
-                });
+                quizMark($quiz);
+                quizShowScore($quiz, $weekScore, 'Review the lecture and try again.');
                 $quiz.find('.show-text').hide();
                 $quiz.find('.hide-text').show();
-                $quiz.find('.legend-note').show();
             } else {
-                $quiz.find('.option').removeClass('correct-answer wrong-answer');
-                $quiz.find('.explain').removeClass('show');
+                quizUnmark($quiz);
+                $weekScore.removeClass('show pass fail').text('');
                 $quiz.find('.show-text').show();
                 $quiz.find('.hide-text').hide();
-                $quiz.find('.legend-note').hide();
+            }
+        });
+        $quiz.on('change', '.opt-input', function () {
+            if (!answersVisible && $weekScore.hasClass('fail')) {
+                $weekScore.removeClass('show pass fail').text('');
             }
         });
         $quiz.on('reset', function () {
             answersVisible = false;
-            $quiz.find('.option').removeClass('correct-answer wrong-answer');
-            $quiz.find('.explain').removeClass('show');
+            $weekScore.removeClass('show pass fail').text('');
+            quizUnmark($quiz);
             $quiz.find('.show-text').show();
             $quiz.find('.hide-text').hide();
-            $quiz.find('.legend-note').hide();
         });
     });
     if ($('.quiz[data-final]').length) {
-        var $quiz = $('.quiz[data-final]');
+        var $finalQuiz = $('.quiz[data-final]');
         var $score = $('#finalScore');
-        function showScore() {
-            var total = $quiz.find('.question').length;
-            var right = 0;
-            $quiz.find('.question').each(function () {
-                var $chosen = $(this).find('.opt-input:checked + .option');
-                if ($chosen.length && $chosen.hasClass('correct')) right++;
-            });
-            var percent = Math.round(right / total * 100);
-            var passed = percent >= 70;
-            var message = 'Your score: ' + right + ' / ' + total + ' (' + percent + '%). ';
-            message += passed ? 'Well done, you passed!' : 'Review the lectures and try again.';
-            $score.text(message);
-            $score.toggleClass('pass', passed).toggleClass('fail', !passed).addClass('show');
-        }
         $('#check-final').on('change', function () {
-            if (this.checked) { showScore(); $('html, body').animate({ scrollTop: $score.offset().top - 120 }, 400); }
-            else { $score.removeClass('show pass fail'); }
+            if (this.checked) {
+                if (quizAnswered($finalQuiz) < $finalQuiz.find('.question').length) {
+                    this.checked = false;
+                    quizWarn($finalQuiz, $score);
+                    return;
+                }
+                quizMark($finalQuiz);
+                quizShowScore($finalQuiz, $score, 'Review the lectures and try again.');
+                $('html, body').animate({ scrollTop: $score.offset().top - 120 }, 400);
+            } else {
+                quizUnmark($finalQuiz);
+                $score.removeClass('show pass fail').text('');
+            }
         });
-        $quiz.on('reset', function () {
+        $finalQuiz.on('change', '.opt-input', function () {
+            if (!$('#check-final').prop('checked') && $score.hasClass('fail')) {
+                $score.removeClass('show pass fail').text('');
+            }
+        });
+        $finalQuiz.on('reset', function () {
             $score.removeClass('show pass fail').text('');
+            quizUnmark($finalQuiz);
         });
     }
     var THEME_KEY = 'weblearn-theme';
