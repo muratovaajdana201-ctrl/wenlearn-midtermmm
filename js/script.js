@@ -592,13 +592,12 @@ $(document).ready(function () {
         function renderBooks() {
             var list = books.slice();
             var sort = $('#bookSort').val();
-            if ($('#bookCover').is(':checked')) list = list.filter(function (b) { return b.cover_i; });
             if (sort === 'newest') list.sort(function (a, b) { return (b.first_publish_year || 0) - (a.first_publish_year || 0); });
             if (sort === 'oldest') list.sort(function (a, b) { return (a.first_publish_year || 9999) - (b.first_publish_year || 9999); });
             if (sort === 'editions') list.sort(function (a, b) { return (b.edition_count || 0) - (a.edition_count || 0); });
             var $grid = $('#bookGrid').empty();
             if (list.length === 0) {
-                showBookStatus(books.length ? 'No books with a cover here. Uncheck the box to see all books.' : 'No books found. Try another word.', 'warning');
+                showBookStatus('No books found. Try another word.', 'warning');
                 return;
             }
             showBookStatus('Showing ' + list.length + ' of ' + totalBooks + ' books found.', 'success');
@@ -656,7 +655,6 @@ $(document).ready(function () {
             loadBooks();
         });
         $('#bookSort').on('change', renderBooks);
-        $('#bookCover').on('change', renderBooks);
         loadBooks();
     }
 });
